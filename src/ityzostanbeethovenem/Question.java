@@ -305,6 +305,7 @@ public class Question extends javax.swing.JFrame {
         if (counter >= 10) {
             QuizEnd a = new QuizEnd(points);
             a.setVisible(true);
+            counter = 0;
             close();
         } else {
             initQuestion();
