@@ -1,33 +1,36 @@
 package ityzostanbeethovenem;
+
 import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import sun.audio.*;
 import java.io.*;
+
 import javax.swing.AbstractAction;
+
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
+import javax.swing.Timer;
 
 public class Piano extends javax.swing.JFrame {
 
     public Piano() {
         initComponents();
         addKeyboard();
+
     }
+
     String piano = "piano\\";
     String saksofon = "saksofon\\";
     String gitara = "gitara\\";
     String path = piano;
 
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    int x = 0;
+    boolean on = false;
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         ButtonGroup = new javax.swing.ButtonGroup();
@@ -52,7 +55,9 @@ public class Piano extends javax.swing.JFrame {
         F = new javax.swing.JButton();
         E = new javax.swing.JButton();
         E1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        songs = new javax.swing.JComboBox<>();
+        learn = new javax.swing.JButton();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setFocusCycleRoot(false);
@@ -60,6 +65,7 @@ public class Piano extends javax.swing.JFrame {
         setIconImage(new ImageIcon(getClass().getResource("/Grafika/ikonka.png")).getImage());
         setMinimumSize(new java.awt.Dimension(810, 450));
         setResizable(false);
+        setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(null);
 
         ButtonGroup.add(Radio1);
@@ -348,49 +354,132 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(E1);
         E1.setBounds(622, 77, 57, 275);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/piano.png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 810, 430);
+        songs.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sto lat", "Oda do radości" }));
+        songs.setFocusable(false);
+        getContentPane().add(songs);
+        songs.setBounds(10, 390, 130, 20);
+
+        learn.setText("Naucz");
+        learn.setActionCommand("naucz");
+        learn.setFocusable(false);
+        learn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                learnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(learn);
+        learn.setBounds(10, 360, 100, 23);
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/piano.png"))); // NOI18N
+        getContentPane().add(background);
+        background.setBounds(0, 0, 810, 430);
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
     private void addKeyboard() {
         this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("A"), "C");
+        this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("released A"), "releasedC");
         this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("S"), "D");
+        this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("released S"), "releasedD");
         this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("D"), "E");
+        this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("released D"), "releasedE");
         this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("F"), "F");
+        this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("released F"), "releasedF");
         this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("G"), "G");
+        this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("released G"), "releasedG");
         this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("H"), "A");
+        this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("released H"), "releasedA");
         this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("J"), "H");
+        this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("released J"), "releasedH");
         this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("K"), "C1");
+        this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("released K"), "releasedC1");
         this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("L"), "D1");
+        this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("released L"), "releasedD1");
         this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("SEMICOLON"), "E1");
+        this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("released SEMICOLON"), "releasedE1");
         this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("W"), "Cis");
+        this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("released W"), "releasedCis");
         this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("E"), "Dis");
+        this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("released E"), "releasedDis");
         this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("T"), "Fis");
+        this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("released T"), "releasedFis");
         this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("Y"), "Gis");
+        this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("released Y"), "releasedGis");
         this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("U"), "B");
+        this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("released U"), "releasedB");
         this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("O"), "Cis1");
+        this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("released O"), "releasedCis1");
         this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("P"), "Dis1");
+        this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("released P"), "releasedDis1");
 
-        this.getRootPane().getActionMap().put("C", new ActionPlay("C"));
-        this.getRootPane().getActionMap().put("D", new ActionPlay("D"));
-        this.getRootPane().getActionMap().put("E", new ActionPlay("E"));
-        this.getRootPane().getActionMap().put("F", new ActionPlay("F"));
-        this.getRootPane().getActionMap().put("G", new ActionPlay("G"));
-        this.getRootPane().getActionMap().put("A", new ActionPlay("A"));
-        this.getRootPane().getActionMap().put("H", new ActionPlay("H"));
-        this.getRootPane().getActionMap().put("C1", new ActionPlay("C1"));
-        this.getRootPane().getActionMap().put("D1", new ActionPlay("D1"));
-        this.getRootPane().getActionMap().put("E1", new ActionPlay("E1"));
-        this.getRootPane().getActionMap().put("Cis", new ActionPlay("Cis"));
-        this.getRootPane().getActionMap().put("Dis", new ActionPlay("Dis"));
-        this.getRootPane().getActionMap().put("Fis", new ActionPlay("Fis"));
-        this.getRootPane().getActionMap().put("Gis", new ActionPlay("Gis"));
-        this.getRootPane().getActionMap().put("B", new ActionPlay("B"));
-        this.getRootPane().getActionMap().put("Cis1", new ActionPlay("Cis1"));
-        this.getRootPane().getActionMap().put("Dis1", new ActionPlay("Dis1"));
+        this.getRootPane().getActionMap().put("C", new PressedKey("C", C));
+        this.getRootPane().getActionMap().put("releasedC", new ReleasedKey(C));
+        this.getRootPane().getActionMap().put("D", new PressedKey("D", D));
+        this.getRootPane().getActionMap().put("releasedD", new ReleasedKey(D));
+        this.getRootPane().getActionMap().put("E", new PressedKey("E", E));
+        this.getRootPane().getActionMap().put("releasedE", new ReleasedKey(E));
+        this.getRootPane().getActionMap().put("F", new PressedKey("F", F));
+        this.getRootPane().getActionMap().put("releasedF", new ReleasedKey(F));
+        this.getRootPane().getActionMap().put("G", new PressedKey("G", G));
+        this.getRootPane().getActionMap().put("releasedG", new ReleasedKey(G));
+        this.getRootPane().getActionMap().put("A", new PressedKey("A", A));
+        this.getRootPane().getActionMap().put("releasedA", new ReleasedKey(A));
+        this.getRootPane().getActionMap().put("H", new PressedKey("H", H));
+        this.getRootPane().getActionMap().put("releasedH", new ReleasedKey(H));
+        this.getRootPane().getActionMap().put("C1", new PressedKey("C1", C1));
+        this.getRootPane().getActionMap().put("releasedC1", new ReleasedKey(C1));
+        this.getRootPane().getActionMap().put("D1", new PressedKey("D1", D1));
+        this.getRootPane().getActionMap().put("releasedD1", new ReleasedKey(D1));
+        this.getRootPane().getActionMap().put("E1", new PressedKey("E1", E1));
+        this.getRootPane().getActionMap().put("releasedE1", new ReleasedKey(E1));
+        this.getRootPane().getActionMap().put("Cis", new PressedKey("Cis", Cis));
+        this.getRootPane().getActionMap().put("releasedCis", new ReleasedKey(Cis));
+        this.getRootPane().getActionMap().put("Dis", new PressedKey("Dis", Dis));
+        this.getRootPane().getActionMap().put("releasedDis", new ReleasedKey(Dis));
+        this.getRootPane().getActionMap().put("Fis", new PressedKey("Fis", Fis));
+        this.getRootPane().getActionMap().put("releasedFis", new ReleasedKey(Fis));
+        this.getRootPane().getActionMap().put("Gis", new PressedKey("Gis", Gis));
+        this.getRootPane().getActionMap().put("releasedGis", new ReleasedKey(Gis));
+        this.getRootPane().getActionMap().put("B", new PressedKey("B", B));
+        this.getRootPane().getActionMap().put("releasedB", new ReleasedKey(B));
+        this.getRootPane().getActionMap().put("Cis1", new PressedKey("Cis1", Cis1));
+        this.getRootPane().getActionMap().put("releasedCis1", new ReleasedKey(Cis1));
+        this.getRootPane().getActionMap().put("Dis1", new PressedKey("Dis1", Dis1));
+        this.getRootPane().getActionMap().put("releasedDis1", new ReleasedKey(Dis1));
+    }
+
+    class ReleasedKey extends AbstractAction {
+
+        private javax.swing.JButton button;
+
+        public ReleasedKey(javax.swing.JButton button) {
+            this.button = button;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            button.getModel().setArmed(false);
+            button.getModel().setPressed(false);
+        }
+    }
+
+    class PressedKey extends AbstractAction {
+
+        private String note;
+        private javax.swing.JButton button;
+
+        public PressedKey(String note, javax.swing.JButton button) {
+            this.note = note;
+            this.button = button;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            button.getModel().setPressed(true);
+            button.getModel().setArmed(true);
+            Play(note);
+        }
     }
 
     public void Play(String note) {
@@ -404,109 +493,172 @@ public class Piano extends javax.swing.JFrame {
         }
     }
 
-    class ActionPlay extends AbstractAction {
-
-        String note;
-
-        public ActionPlay(String n) {
-            note = n;
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            Play(note);
-        }
-    }
-
-
-    private void D1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D1ActionPerformed
+    private void D1ActionPerformed(java.awt.event.ActionEvent evt) {                                   
         Play("D1");
-    }//GEN-LAST:event_D1ActionPerformed
+    }                                  
 
-    private void C1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C1ActionPerformed
+    private void C1ActionPerformed(java.awt.event.ActionEvent evt) {                                   
         Play("C1");
-    }//GEN-LAST:event_C1ActionPerformed
+    }                                  
 
-    private void HActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HActionPerformed
+    private void HActionPerformed(java.awt.event.ActionEvent evt) {                                  
         Play("H");
-    }//GEN-LAST:event_HActionPerformed
+    }                                 
 
-    private void AActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AActionPerformed
+    private void AActionPerformed(java.awt.event.ActionEvent evt) {                                  
         Play("A");
-    }//GEN-LAST:event_AActionPerformed
+    }                                 
 
-    private void GActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GActionPerformed
+    private void GActionPerformed(java.awt.event.ActionEvent evt) {                                  
         Play("G");
-    }//GEN-LAST:event_GActionPerformed
+    }                                 
 
-    private void DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DActionPerformed
+    private void DActionPerformed(java.awt.event.ActionEvent evt) {                                  
         Play("D");
-    }//GEN-LAST:event_DActionPerformed
+    }                                 
 
-    private void FActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FActionPerformed
+    private void FActionPerformed(java.awt.event.ActionEvent evt) {                                  
         Play("F");
-    }//GEN-LAST:event_FActionPerformed
+    }                                 
 
-    private void CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CActionPerformed
+    private void CActionPerformed(java.awt.event.ActionEvent evt) {                                  
         Play("C");
-    }//GEN-LAST:event_CActionPerformed
+    }                                 
 
-    private void EActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EActionPerformed
+    private void EActionPerformed(java.awt.event.ActionEvent evt) {                                  
         Play("E");
-    }//GEN-LAST:event_EActionPerformed
+    }                                 
 
-    private void E1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_E1ActionPerformed
+    private void E1ActionPerformed(java.awt.event.ActionEvent evt) {                                   
         Play("E1");
-    }//GEN-LAST:event_E1ActionPerformed
+    }                                  
 
-    private void CisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CisActionPerformed
+    private void CisActionPerformed(java.awt.event.ActionEvent evt) {                                    
         Play("Cis");
-    }//GEN-LAST:event_CisActionPerformed
+    }                                   
 
-    private void DisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisActionPerformed
+    private void DisActionPerformed(java.awt.event.ActionEvent evt) {                                    
         Play("Dis");
-    }//GEN-LAST:event_DisActionPerformed
+    }                                   
 
-    private void Cis1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cis1ActionPerformed
+    private void Cis1ActionPerformed(java.awt.event.ActionEvent evt) {                                     
         Play("Cis1");
-    }//GEN-LAST:event_Cis1ActionPerformed
+    }                                    
 
-    private void Dis1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dis1ActionPerformed
+    private void Dis1ActionPerformed(java.awt.event.ActionEvent evt) {                                     
         Play("Dis1");
-    }//GEN-LAST:event_Dis1ActionPerformed
+    }                                    
 
-    private void FisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FisActionPerformed
+    private void FisActionPerformed(java.awt.event.ActionEvent evt) {                                    
         Play("Fis");
-    }//GEN-LAST:event_FisActionPerformed
+    }                                   
 
-    private void GisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GisActionPerformed
+    private void GisActionPerformed(java.awt.event.ActionEvent evt) {                                    
         Play("Gis");
-    }//GEN-LAST:event_GisActionPerformed
+    }                                   
 
-    private void BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BActionPerformed
+    private void BActionPerformed(java.awt.event.ActionEvent evt) {                                  
         Play("B");
-    }//GEN-LAST:event_BActionPerformed
+    }                                 
 
-    private void Radio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Radio1ActionPerformed
+    private void Radio1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
         path = piano;
-    }//GEN-LAST:event_Radio1ActionPerformed
+    }                                      
 
-    private void Radio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Radio2ActionPerformed
+    private void Radio2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
         path = saksofon;
-    }//GEN-LAST:event_Radio2ActionPerformed
+    }                                      
 
-    private void Radio3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Radio3ActionPerformed
+    private void Radio3ActionPerformed(java.awt.event.ActionEvent evt) {                                       
         path = gitara;
-    }//GEN-LAST:event_Radio3ActionPerformed
+    }                                      
 
-    private void buttonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMenuActionPerformed
+    private void buttonMenuActionPerformed(java.awt.event.ActionEvent evt) {                                           
         EkranStartowy q = new EkranStartowy();
         q.setVisible(true);
         close();
-    }//GEN-LAST:event_buttonMenuActionPerformed
+    }                                          
 
-    private void close() 
-    {
+    private void timerPressed(final javax.swing.JButton button, final String note) {
+        timer = new Timer(100, new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Play(note);
+                button.getModel().setArmed(true);
+                button.getModel().setPressed(true);
+            }
+        });
+
+    }
+
+    private void timerReleased(final javax.swing.JButton button) {
+        timerOff = new Timer(100, new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                button.getModel().setArmed(false);
+                button.getModel().setPressed(false);
+            }
+        });
+    }
+
+    private void playNote(final javax.swing.JButton button, final String note, int timeOn, int timeOff) {
+        timerPressed(button, note);
+        timerReleased(button);
+
+        timer.setRepeats(false);
+        timer.setInitialDelay(timeOn);
+        timerOff.setRepeats(false);
+        timerOff.setInitialDelay(timeOff);
+        timer.start();
+        timerOff.start();
+    }
+
+    private void playStoLat() {
+        playNote(G, "G", 0, 500);
+        playNote(E, "E", 1000, 1500);
+        playNote(G, "G", 2000, 2500);
+        playNote(E, "E", 3000, 3500);
+        playNote(G, "G", 4000, 4500);
+        playNote(A, "A", 5000, 5250);
+        playNote(G, "G", 5500, 5750);
+        playNote(F, "F", 6000, 6250);
+        playNote(E, "E", 6500, 6750);
+        playNote(F, "F", 7000, 7500);
+    }
+
+    private void playOda() {
+        playNote(E, "E", 0, 250);
+        playNote(E, "E", 500, 750);
+        playNote(F, "F", 1000, 1250);
+        playNote(G, "G", 1500, 1750);
+        playNote(G, "G", 2000, 2250);
+        playNote(F, "F", 2500, 2750);
+        playNote(E, "E", 3000, 3250);
+        playNote(D, "D", 3500, 3750);
+        playNote(C, "C", 4000, 4250);
+        playNote(C, "C", 4500, 4750);
+        playNote(D, "D", 5000, 5250);
+        playNote(E, "E", 5500, 5750);
+        playNote(E, "E", 6000, 6500);
+        playNote(D, "D", 6750, 6900);
+        playNote(D, "D", 7000, 7500);
+    }
+
+
+    private void learnActionPerformed(java.awt.event.ActionEvent evt) {                                      
+
+        String message = (String) songs.getSelectedItem();
+        if ("Sto lat".equals(message)) {
+            playStoLat();
+        }
+        if ("Oda do radości".equals(message)) {
+            playOda();
+        }
+    }                                     
+
+    private void close() {
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }
@@ -539,13 +691,13 @@ public class Piano extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Piano().setVisible(true);
-                //addKeyBindings();
+
             }
         });
     }
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton A;
     private javax.swing.JButton B;
     private javax.swing.ButtonGroup ButtonGroup;
@@ -567,8 +719,11 @@ public class Piano extends javax.swing.JFrame {
     private javax.swing.JRadioButton Radio1;
     private javax.swing.JRadioButton Radio2;
     private javax.swing.JRadioButton Radio3;
+    private javax.swing.JLabel background;
     private javax.swing.JButton buttonMenu;
-    private javax.swing.JLabel jLabel1;
-    // End of variables declaration//GEN-END:variables
-
+    private javax.swing.JButton learn;
+    private javax.swing.JComboBox<String> songs;
+    // End of variables declaration                   
+    private Timer timer;
+    private Timer timerOff;
 }
