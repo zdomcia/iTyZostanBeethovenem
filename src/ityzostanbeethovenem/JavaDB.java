@@ -9,6 +9,8 @@ import java.sql.Statement;
 
 public class JavaDB {
 
+    public static Pytanie[] pytania = new Pytanie[100];
+
     void uploadQuestions() {
         try {
             String baza = "Quiz";
@@ -16,23 +18,24 @@ public class JavaDB {
 
             File link = new File("Quiz.db");
             if (!link.exists()) {
-                link.delete();
+                stworzTablice(polaczenie, baza);
+                dodajDane(baza);
             }
-            stworzTablice(polaczenie, baza);
-            dodajDane(baza);
-            dodajPytania(baza);
+            dodajPytania();
 
         } catch (Exception e) {
             System.out.println(e.toString());
         }
     }
+   
+    
+    
 
     public static Connection polacz(String baza) {
         Connection polaczenie = null;
         try {
             Class.forName("org.sqlite.JDBC");
             polaczenie = DriverManager.getConnection("jdbc:sqlite:" + baza + ".db");
-            //System.out.println("Połączyłem się z bazą "+baza);
         } catch (Exception e) {
             e.toString();
             return null;
@@ -59,21 +62,52 @@ public class JavaDB {
         }
     }
 
-    public static void dodajPytania(String baza) {
+    public static void dodajPytania() {
         Connection polaczenie = null;
         Statement stat = null;
         try {
             Class.forName("org.sqlite.JDBC");
-            polaczenie = DriverManager.getConnection("jdbc:sqlite:" + baza + ".db");
+            polaczenie = DriverManager.getConnection("jdbc:sqlite:" + "Quiz" + ".db");
             stat = polaczenie.createStatement();
 
-            // Polecenie wyszukania
-            String szukajSQL = "SELECT * FROM " + baza + ";";
+            String szukajSQL = "SELECT * FROM " + "Quiz" + ";";
 
             ResultSet wynik = stat.executeQuery(szukajSQL);
-
+            int licznik = 0;
             while (wynik.next()) {
-                System.out.println(wynik.getString("Question"));
+                Pytanie p = new Pytanie(wynik.getString("Question"), wynik.getString("AnswerA"), wynik.getString("AnswerB"),
+                        wynik.getString("AnswerC"), wynik.getString("AnswerD"), wynik.getString("CorrectAnswer"), Integer.parseInt(wynik.getString("Scores")),
+                        Integer.parseInt(wynik.getString("idCategory")));
+                pytania[licznik] = p;
+                licznik++;
+            }
+            wynik.close();
+            stat.close();
+            polaczenie.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public static void dodajPytaniaKategorii( int idKategorii) {
+        Connection polaczenie = null;
+        Statement stat = null;
+        pytania = new Pytanie[100];
+        try {
+            Class.forName("org.sqlite.JDBC");
+            polaczenie = DriverManager.getConnection("jdbc:sqlite:" + "Quiz" + ".db");
+            stat = polaczenie.createStatement();
+
+            String szukajSQL = "SELECT * FROM " + "Quiz" + " WHERE idCategory = " + idKategorii + ";";
+
+            ResultSet wynik = stat.executeQuery(szukajSQL);
+            int licznik = 0;
+            while (wynik.next()) {
+                Pytanie p = new Pytanie(wynik.getString("Question"), wynik.getString("AnswerA"), wynik.getString("AnswerB"),
+                        wynik.getString("AnswerC"), wynik.getString("AnswerD"), wynik.getString("CorrectAnswer"), Integer.parseInt(wynik.getString("Scores")),
+                        Integer.parseInt(wynik.getString("idCategory")));
+                pytania[licznik] = p;
+                licznik++;
             }
             wynik.close();
             stat.close();
@@ -91,7 +125,7 @@ public class JavaDB {
             Class.forName("org.sqlite.JDBC");
             polaczenie = DriverManager.getConnection("jdbc:sqlite:" + baza + ".db");
             stat = polaczenie.createStatement();
-            // Polecenie zmiany
+            
             String zmienSQL = "UPDATE " + baza + " SET "
                     + poleZmieniane + " = '" + nowaWartosc
                     + "' WHERE " + poleSzukane + "='" + wartoscSzukana + "';";
