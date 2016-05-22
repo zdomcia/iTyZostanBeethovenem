@@ -4,13 +4,11 @@ import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 
 public class QuizCategories extends javax.swing.JFrame {
+
     public QuizCategories() {
         initComponents();
-        JavaDB db = new JavaDB();
-        db.uploadQuestions();
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -101,30 +99,40 @@ public class QuizCategories extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonInstrumentyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInstrumentyActionPerformed
+        JavaDB db = new JavaDB();
+        db.dodajPytaniaKategorii(1);
         Question q = new Question();
         q.setVisible(true);
         close();
     }//GEN-LAST:event_buttonInstrumentyActionPerformed
 
     private void buttonKompozytorzyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonKompozytorzyActionPerformed
+        JavaDB db = new JavaDB();
+        db.dodajPytaniaKategorii(2);
         Question q = new Question();
         q.setVisible(true);
         close();
     }//GEN-LAST:event_buttonKompozytorzyActionPerformed
 
     private void buttonNotacjaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNotacjaActionPerformed
+        JavaDB db = new JavaDB();
+        db.dodajPytaniaKategorii(3);
         Question q = new Question();
         q.setVisible(true);
         close();
     }//GEN-LAST:event_buttonNotacjaActionPerformed
 
     private void buttonRozpoznawanieDzwiekowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRozpoznawanieDzwiekowActionPerformed
+        JavaDB db = new JavaDB();
+        db.dodajPytaniaKategorii(4);
         Question q = new Question();
         q.setVisible(true);
         close();
     }//GEN-LAST:event_buttonRozpoznawanieDzwiekowActionPerformed
 
     private void buttonWszystkoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonWszystkoActionPerformed
+        JavaDB db = new JavaDB();
+        db.dodajPytania();
         Question q = new Question();
         q.setVisible(true);
         close();
@@ -135,9 +143,6 @@ public class QuizCategories extends javax.swing.JFrame {
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
