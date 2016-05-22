@@ -3,6 +3,11 @@ package ityzostanbeethovenem;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import javax.swing.ImageIcon;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Quiz extends javax.swing.JFrame {
 
@@ -10,7 +15,7 @@ public class Quiz extends javax.swing.JFrame {
         initComponents();
         setSize(600, 600);
     }
-   
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -75,7 +80,7 @@ public class Quiz extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonMenuActionPerformed
 
     private void buttonPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPlayActionPerformed
-        Question q = new Question();
+        QuizCategories q = new QuizCategories();
         q.setVisible(true);
         close();
     }//GEN-LAST:event_buttonPlayActionPerformed
@@ -86,11 +91,6 @@ public class Quiz extends javax.swing.JFrame {
     }
 
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -107,9 +107,7 @@ public class Quiz extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Quiz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Quiz().setVisible(true);
