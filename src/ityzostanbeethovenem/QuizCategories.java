@@ -7,6 +7,8 @@ public class QuizCategories extends javax.swing.JFrame {
 
     public QuizCategories() {
         initComponents();
+        setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
+        setResizable(true);
     }
 
     @SuppressWarnings("unchecked")
@@ -21,79 +23,62 @@ public class QuizCategories extends javax.swing.JFrame {
         buttonWszystko = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        jLabel1.setText("Wybierz kategorię");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel1.setText("WYBIERZ KATEGORIĘ");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(440, 50, 470, 32);
 
+        buttonInstrumenty.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         buttonInstrumenty.setText("Instrumenty");
         buttonInstrumenty.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonInstrumentyActionPerformed(evt);
             }
         });
+        getContentPane().add(buttonInstrumenty);
+        buttonInstrumenty.setBounds(480, 120, 290, 70);
 
+        buttonKompozytorzy.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         buttonKompozytorzy.setText("Kompozytorzy");
         buttonKompozytorzy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonKompozytorzyActionPerformed(evt);
             }
         });
+        getContentPane().add(buttonKompozytorzy);
+        buttonKompozytorzy.setBounds(480, 220, 290, 70);
 
+        buttonNotacja.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         buttonNotacja.setText("Notacja muzyczna");
         buttonNotacja.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonNotacjaActionPerformed(evt);
             }
         });
+        getContentPane().add(buttonNotacja);
+        buttonNotacja.setBounds(480, 330, 290, 70);
 
-        buttonRozpoznawanieDzwiekow.setText("Rozpoznawanie dźwięków");
+        buttonRozpoznawanieDzwiekow.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        buttonRozpoznawanieDzwiekow.setText("Dźwięki");
         buttonRozpoznawanieDzwiekow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonRozpoznawanieDzwiekowActionPerformed(evt);
             }
         });
+        getContentPane().add(buttonRozpoznawanieDzwiekow);
+        buttonRozpoznawanieDzwiekow.setBounds(480, 440, 290, 70);
 
+        buttonWszystko.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         buttonWszystko.setText("Wszystko");
         buttonWszystko.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonWszystkoActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(buttonInstrumenty, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonKompozytorzy, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonRozpoznawanieDzwiekow, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonNotacja, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonWszystko, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(100, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(112, 112, 112))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(buttonInstrumenty)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonKompozytorzy)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonNotacja)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonRozpoznawanieDzwiekow)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonWszystko)
-                .addContainerGap(111, Short.MAX_VALUE))
-        );
+        getContentPane().add(buttonWszystko);
+        buttonWszystko.setBounds(480, 550, 290, 70);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

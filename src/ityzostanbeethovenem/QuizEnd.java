@@ -12,12 +12,16 @@ public class QuizEnd extends javax.swing.JFrame {
         initComponents();
         jLabel2.setText(points + " punktów");
         points = 0;
+        setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
+        setResizable(true);
     }
     
     public QuizEnd( int points) {
         initComponents();
         jLabel2.setText(points + " punktów");
         this.points = points;
+        setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
+        setResizable(true);
     }
     
     public void close() {
@@ -36,38 +40,45 @@ public class QuizEnd extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setAutoRequestFocus(false);
         setIconImage(new ImageIcon(getClass().getResource("/Grafika/ikonka.png")).getImage());
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setMinimumSize(new java.awt.Dimension(1250, 800));
+        getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-        jLabel1.setText("Gratulacje :) Udało Ci się zdobyć");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 42, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("<html> Udało Ci się zdobyć <br> <br> </html>");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(460, 90, 370, 180);
 
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 74, 160, -1));
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 48)); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(520, 210, 280, 160);
 
-        buttonExit.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        buttonExit.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         buttonExit.setText("Wyjście");
         buttonExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonExitActionPerformed(evt);
             }
         });
-        getContentPane().add(buttonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 129, 48));
+        getContentPane().add(buttonExit);
+        buttonExit.setBounds(550, 570, 170, 90);
 
-        buttonMenu.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        buttonMenu.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         buttonMenu.setText("Menu");
         buttonMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonMenuActionPerformed(evt);
             }
         });
-        getContentPane().add(buttonMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 129, 48));
+        getContentPane().add(buttonMenu);
+        buttonMenu.setBounds(550, 430, 170, 90);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/tlo.png"))); // NOI18N
-        jLabel3.setMaximumSize(new java.awt.Dimension(0, 0));
         jLabel3.setMinimumSize(new java.awt.Dimension(750, 750));
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 450));
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(0, 10, 1550, 860);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

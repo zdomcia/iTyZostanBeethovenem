@@ -14,8 +14,6 @@ public class Question extends javax.swing.JFrame {
 
     public static int counter;
     private static int points;
-    public static Pytanie[] bazaPytan;
-
     private String[] questions = {"Kto ma najlepszy projekt z IO?",
         "Który z poniższych instrumentów jest smyczkowy?",
         "Jak nazywa się gama z podwyższonym 7. stopniem?",
@@ -43,7 +41,6 @@ public class Question extends javax.swing.JFrame {
     private static boolean checkOrNext;
 
     public Question() {
-        //System.out.println(JavaDB.pytania[0].pytanie);
         initComponents();
         initQuestion();
         groupButton();
@@ -51,6 +48,9 @@ public class Question extends javax.swing.JFrame {
         counter = 0;
         points = 0;
         checkOrNext = true;
+        setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
+        setResizable(true);
+
     }
 
     void clearBackground() {
@@ -67,11 +67,11 @@ public class Question extends javax.swing.JFrame {
     void initQuestion() {
         enableOrNotButtons(true);
         labelQuestionNumber.setText("Pytanie " + (counter + 1));
-        labelQuestionText.setText(JavaDB.pytania[counter].pytanie);
-        buttonA.setText(JavaDB.pytania[counter].odpowiedzA);
-        buttonB.setText(JavaDB.pytania[counter].odpowiedzB);
-        buttonC.setText(JavaDB.pytania[counter].odpowiedzC);
-        buttonD.setText(JavaDB.pytania[counter].odpowiedzD);
+        labelQuestionText.setText(questions[counter]);
+        buttonA.setText(answers[counter][0]);
+        buttonB.setText(answers[counter][1]);
+        buttonC.setText(answers[counter][2]);
+        buttonD.setText(answers[counter][3]);
     }
 
     public void close() {
@@ -95,7 +95,7 @@ public class Question extends javax.swing.JFrame {
         buttonC = new javax.swing.JRadioButton();
         buttonD = new javax.swing.JRadioButton();
         buttonSend = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         jInternalFrame1.setVisible(true);
 
@@ -112,113 +112,76 @@ public class Question extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setIconImage(new ImageIcon(getClass().getResource("/Grafika/ikonka.png")).getImage());
+        setMinimumSize(new java.awt.Dimension(1250, 800));
+        getContentPane().setLayout(null);
 
-        labelQuestionNumber.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        labelQuestionNumber.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        getContentPane().add(labelQuestionNumber);
+        labelQuestionNumber.setBounds(510, 20, 330, 59);
 
-        labelQuestionText.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        labelQuestionText.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        getContentPane().add(labelQuestionText);
+        labelQuestionText.setBounds(440, 70, 871, 146);
 
-        buttonMenu.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        buttonMenu.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         buttonMenu.setText("Menu");
         buttonMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonMenuActionPerformed(evt);
             }
         });
+        getContentPane().add(buttonMenu);
+        buttonMenu.setBounds(50, 590, 137, 57);
 
-        buttonExit.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        buttonExit.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         buttonExit.setText("Wyjście");
         buttonExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonExitActionPerformed(evt);
             }
         });
+        getContentPane().add(buttonExit);
+        buttonExit.setBounds(50, 660, 137, 57);
 
         buttonA.setBackground(new java.awt.Color(0, 255, 0));
-        buttonA.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        buttonA.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         buttonA.setText("aaa");
+        getContentPane().add(buttonA);
+        buttonA.setBounds(510, 230, 317, 54);
 
         buttonB.setBackground(new java.awt.Color(0, 255, 0));
-        buttonB.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        buttonB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        getContentPane().add(buttonB);
+        buttonB.setBounds(510, 300, 317, 54);
 
         buttonC.setBackground(new java.awt.Color(0, 255, 0));
-        buttonC.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        buttonC.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        buttonC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCActionPerformed(evt);
+            }
+        });
+        getContentPane().add(buttonC);
+        buttonC.setBounds(510, 370, 317, 54);
 
         buttonD.setBackground(new java.awt.Color(0, 255, 0));
-        buttonD.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        buttonD.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        getContentPane().add(buttonD);
+        buttonD.setBounds(510, 440, 317, 54);
 
-        buttonSend.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        buttonSend.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         buttonSend.setText("Sprawdź");
         buttonSend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonSendActionPerformed(evt);
             }
         });
+        getContentPane().add(buttonSend);
+        buttonSend.setBounds(590, 530, 166, 57);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/tlo.png"))); // NOI18N
-        jLabel1.setMaximumSize(new java.awt.Dimension(0, 0));
-        jLabel1.setMinimumSize(new java.awt.Dimension(750, 750));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(labelQuestionText)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(buttonD, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonC, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonB, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonA, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelQuestionNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(83, 83, 83))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(buttonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(buttonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(buttonSend, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(108, 108, 108))))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(labelQuestionNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelQuestionText, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
-                .addComponent(buttonA)
-                .addGap(5, 5, 5)
-                .addComponent(buttonB)
-                .addGap(5, 5, 5)
-                .addComponent(buttonC)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buttonD)
-                .addGap(45, 45, 45)
-                .addComponent(buttonSend, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonExit)
-                    .addComponent(buttonMenu))
-                .addGap(80, 80, 80))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/tlo.png"))); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, -50, 1370, 1040);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -240,6 +203,10 @@ public class Question extends javax.swing.JFrame {
  
 //GEN-LAST:event_buttonSendActionPerformed
 
+    private void buttonCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonCActionPerformed
+
     private void groupButton() {
         ButtonGroup group = new ButtonGroup();
 
@@ -258,12 +225,12 @@ public class Question extends javax.swing.JFrame {
     }
 
     private boolean checkAnswer() {
-        String correct = JavaDB.pytania[counter].prawidlowa;
+        String correct = correctAnswer[counter];
         enableOrNotButtons(false);
 
         switch (correct) {
 
-            case "A":
+            case "a":
                 buttonA.setBackground(Color.GREEN);
                 buttonA.setOpaque(true);
                 buttonA.repaint();
@@ -272,7 +239,7 @@ public class Question extends javax.swing.JFrame {
                 }
                 return false;
 
-            case "B":
+            case "b":
                 buttonB.setBackground(Color.GREEN);
                 buttonB.setOpaque(true);
                 buttonB.repaint();
@@ -281,7 +248,7 @@ public class Question extends javax.swing.JFrame {
                 }
                 return false;
 
-            case "C":
+            case "c":
                 buttonC.setBackground(Color.GREEN);
                 buttonC.setOpaque(true);
                 buttonC.repaint();
@@ -289,7 +256,7 @@ public class Question extends javax.swing.JFrame {
                     return true;
                 }
                 return false;
-            case "D":
+            case "d":
                 buttonD.setBackground(Color.GREEN);
                 buttonD.setOpaque(true);
                 buttonD.repaint();
@@ -315,7 +282,7 @@ public class Question extends javax.swing.JFrame {
     }
 
     void addPoints() {
-        points += JavaDB.pytania[counter].punkty;
+        points += 10;
     }
 
     void colorBadAnswer() {
@@ -396,7 +363,7 @@ public class Question extends javax.swing.JFrame {
     private javax.swing.JButton buttonMenu;
     private javax.swing.JButton buttonSend;
     private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel labelQuestionNumber;
     private javax.swing.JLabel labelQuestionText;
     // End of variables declaration//GEN-END:variables

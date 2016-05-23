@@ -9,6 +9,8 @@ public class EkranStartowy extends javax.swing.JFrame {
 
     public EkranStartowy() {
         initComponents();
+        setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
+        setResizable(true);
     }
 
     @SuppressWarnings("unchecked")
@@ -18,16 +20,16 @@ public class EkranStartowy extends javax.swing.JFrame {
         Pianino = new javax.swing.JButton();
         Quiz = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setIconImage(new ImageIcon(getClass().getResource("/Grafika/ikonka.png")).getImage());
         setLocationByPlatform(true);
+        setMinimumSize(new java.awt.Dimension(1250, 800));
         setPreferredSize(new java.awt.Dimension(450, 450));
-        setResizable(false);
-        getContentPane().setLayout(null);
 
-        Pianino.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        Pianino.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         Pianino.setForeground(new java.awt.Color(68, 68, 68));
         Pianino.setText("Pianino");
         Pianino.setBorder(null);
@@ -39,10 +41,8 @@ public class EkranStartowy extends javax.swing.JFrame {
                 PianinoActionPerformed(evt);
             }
         });
-        getContentPane().add(Pianino);
-        Pianino.setBounds(150, 270, 137, 38);
 
-        Quiz.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        Quiz.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         Quiz.setForeground(new java.awt.Color(68, 68, 68));
         Quiz.setText("Quiz");
         Quiz.setBorder(null);
@@ -54,14 +54,49 @@ public class EkranStartowy extends javax.swing.JFrame {
                 QuizActionPerformed(evt);
             }
         });
-        getContentPane().add(Quiz);
-        Quiz.setBounds(150, 220, 137, 38);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 2, 22)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/glowna.png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 450, 450);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/tlo.png"))); // NOI18N
+        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel2.setText("<html>I Ty możesz zostać <br>_______________<br> &nbsp BEETHOVENEM </html> ");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(460, 460, 460)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(550, 550, 550)
+                .addComponent(Quiz, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(550, 550, 550)
+                .addComponent(Pianino, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel1)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(430, 430, 430)
+                        .addComponent(Quiz, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(550, 550, 550)
+                        .addComponent(Pianino, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -120,6 +155,7 @@ public class EkranStartowy extends javax.swing.JFrame {
     private javax.swing.JButton Pianino;
     private javax.swing.JButton Quiz;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 
     //jLabel1.setText()

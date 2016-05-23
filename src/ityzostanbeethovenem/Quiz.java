@@ -3,19 +3,16 @@ package ityzostanbeethovenem;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import javax.swing.ImageIcon;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 public class Quiz extends javax.swing.JFrame {
 
     public Quiz() {
         initComponents();
         setSize(600, 600);
+        setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
+        setResizable(true);
     }
-    
+   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -29,42 +26,47 @@ public class Quiz extends javax.swing.JFrame {
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setIconImage(new ImageIcon(getClass().getResource("/Grafika/ikonka.png")).getImage());
-        setMinimumSize(new java.awt.Dimension(750, 450));
-        setPreferredSize(new java.awt.Dimension(472, 472));
-        setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLocation(new java.awt.Point(0, 0));
+        setMinimumSize(new java.awt.Dimension(1250, 800));
+        setPreferredSize(new java.awt.Dimension(450, 500));
+        getContentPane().setLayout(null);
 
-        buttonExit.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        buttonExit.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         buttonExit.setText("Wyjście");
         buttonExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonExitActionPerformed(evt);
             }
         });
-        getContentPane().add(buttonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 180, 50));
+        getContentPane().add(buttonExit);
+        buttonExit.setBounds(540, 550, 210, 90);
 
-        buttonMenu.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        buttonMenu.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         buttonMenu.setText("Menu");
         buttonMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonMenuActionPerformed(evt);
             }
         });
-        getContentPane().add(buttonMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 180, 50));
+        getContentPane().add(buttonMenu);
+        buttonMenu.setBounds(540, 400, 210, 90);
 
-        buttonPlay.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        buttonPlay.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         buttonPlay.setText("Zagraj!");
+        buttonPlay.setMaximumSize(new java.awt.Dimension(81, 47));
+        buttonPlay.setMinimumSize(new java.awt.Dimension(81, 47));
         buttonPlay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonPlayActionPerformed(evt);
             }
         });
-        getContentPane().add(buttonPlay, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 180, 50));
+        getContentPane().add(buttonPlay);
+        buttonPlay.setBounds(510, 130, 270, 150);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/tlo.png"))); // NOI18N
-        jLabel3.setMaximumSize(new java.awt.Dimension(0, 0));
         jLabel3.setMinimumSize(new java.awt.Dimension(750, 750));
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 450));
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(0, 0, 1360, 930);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -91,6 +93,11 @@ public class Quiz extends javax.swing.JFrame {
     }
 
     public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -107,7 +114,9 @@ public class Quiz extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Quiz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        
+        //</editor-fold>
+
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Quiz().setVisible(true);

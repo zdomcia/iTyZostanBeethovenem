@@ -19,7 +19,10 @@ public class Piano extends javax.swing.JFrame {
 
     public Piano() {
         initComponents();
+        setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
+        //setResizable(true);
         addKeyboard();
+        
 
     }
 
@@ -64,12 +67,11 @@ public class Piano extends javax.swing.JFrame {
         setFocusable(false);
         setIconImage(new ImageIcon(getClass().getResource("/Grafika/ikonka.png")).getImage());
         setMinimumSize(new java.awt.Dimension(810, 450));
-        setResizable(false);
         setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(null);
 
         ButtonGroup.add(Radio1);
-        Radio1.setFont(new java.awt.Font("Candara", 0, 13)); // NOI18N
+        Radio1.setFont(new java.awt.Font("Candara", 0, 24)); // NOI18N
         Radio1.setForeground(new java.awt.Color(68, 68, 68));
         Radio1.setText("pianino");
         Radio1.setFocusable(false);
@@ -79,10 +81,10 @@ public class Piano extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Radio1);
-        Radio1.setBounds(320, 380, 70, 30);
+        Radio1.setBounds(100, 500, 120, 50);
 
         ButtonGroup.add(Radio2);
-        Radio2.setFont(new java.awt.Font("Candara", 0, 13)); // NOI18N
+        Radio2.setFont(new java.awt.Font("Candara", 0, 24)); // NOI18N
         Radio2.setForeground(new java.awt.Color(68, 68, 68));
         Radio2.setText("saksofon");
         Radio2.setToolTipText("");
@@ -93,10 +95,10 @@ public class Piano extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Radio2);
-        Radio2.setBounds(550, 380, 70, 30);
+        Radio2.setBounds(600, 510, 120, 30);
 
         ButtonGroup.add(Radio3);
-        Radio3.setFont(new java.awt.Font("Candara", 0, 13)); // NOI18N
+        Radio3.setFont(new java.awt.Font("Candara", 0, 24)); // NOI18N
         Radio3.setForeground(new java.awt.Color(68, 68, 68));
         Radio3.setText("gitara");
         Radio3.setFocusable(false);
@@ -106,10 +108,10 @@ public class Piano extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Radio3);
-        Radio3.setBounds(440, 380, 70, 30);
+        Radio3.setBounds(350, 510, 110, 30);
         Radio3.getAccessibleContext().setAccessibleDescription("");
 
-        buttonMenu.setFont(new java.awt.Font("Candara", 0, 13)); // NOI18N
+        buttonMenu.setFont(new java.awt.Font("Candara", 0, 24)); // NOI18N
         buttonMenu.setForeground(new java.awt.Color(68, 68, 68));
         buttonMenu.setText("Menu");
         buttonMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -118,7 +120,7 @@ public class Piano extends javax.swing.JFrame {
             }
         });
         getContentPane().add(buttonMenu);
-        buttonMenu.setBounds(170, 380, 70, 30);
+        buttonMenu.setBounds(900, 490, 200, 70);
 
         Cis.setBackground(java.awt.Color.black);
         Cis.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -354,12 +356,14 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(E1);
         E1.setBounds(622, 77, 57, 275);
 
+        songs.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         songs.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sto lat", "Oda do radości" }));
         songs.setFocusable(false);
         getContentPane().add(songs);
-        songs.setBounds(10, 390, 130, 20);
+        songs.setBounds(900, 100, 200, 40);
 
-        learn.setText("Naucz");
+        learn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        learn.setText("Zagraj");
         learn.setActionCommand("naucz");
         learn.setFocusable(false);
         learn.addActionListener(new java.awt.event.ActionListener() {
@@ -368,7 +372,7 @@ public class Piano extends javax.swing.JFrame {
             }
         });
         getContentPane().add(learn);
-        learn.setBounds(10, 360, 100, 23);
+        learn.setBounds(900, 200, 200, 70);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/piano.png"))); // NOI18N
         getContentPane().add(background);
