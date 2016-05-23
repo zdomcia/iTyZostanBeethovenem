@@ -95,7 +95,6 @@ public class Question extends javax.swing.JFrame {
         buttonC = new javax.swing.JRadioButton();
         buttonD = new javax.swing.JRadioButton();
         buttonSend = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
 
         jInternalFrame1.setVisible(true);
 
@@ -178,10 +177,6 @@ public class Question extends javax.swing.JFrame {
         });
         getContentPane().add(buttonSend);
         buttonSend.setBounds(590, 530, 166, 57);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/tlo.png"))); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, -50, 1370, 1040);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -363,7 +358,6 @@ public class Question extends javax.swing.JFrame {
     private javax.swing.JButton buttonMenu;
     private javax.swing.JButton buttonSend;
     private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel labelQuestionNumber;
     private javax.swing.JLabel labelQuestionText;
     // End of variables declaration//GEN-END:variables

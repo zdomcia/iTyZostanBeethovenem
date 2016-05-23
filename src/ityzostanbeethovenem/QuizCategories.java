@@ -21,6 +21,7 @@ public class QuizCategories extends javax.swing.JFrame {
         buttonNotacja = new javax.swing.JButton();
         buttonRozpoznawanieDzwiekow = new javax.swing.JButton();
         buttonWszystko = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -58,7 +59,7 @@ public class QuizCategories extends javax.swing.JFrame {
             }
         });
         getContentPane().add(buttonNotacja);
-        buttonNotacja.setBounds(480, 330, 290, 70);
+        buttonNotacja.setBounds(480, 320, 290, 70);
 
         buttonRozpoznawanieDzwiekow.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         buttonRozpoznawanieDzwiekow.setText("Dźwięki");
@@ -68,7 +69,7 @@ public class QuizCategories extends javax.swing.JFrame {
             }
         });
         getContentPane().add(buttonRozpoznawanieDzwiekow);
-        buttonRozpoznawanieDzwiekow.setBounds(480, 440, 290, 70);
+        buttonRozpoznawanieDzwiekow.setBounds(480, 420, 290, 70);
 
         buttonWszystko.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         buttonWszystko.setText("Wszystko");
@@ -78,7 +79,17 @@ public class QuizCategories extends javax.swing.JFrame {
             }
         });
         getContentPane().add(buttonWszystko);
-        buttonWszystko.setBounds(480, 550, 290, 70);
+        buttonWszystko.setBounds(480, 520, 290, 70);
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton1.setText("Menu");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(480, 650, 290, 70);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -123,6 +134,12 @@ public class QuizCategories extends javax.swing.JFrame {
         close();
     }//GEN-LAST:event_buttonWszystkoActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        EkranStartowy q = new EkranStartowy();
+        q.setVisible(true);
+        close();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     public void close() {
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
@@ -166,6 +183,7 @@ public class QuizCategories extends javax.swing.JFrame {
     private javax.swing.JButton buttonNotacja;
     private javax.swing.JButton buttonRozpoznawanieDzwiekow;
     private javax.swing.JButton buttonWszystko;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

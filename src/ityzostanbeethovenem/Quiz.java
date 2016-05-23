@@ -20,7 +20,6 @@ public class Quiz extends javax.swing.JFrame {
         buttonExit = new javax.swing.JButton();
         buttonMenu = new javax.swing.JButton();
         buttonPlay = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
@@ -62,11 +61,6 @@ public class Quiz extends javax.swing.JFrame {
         });
         getContentPane().add(buttonPlay);
         buttonPlay.setBounds(510, 130, 270, 150);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/tlo.png"))); // NOI18N
-        jLabel3.setMinimumSize(new java.awt.Dimension(750, 750));
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(0, 0, 1360, 930);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -128,6 +122,5 @@ public class Quiz extends javax.swing.JFrame {
     private javax.swing.JButton buttonExit;
     private javax.swing.JButton buttonMenu;
     private javax.swing.JButton buttonPlay;
-    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
