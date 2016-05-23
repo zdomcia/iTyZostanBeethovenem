@@ -30,7 +30,7 @@ public class Piano extends javax.swing.JFrame {
 
     int x = 0;
     boolean on = false;
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         ButtonGroup = new javax.swing.ButtonGroup();
@@ -375,7 +375,7 @@ public class Piano extends javax.swing.JFrame {
         background.setBounds(0, 0, 810, 430);
 
         pack();
-    }// </editor-fold>                        
+    }// </editor-fold>//GEN-END:initComponents
 
     private void addKeyboard() {
         this.getRootPane().getInputMap().put(KeyStroke.getKeyStroke("A"), "C");
@@ -493,91 +493,91 @@ public class Piano extends javax.swing.JFrame {
         }
     }
 
-    private void D1ActionPerformed(java.awt.event.ActionEvent evt) {                                   
+    private void D1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D1ActionPerformed
         Play("D1");
-    }                                  
+    }//GEN-LAST:event_D1ActionPerformed
 
-    private void C1ActionPerformed(java.awt.event.ActionEvent evt) {                                   
+    private void C1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C1ActionPerformed
         Play("C1");
-    }                                  
+    }//GEN-LAST:event_C1ActionPerformed
 
-    private void HActionPerformed(java.awt.event.ActionEvent evt) {                                  
+    private void HActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HActionPerformed
         Play("H");
-    }                                 
+    }//GEN-LAST:event_HActionPerformed
 
-    private void AActionPerformed(java.awt.event.ActionEvent evt) {                                  
+    private void AActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AActionPerformed
         Play("A");
-    }                                 
+    }//GEN-LAST:event_AActionPerformed
 
-    private void GActionPerformed(java.awt.event.ActionEvent evt) {                                  
+    private void GActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GActionPerformed
         Play("G");
-    }                                 
+    }//GEN-LAST:event_GActionPerformed
 
-    private void DActionPerformed(java.awt.event.ActionEvent evt) {                                  
+    private void DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DActionPerformed
         Play("D");
-    }                                 
+    }//GEN-LAST:event_DActionPerformed
 
-    private void FActionPerformed(java.awt.event.ActionEvent evt) {                                  
+    private void FActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FActionPerformed
         Play("F");
-    }                                 
+    }//GEN-LAST:event_FActionPerformed
 
-    private void CActionPerformed(java.awt.event.ActionEvent evt) {                                  
+    private void CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CActionPerformed
         Play("C");
-    }                                 
+    }//GEN-LAST:event_CActionPerformed
 
-    private void EActionPerformed(java.awt.event.ActionEvent evt) {                                  
+    private void EActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EActionPerformed
         Play("E");
-    }                                 
+    }//GEN-LAST:event_EActionPerformed
 
-    private void E1ActionPerformed(java.awt.event.ActionEvent evt) {                                   
+    private void E1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_E1ActionPerformed
         Play("E1");
-    }                                  
+    }//GEN-LAST:event_E1ActionPerformed
 
-    private void CisActionPerformed(java.awt.event.ActionEvent evt) {                                    
+    private void CisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CisActionPerformed
         Play("Cis");
-    }                                   
+    }//GEN-LAST:event_CisActionPerformed
 
-    private void DisActionPerformed(java.awt.event.ActionEvent evt) {                                    
+    private void DisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisActionPerformed
         Play("Dis");
-    }                                   
+    }//GEN-LAST:event_DisActionPerformed
 
-    private void Cis1ActionPerformed(java.awt.event.ActionEvent evt) {                                     
+    private void Cis1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cis1ActionPerformed
         Play("Cis1");
-    }                                    
+    }//GEN-LAST:event_Cis1ActionPerformed
 
-    private void Dis1ActionPerformed(java.awt.event.ActionEvent evt) {                                     
+    private void Dis1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dis1ActionPerformed
         Play("Dis1");
-    }                                    
+    }//GEN-LAST:event_Dis1ActionPerformed
 
-    private void FisActionPerformed(java.awt.event.ActionEvent evt) {                                    
+    private void FisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FisActionPerformed
         Play("Fis");
-    }                                   
+    }//GEN-LAST:event_FisActionPerformed
 
-    private void GisActionPerformed(java.awt.event.ActionEvent evt) {                                    
+    private void GisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GisActionPerformed
         Play("Gis");
-    }                                   
+    }//GEN-LAST:event_GisActionPerformed
 
-    private void BActionPerformed(java.awt.event.ActionEvent evt) {                                  
+    private void BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BActionPerformed
         Play("B");
-    }                                 
+    }//GEN-LAST:event_BActionPerformed
 
-    private void Radio1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+    private void Radio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Radio1ActionPerformed
         path = piano;
-    }                                      
+    }//GEN-LAST:event_Radio1ActionPerformed
 
-    private void Radio2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+    private void Radio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Radio2ActionPerformed
         path = saksofon;
-    }                                      
+    }//GEN-LAST:event_Radio2ActionPerformed
 
-    private void Radio3ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+    private void Radio3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Radio3ActionPerformed
         path = gitara;
-    }                                      
+    }//GEN-LAST:event_Radio3ActionPerformed
 
-    private void buttonMenuActionPerformed(java.awt.event.ActionEvent evt) {                                           
+    private void buttonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMenuActionPerformed
         EkranStartowy q = new EkranStartowy();
         q.setVisible(true);
         close();
-    }                                          
+    }//GEN-LAST:event_buttonMenuActionPerformed
 
     private void timerPressed(final javax.swing.JButton button, final String note) {
         timer = new Timer(100, new ActionListener() {
@@ -647,7 +647,7 @@ public class Piano extends javax.swing.JFrame {
     }
 
 
-    private void learnActionPerformed(java.awt.event.ActionEvent evt) {                                      
+    private void learnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_learnActionPerformed
 
         String message = (String) songs.getSelectedItem();
         if ("Sto lat".equals(message)) {
@@ -656,7 +656,7 @@ public class Piano extends javax.swing.JFrame {
         if ("Oda do radości".equals(message)) {
             playOda();
         }
-    }                                     
+    }//GEN-LAST:event_learnActionPerformed
 
     private void close() {
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
@@ -697,7 +697,7 @@ public class Piano extends javax.swing.JFrame {
     }
 
 
-    // Variables declaration - do not modify                     
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton A;
     private javax.swing.JButton B;
     private javax.swing.ButtonGroup ButtonGroup;
@@ -723,7 +723,7 @@ public class Piano extends javax.swing.JFrame {
     private javax.swing.JButton buttonMenu;
     private javax.swing.JButton learn;
     private javax.swing.JComboBox<String> songs;
-    // End of variables declaration                   
+    // End of variables declaration//GEN-END:variables
     private Timer timer;
     private Timer timerOff;
 }
