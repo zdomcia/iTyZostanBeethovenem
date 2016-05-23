@@ -67,11 +67,11 @@ public class Question extends javax.swing.JFrame {
     void initQuestion() {
         enableOrNotButtons(true);
         labelQuestionNumber.setText("Pytanie " + (counter + 1));
-        labelQuestionText.setText(questions[counter]);
-        buttonA.setText(answers[counter][0]);
-        buttonB.setText(answers[counter][1]);
-        buttonC.setText(answers[counter][2]);
-        buttonD.setText(answers[counter][3]);
+        labelQuestionText.setText(JavaDB.pytania[counter].pytanie);
+        buttonA.setText(JavaDB.pytania[counter].odpowiedzA);
+        buttonB.setText(JavaDB.pytania[counter].odpowiedzB);
+        buttonC.setText(JavaDB.pytania[counter].odpowiedzC);
+        buttonD.setText(JavaDB.pytania[counter].odpowiedzD);
     }
 
     public void close() {
@@ -220,12 +220,12 @@ public class Question extends javax.swing.JFrame {
     }
 
     private boolean checkAnswer() {
-        String correct = correctAnswer[counter];
+        String correct = JavaDB.pytania[counter].prawidlowa;
         enableOrNotButtons(false);
 
         switch (correct) {
 
-            case "a":
+            case "A":
                 buttonA.setBackground(Color.GREEN);
                 buttonA.setOpaque(true);
                 buttonA.repaint();
@@ -234,7 +234,7 @@ public class Question extends javax.swing.JFrame {
                 }
                 return false;
 
-            case "b":
+            case "B":
                 buttonB.setBackground(Color.GREEN);
                 buttonB.setOpaque(true);
                 buttonB.repaint();
@@ -243,7 +243,7 @@ public class Question extends javax.swing.JFrame {
                 }
                 return false;
 
-            case "c":
+            case "C":
                 buttonC.setBackground(Color.GREEN);
                 buttonC.setOpaque(true);
                 buttonC.repaint();
@@ -251,7 +251,7 @@ public class Question extends javax.swing.JFrame {
                     return true;
                 }
                 return false;
-            case "d":
+            case "D":
                 buttonD.setBackground(Color.GREEN);
                 buttonD.setOpaque(true);
                 buttonD.repaint();

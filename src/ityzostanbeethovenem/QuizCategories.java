@@ -96,6 +96,7 @@ public class QuizCategories extends javax.swing.JFrame {
 
     private void buttonInstrumentyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInstrumentyActionPerformed
         JavaDB db = new JavaDB();
+        db.uploadQuestions();
         db.dodajPytaniaKategorii(1);
         Question q = new Question();
         q.setVisible(true);
@@ -104,6 +105,7 @@ public class QuizCategories extends javax.swing.JFrame {
 
     private void buttonKompozytorzyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonKompozytorzyActionPerformed
         JavaDB db = new JavaDB();
+        db.uploadQuestions();
         db.dodajPytaniaKategorii(2);
         Question q = new Question();
         q.setVisible(true);
@@ -112,6 +114,7 @@ public class QuizCategories extends javax.swing.JFrame {
 
     private void buttonNotacjaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNotacjaActionPerformed
         JavaDB db = new JavaDB();
+        db.uploadQuestions();
         db.dodajPytaniaKategorii(3);
         Question q = new Question();
         q.setVisible(true);
@@ -120,6 +123,7 @@ public class QuizCategories extends javax.swing.JFrame {
 
     private void buttonRozpoznawanieDzwiekowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRozpoznawanieDzwiekowActionPerformed
         JavaDB db = new JavaDB();
+        db.uploadQuestions();
         db.dodajPytaniaKategorii(4);
         Question q = new Question();
         q.setVisible(true);
@@ -128,6 +132,7 @@ public class QuizCategories extends javax.swing.JFrame {
 
     private void buttonWszystkoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonWszystkoActionPerformed
         JavaDB db = new JavaDB();
+        db.uploadQuestions();
         db.dodajPytania();
         Question q = new Question();
         q.setVisible(true);
