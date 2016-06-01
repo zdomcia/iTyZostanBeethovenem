@@ -10,20 +10,22 @@ import java.sql.Statement;
 public class JavaDB {
     
     public static Pytanie[] pytania = new Pytanie[100];
-
+    public static int size;
+    
     void uploadQuestions() {
         try {
+            
+            File link = new File("Quiz.db");
+            if ( link.exists()) {
+                link.delete();
+            }
             
             String baza = "Quiz";
             Connection polaczenie = polacz(baza);
 
-            File link = new File("Quiz.db");
-            //if (!link.exists()) {
+            
             stworzTablice(polaczenie, baza);
             dodajDane(baza);
-            //}
-            //dodajPytania();
-
         } catch (Exception e) {
             System.out.println(e.toString());
         }
@@ -91,11 +93,6 @@ public class JavaDB {
                     + "('Syn którego kompozytora miał wpływ na twórczość Mozarta?','Chopina','Beethovena','Bacha','Moniuszki', 'C', 2, 20),"
                     + "('Jakich utworów nie tworzył Jan Sebastian Bach?','oper','kantat','pasji','żadnych z powyższych', 'A', 2, 15),"
                     + "('Beethoven stał się najpierw sławny jako:', 'śpiewak', 'wirtuoz fortepianu','skrzypek','aktor', 'B', 2, 10);";
-           
-                
-                   
-            
-            
             stat.executeUpdate(dodajSQL1);
             stat.close();
             polaczenie.close();
@@ -123,6 +120,7 @@ public class JavaDB {
                 pytania[licznik] = p;
                 licznik++;
             }
+            size = licznik;
             wynik.close();
             stat.close();
             polaczenie.close();
@@ -151,6 +149,7 @@ public class JavaDB {
                 pytania[licznik] = p;
                 licznik++;
             }
+            size = licznik;
             wynik.close();
             stat.close();
             polaczenie.close();

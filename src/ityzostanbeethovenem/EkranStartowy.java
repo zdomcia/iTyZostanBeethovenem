@@ -26,7 +26,6 @@ public class EkranStartowy extends javax.swing.JFrame {
         setIconImage(new ImageIcon(getClass().getResource("/Grafika/ikonka.png")).getImage());
         setLocationByPlatform(true);
         setMinimumSize(new java.awt.Dimension(1250, 800));
-        setPreferredSize(new java.awt.Dimension(450, 450));
 
         Pianino.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         Pianino.setForeground(new java.awt.Color(68, 68, 68));
@@ -76,15 +75,15 @@ public class EkranStartowy extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(120, 120, 120)
+                        .addGap(83, 83, 83)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(430, 430, 430)
+                        .addGap(393, 393, 393)
                         .addComponent(Quiz, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(550, 550, 550)
+                        .addGap(513, 513, 513)
                         .addComponent(Pianino, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(351, Short.MAX_VALUE))
         );
 
         pack();
