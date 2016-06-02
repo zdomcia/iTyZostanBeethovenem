@@ -27,9 +27,10 @@ public class EkranStartowy extends javax.swing.JFrame {
         setLocationByPlatform(true);
         setMinimumSize(new java.awt.Dimension(1250, 800));
         setPreferredSize(new java.awt.Dimension(450, 450));
+        getContentPane().setLayout(null);
 
-        Pianino.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
-        Pianino.setForeground(new java.awt.Color(68, 68, 68));
+        Pianino.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        Pianino.setForeground(new java.awt.Color(98, 114, 130));
         Pianino.setText("Pianino");
         Pianino.setBorder(null);
         Pianino.setDefaultCapable(false);
@@ -40,9 +41,11 @@ public class EkranStartowy extends javax.swing.JFrame {
                 PianinoActionPerformed(evt);
             }
         });
+        getContentPane().add(Pianino);
+        Pianino.setBounds(830, 220, 330, 80);
 
-        Quiz.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
-        Quiz.setForeground(new java.awt.Color(68, 68, 68));
+        Quiz.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        Quiz.setForeground(new java.awt.Color(98, 114, 130));
         Quiz.setText("Quiz");
         Quiz.setBorder(null);
         Quiz.setBorderPainted(false);
@@ -53,45 +56,19 @@ public class EkranStartowy extends javax.swing.JFrame {
                 QuizActionPerformed(evt);
             }
         });
+        getContentPane().add(Quiz);
+        Quiz.setBounds(830, 120, 330, 80);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
-        jLabel2.setText("<html>I Ty możesz zostać <br>_______________<br> &nbsp BEETHOVENEM </html> ");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(460, 460, 460)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(550, 550, 550)
-                .addComponent(Quiz, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(550, 550, 550)
-                .addComponent(Pianino, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(430, 430, 430)
-                        .addComponent(Quiz, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(550, 550, 550)
-                        .addComponent(Pianino, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/zyrafa.jpg"))); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, -270, 1920, 1190);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void PianinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PianinoActionPerformed
-        final Piano piano = new Piano();
+        final PianoWindow piano = new PianoWindow();
         piano.setVisible(true);
         close();
     }//GEN-LAST:event_PianinoActionPerformed
@@ -108,11 +85,7 @@ public class EkranStartowy extends javax.swing.JFrame {
     }//GEN-LAST:event_QuizActionPerformed
 
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -129,7 +102,6 @@ public class EkranStartowy extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(EkranStartowy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

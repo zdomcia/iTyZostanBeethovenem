@@ -1,16 +1,26 @@
-
 package ityzostanbeethovenem;
+
+import java.awt.Color;
 
 
 public class Congratulations extends javax.swing.JFrame {
 
     Player player;
-    public Congratulations() {
+    static String song;
+    static String image;
+    
+    public Congratulations(String song, String image) {
+        this.song = song;
+        this.image = image;
         player = new Player();
-        player.path = "when-mom";
+        player.path = song;
+       
         initComponents();
         setLocationRelativeTo(null);
+
+        gif.setIcon(new javax.swing.ImageIcon(getClass().getResource(image)));
         player.play("");
+        this.setBackground(new Color(0,0,0,0));
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -22,13 +32,13 @@ public class Congratulations extends javax.swing.JFrame {
         setUndecorated(true);
         setType(java.awt.Window.Type.UTILITY);
 
-        gif.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/dance.gif"))); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gif, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(gif, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -59,7 +69,7 @@ public class Congratulations extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Congratulations().setVisible(true);
+                new Congratulations(song, image).setVisible(true);
             }
         });
     }
