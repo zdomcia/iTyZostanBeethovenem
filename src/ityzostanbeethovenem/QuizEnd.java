@@ -79,7 +79,7 @@ public class QuizEnd extends javax.swing.JFrame {
    
     
     private void buttonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMenuActionPerformed
-        EkranStartowy q = new EkranStartowy();
+        Menu q = new Menu();
         q.setVisible(true);
         close();
     }//GEN-LAST:event_buttonMenuActionPerformed
