@@ -4,7 +4,9 @@ import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import javax.swing.AbstractAction;
 import javax.swing.ButtonGroup;
 import javax.swing.ButtonModel;
@@ -14,35 +16,16 @@ public class Question extends javax.swing.JFrame {
 
     public static int counter;
     private static int points;
-    private String[] questions = {"Kto ma najlepszy projekt z IO?",
-        "Który z poniższych instrumentów jest smyczkowy?",
-        "Jak nazywa się gama z podwyższonym 7. stopniem?",
-        "Który z poniższych tańców pochodzi z Polski?",
-        "Jaki znak służy podwyższeniu dźwięku o pół tonu?",
-        "Który z instrumentów nie należy do instrumentów dętych drewnianych?",
-        "Której z operr nie skomponował Mozart?",
-        "W jakim mieście zmarł Fryderyk Chopin?",
-        "Co oznacza słowo volta?",
-        "Który instrument nie ma membrany?", "p11"};
-
-    private String[][] answers = {{"MozartTeam", "BeethovenTeam", "VivaldiTeam", "HaydnTeam"},
-    {"fortepian", "skrzypce", "flet", "perkusja"},
-    {"harmoniczna", "eolska", "dorycka", "melodyczna"},
-    {"polka", "polonez", "zorba", "czardasz"},
-    {"#", "b", "!", "^"},
-    {"saksofon", "rożek angielski", "kontrafagot", "sakshorn"},
-    {"Wesele Figara", "Uprowadzenie z Seraju", "Cyrulik sewilski", "Czarodziejski flet"},
-    {"Londyn", "Żelazowa Wola", "Paryż", "Warszawa"},
-    {"Nazwisko włoskiego kompozytora", "Rodzaj popularnego tańca dworskiego",
-        "Jedno z dwóch różnych zakończeń utworu", "rodzaj gamy"},
-    {"bęben", "kotły", "werbel", "trójkąt"}};
-
-    private String[] correctAnswer = {"b", "b", "a", "b", "a", "d", "c", "c", "c", "d"};
+    private static int number;
+    
     private static boolean checkOrNext;
-
+    private ArrayList <Integer> randomTable;
+    
+    
     public Question() {
         initComponents();
-        initQuestion();
+        randomQuestions();
+        initQuestion(chooseNumber());
         groupButton();
         setSize(500, 500);
         counter = 0;
@@ -64,21 +47,30 @@ public class Question extends javax.swing.JFrame {
         buttonD.repaint();
     }
 
-    void initQuestion() {
+    void initQuestion(int number) {
         enableOrNotButtons(true);
         labelQuestionNumber.setText("Pytanie " + (counter + 1));
-        labelQuestionText.setText(JavaDB.pytania[counter].pytanie);
-        buttonA.setText(JavaDB.pytania[counter].odpowiedzA);
-        buttonB.setText(JavaDB.pytania[counter].odpowiedzB);
-        buttonC.setText(JavaDB.pytania[counter].odpowiedzC);
-        buttonD.setText(JavaDB.pytania[counter].odpowiedzD);
+        labelQuestionText.setText(JavaDB.pytania[number].pytanie);
+        buttonA.setText(JavaDB.pytania[number].odpowiedzA);
+        buttonB.setText(JavaDB.pytania[number].odpowiedzB);
+        buttonC.setText(JavaDB.pytania[number].odpowiedzC);
+        buttonD.setText(JavaDB.pytania[number].odpowiedzD);
     }
 
     public void close() {
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }
-
+    
+    
+    private int chooseNumber( ) {
+        Random rand = new Random();
+        int los = rand.nextInt(randomTable.size() - 1);
+        number = randomTable.get(los);
+        randomTable.remove(los);
+        return number;
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -220,7 +212,7 @@ public class Question extends javax.swing.JFrame {
     }
 
     private boolean checkAnswer() {
-        String correct = JavaDB.pytania[counter].prawidlowa;
+        String correct = JavaDB.pytania[number].prawidlowa;
         enableOrNotButtons(false);
 
         switch (correct) {
@@ -263,7 +255,17 @@ public class Question extends javax.swing.JFrame {
 
         return false;
     }
-
+    
+    
+    void randomQuestions() {
+        int length = JavaDB.size;
+        randomTable = new ArrayList();
+        for (int i = 0; i < length; i++) {
+            randomTable.add(i);
+        }
+    }
+    
+    
     void nextQuestion() {
         counter++;
         if (counter >= 10) {
@@ -272,12 +274,12 @@ public class Question extends javax.swing.JFrame {
             counter = 0;
             close();
         } else {
-            initQuestion();
+            initQuestion(chooseNumber());
         }
     }
 
     void addPoints() {
-        points += 10;
+        points += JavaDB.pytania[number].punkty;
     }
 
     void colorBadAnswer() {
@@ -307,7 +309,6 @@ public class Question extends javax.swing.JFrame {
             } else {
                 colorBadAnswer();
             }
-
             buttonSend.setText("Dalej");
             checkOrNext = false;
         } else {
