@@ -7,6 +7,7 @@ public class SongChooser extends javax.swing.JDialog {
     public SongChooser(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -14,13 +15,22 @@ public class SongChooser extends javax.swing.JDialog {
 
         songs = new javax.swing.JComboBox<>();
         confirm = new javax.swing.JButton();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(330, 250));
+        setMinimumSize(new java.awt.Dimension(330, 250));
+        setPreferredSize(new java.awt.Dimension(330, 250));
+        setType(java.awt.Window.Type.UTILITY);
+        getContentPane().setLayout(null);
 
-        songs.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        songs.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         songs.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sto lat", "Oda do radości" }));
         songs.setFocusable(false);
+        getContentPane().add(songs);
+        songs.setBounds(80, 80, 170, 40);
 
+        confirm.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         confirm.setText("OK");
         confirm.setFocusable(false);
         confirm.addActionListener(new java.awt.event.ActionListener() {
@@ -28,29 +38,12 @@ public class SongChooser extends javax.swing.JDialog {
                 confirmActionPerformed(evt);
             }
         });
+        getContentPane().add(confirm);
+        confirm.setBounds(130, 130, 63, 42);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(165, 165, 165)
-                .addComponent(confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(106, Short.MAX_VALUE)
-                .addComponent(songs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(94, 94, 94))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(songs, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
-                .addComponent(confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
-        );
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/ptak1.jpg"))); // NOI18N
+        getContentPane().add(background);
+        background.setBounds(0, 0, 320, 310);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -106,6 +99,7 @@ public class SongChooser extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel background;
     private javax.swing.JButton confirm;
     public static javax.swing.JComboBox<String> songs;
     // End of variables declaration//GEN-END:variables

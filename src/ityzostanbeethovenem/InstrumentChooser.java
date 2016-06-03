@@ -1,5 +1,7 @@
 package ityzostanbeethovenem;
 
+import java.awt.Color;
+
 public class InstrumentChooser extends javax.swing.JDialog {
 
     private String path;
@@ -7,6 +9,7 @@ public class InstrumentChooser extends javax.swing.JDialog {
     public InstrumentChooser(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -14,13 +17,29 @@ public class InstrumentChooser extends javax.swing.JDialog {
 
         instrument = new javax.swing.JComboBox<>();
         confirm = new javax.swing.JButton();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(330, 250));
+        setMinimumSize(new java.awt.Dimension(330, 250));
+        setPreferredSize(new java.awt.Dimension(330, 250));
+        setType(java.awt.Window.Type.UTILITY);
+        getContentPane().setLayout(null);
 
-        instrument.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        instrument.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        instrument.setForeground(new java.awt.Color(73, 73, 79));
         instrument.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pianino", "Saksofon", "Gitara" }));
         instrument.setFocusable(false);
+        instrument.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                instrumentActionPerformed(evt);
+            }
+        });
+        getContentPane().add(instrument);
+        instrument.setBounds(120, 70, 100, 40);
 
+        confirm.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        confirm.setForeground(new java.awt.Color(73, 73, 79));
         confirm.setText("OK");
         confirm.setFocusable(false);
         confirm.addActionListener(new java.awt.event.ActionListener() {
@@ -28,30 +47,12 @@ public class InstrumentChooser extends javax.swing.JDialog {
                 confirmActionPerformed(evt);
             }
         });
+        getContentPane().add(confirm);
+        confirm.setBounds(130, 120, 70, 42);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(165, 165, 165)
-                        .addComponent(confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
-                        .addComponent(instrument, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(137, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(112, 112, 112)
-                .addComponent(instrument, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
-        );
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/ptak.jpg"))); // NOI18N
+        getContentPane().add(background);
+        background.setBounds(0, 0, 320, 310);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -71,6 +72,10 @@ public class InstrumentChooser extends javax.swing.JDialog {
         setVisible(false);
         dispose();
     }//GEN-LAST:event_confirmActionPerformed
+
+    private void instrumentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instrumentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_instrumentActionPerformed
 
     public String showDialog() {
         setVisible(true);
@@ -119,6 +124,7 @@ public class InstrumentChooser extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel background;
     private javax.swing.JButton confirm;
     public static javax.swing.JComboBox<String> instrument;
     // End of variables declaration//GEN-END:variables

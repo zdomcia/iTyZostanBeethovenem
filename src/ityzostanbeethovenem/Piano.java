@@ -17,7 +17,6 @@ public class Piano extends javax.swing.JFrame {
         initComponents();
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         addKeyboard();
-     
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -51,8 +50,8 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         menu.setBackground(new Color(0,0,0,0));
-        menu.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        menu.setForeground(new java.awt.Color(0, 102, 51));
+        menu.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        menu.setForeground(new java.awt.Color(2, 40, 21));
         menu.setText("Menu");
         menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,7 +59,7 @@ public class Piano extends javax.swing.JFrame {
             }
         });
         getContentPane().add(menu);
-        menu.setBounds(1260, 680, 90, 40);
+        menu.setBounds(1240, 680, 100, 40);
 
         Cis.setBackground(java.awt.Color.black);
         Cis.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -297,8 +296,8 @@ public class Piano extends javax.swing.JFrame {
         E1.setBounds(622, 77, 57, 275);
 
         instrumentChoose.setBackground(new Color(0,0,0,0));
-        instrumentChoose.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        instrumentChoose.setForeground(new java.awt.Color(0, 102, 51));
+        instrumentChoose.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        instrumentChoose.setForeground(new java.awt.Color(4, 65, 35));
         instrumentChoose.setText("Instrument");
         instrumentChoose.setFocusable(false);
         instrumentChoose.addActionListener(new java.awt.event.ActionListener() {
@@ -307,7 +306,7 @@ public class Piano extends javax.swing.JFrame {
             }
         });
         getContentPane().add(instrumentChoose);
-        instrumentChoose.setBounds(1070, 680, 150, 40);
+        instrumentChoose.setBounds(980, 680, 180, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -446,7 +445,7 @@ public class Piano extends javax.swing.JFrame {
         player.play(note);
     }
 
-    private void check() {
+    protected void check() {
     }
 
     public static void main(String args[]) {
