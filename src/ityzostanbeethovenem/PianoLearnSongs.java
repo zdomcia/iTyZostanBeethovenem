@@ -1,5 +1,6 @@
 package ityzostanbeethovenem;
 
+import java.awt.Color;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 import javax.swing.Timer;
 
 public class PianoLearnSongs extends Piano {
+
     public String songCongratulations;
     public String gifCongratulations;
     public String songToLearn;
@@ -39,6 +41,7 @@ public class PianoLearnSongs extends Piano {
         setMinimumSize(new java.awt.Dimension(810, 450));
         getContentPane().setLayout(null);
 
+        playSong.setBackground(new Color(0,0,0,0));
         playSong.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         playSong.setText("Naucz");
         playSong.setActionCommand("naucz");
@@ -143,6 +146,8 @@ public class PianoLearnSongs extends Piano {
         SongChooser songChoosingWindow = new SongChooser(this, true);
         String song = songChoosingWindow.showDialog();
         if (song != null) {
+            sequence = "";
+            progress.setValue(0);
             setSongToLearn(song);
         }
     }//GEN-LAST:event_songChooseActionPerformed
@@ -152,25 +157,25 @@ public class PianoLearnSongs extends Piano {
         sequence += note;
         player.play(note);
 
-        progress.setValue(sequence.length());
         
+
         check();
     }
 
     protected void check() {
+        progress.setValue(sequence.length());
+        
         if (sequence.equals(songToLearnNotes)) {
             sequence = "";
             progress.setValue(0);
+
             openCongratulations(songCongratulations, gifCongratulations);
-        }
-        else{
-            if( !sequence.equals(songToLearnNotes.substring(0, sequence.length()))){
+        } else if (!sequence.equals(songToLearnNotes.substring(0, sequence.length()))) {
             sequence = "";
-            progress.setValue(0); 
+            progress.setValue(0);
             Player playerWrong = new Player();
             playerWrong.path = "wrong";
             playerWrong.play("");
-            }
         }
     }
 
