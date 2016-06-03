@@ -26,11 +26,15 @@ public class PianoLearnSongs extends Piano {
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         addKeyboard();
         setSongToLearn("Sto lat");
+        
+        tryAgain.setVisible(false);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tryAgain = new javax.swing.JLabel();
         playSong = new javax.swing.JButton();
         progress = new javax.swing.JProgressBar();
         songChoose = new javax.swing.JButton();
@@ -42,6 +46,12 @@ public class PianoLearnSongs extends Piano {
         setIconImage(new ImageIcon(getClass().getResource("/Grafika/ikonka.png")).getImage());
         setMinimumSize(new java.awt.Dimension(810, 450));
         getContentPane().setLayout(null);
+
+        tryAgain.setBackground(new Color(0, 0, 0, 0));
+        tryAgain.setFont(new java.awt.Font("Comic Sans MS", 1, 180)); // NOI18N
+        tryAgain.setText("Jeszcze raz");
+        getContentPane().add(tryAgain);
+        tryAgain.setBounds(160, 200, 1400, 460);
 
         playSong.setBackground(new Color(0,0,0,0));
         playSong.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
@@ -178,9 +188,26 @@ public class PianoLearnSongs extends Piano {
             Player playerWrong = new Player();
             playerWrong.path = "wrong";
             playerWrong.play("");
+            
+            //tryAgain.setVisible(true);
+            showLabel();
         }
     }
 
+        private void showLabel() {
+        
+        ScheduledExecutorService s = Executors.newSingleThreadScheduledExecutor();
+        s.schedule(new Runnable() {
+            public void run() {
+                tryAgain.setVisible(false);
+                //congratulations.dispose();
+            }
+        }, 1, TimeUnit.SECONDS);
+
+        tryAgain.setVisible(true);
+
+    }
+    
     private void openCongratulations(String song, String image, String text) {
         final Congratulations congratulations = new Congratulations(song, image, text);
 
@@ -225,6 +252,7 @@ public class PianoLearnSongs extends Piano {
     private javax.swing.JButton playSong;
     private javax.swing.JProgressBar progress;
     private javax.swing.JButton songChoose;
+    private javax.swing.JLabel tryAgain;
     // End of variables declaration//GEN-END:variables
     private Timer timer;
     private Timer timerOff;
