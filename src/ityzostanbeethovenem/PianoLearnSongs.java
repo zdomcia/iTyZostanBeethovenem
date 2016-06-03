@@ -13,6 +13,8 @@ public class PianoLearnSongs extends Piano {
 
     public String songCongratulations;
     public String gifCongratulations;
+    public String textCongratulations;
+    
     public String songToLearn;
     private String songToLearnNotes;
 
@@ -169,7 +171,7 @@ public class PianoLearnSongs extends Piano {
             sequence = "";
             progress.setValue(0);
 
-            openCongratulations(songCongratulations, gifCongratulations);
+            openCongratulations(songCongratulations, gifCongratulations, textCongratulations);
         } else if (!sequence.equals(songToLearnNotes.substring(0, sequence.length()))) {
             sequence = "";
             progress.setValue(0);
@@ -179,8 +181,8 @@ public class PianoLearnSongs extends Piano {
         }
     }
 
-    private void openCongratulations(String song, String image) {
-        final Congratulations congratulations = new Congratulations(song, image);
+    private void openCongratulations(String song, String image, String text) {
+        final Congratulations congratulations = new Congratulations(song, image, text);
 
         ScheduledExecutorService s = Executors.newSingleThreadScheduledExecutor();
         s.schedule(new Runnable() {
@@ -203,6 +205,7 @@ public class PianoLearnSongs extends Piano {
             songToLearnNotes = "EEF";
             songCongratulations = "cat";
             gifCongratulations = "/Grafika/pizza.gif";
+            textCongratulations = "SUPER!";
             //progress.setMaximum(15);
             progress.setMaximum(3);
         } else {
@@ -211,44 +214,10 @@ public class PianoLearnSongs extends Piano {
             //songToLearnNotes = "GEGEGAGFEF";
             songToLearnNotes = "GEGE";
             gifCongratulations = "/Grafika/kotKrolik.gif";
+            textCongratulations = "EKSTRA!";
             //progress.setMaximum(10);
             progress.setMaximum(4);
         }
-
-    }
-
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PianoLearnSongs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PianoLearnSongs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PianoLearnSongs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PianoLearnSongs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PianoLearnSongs().setVisible(true);
-
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

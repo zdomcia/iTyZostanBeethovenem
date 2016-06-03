@@ -140,7 +140,7 @@ public class QuizCategories extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonWszystkoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        EkranStartowy q = new EkranStartowy();
+        Menu q = new Menu();
         q.setVisible(true);
         close();
     }//GEN-LAST:event_jButton1ActionPerformed

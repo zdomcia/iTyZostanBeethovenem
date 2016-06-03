@@ -174,7 +174,7 @@ public class Question extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMenuActionPerformed
-        EkranStartowy q = new EkranStartowy();
+        Menu q = new Menu();
         q.setVisible(true);
         counter = 0;
         close();

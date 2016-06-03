@@ -8,10 +8,12 @@ public class Congratulations extends javax.swing.JFrame {
     Player player;
     static String song;
     static String image;
+    static String word;
     
-    public Congratulations(String song, String image) {
+    public Congratulations(String song, String image, String word) {
         this.song = song;
         this.image = image;
+        this.word = word;
         player = new Player();
         player.path = song;
        
@@ -21,28 +23,46 @@ public class Congratulations extends javax.swing.JFrame {
         gif.setIcon(new javax.swing.ImageIcon(getClass().getResource(image)));
         player.play("");
         this.setBackground(new Color(0,0,0,0));
+        text.setText(word);
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        text = new javax.swing.JLabel();
         gif = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setType(java.awt.Window.Type.UTILITY);
 
+        text.setFont(new java.awt.Font("Comic Sans MS", 1, 120)); // NOI18N
+        text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        text.setText("SUPER!");
+
+        gif.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(gif, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(text, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(171, Short.MAX_VALUE)
+                .addComponent(gif, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(152, 152, 152))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gif, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(161, Short.MAX_VALUE)
+                .addComponent(gif, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -69,12 +89,13 @@ public class Congratulations extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Congratulations(song, image).setVisible(true);
+                new Congratulations(song, image, word).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel gif;
+    private javax.swing.JLabel text;
     // End of variables declaration//GEN-END:variables
 }
