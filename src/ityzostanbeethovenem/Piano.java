@@ -1,21 +1,15 @@
 package ityzostanbeethovenem;
 
+import java.awt.Color;
 import javax.swing.ImageIcon;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 import javax.swing.AbstractAction;
 import javax.swing.KeyStroke;
-import javax.swing.Timer;
 
 public class Piano extends javax.swing.JFrame {
 
-    Player player;
-    public String sequence;
+    protected Player player;
+    protected String sequence;
 
     public Piano() {
         player = new Player();
@@ -23,16 +17,13 @@ public class Piano extends javax.swing.JFrame {
         initComponents();
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         addKeyboard();
+     
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ButtonGroup = new javax.swing.ButtonGroup();
-        Radio1 = new javax.swing.JRadioButton();
-        Radio2 = new javax.swing.JRadioButton();
-        Radio3 = new javax.swing.JRadioButton();
-        buttonMenu = new javax.swing.JButton();
+        menu = new javax.swing.JButton();
         Cis = new javax.swing.JButton();
         Dis = new javax.swing.JButton();
         Fis = new javax.swing.JButton();
@@ -50,10 +41,7 @@ public class Piano extends javax.swing.JFrame {
         F = new javax.swing.JButton();
         E = new javax.swing.JButton();
         E1 = new javax.swing.JButton();
-        songs = new javax.swing.JComboBox<>();
-        learn = new javax.swing.JButton();
-        check = new javax.swing.JButton();
-        background = new javax.swing.JLabel();
+        instrumentChoose = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFocusCycleRoot(false);
@@ -62,57 +50,17 @@ public class Piano extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(810, 450));
         getContentPane().setLayout(null);
 
-        ButtonGroup.add(Radio1);
-        Radio1.setFont(new java.awt.Font("Candara", 0, 24)); // NOI18N
-        Radio1.setForeground(new java.awt.Color(68, 68, 68));
-        Radio1.setText("pianino");
-        Radio1.setFocusable(false);
-        Radio1.addActionListener(new java.awt.event.ActionListener() {
+        menu.setBackground(new Color(0,0,0,0));
+        menu.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        menu.setForeground(new java.awt.Color(0, 102, 51));
+        menu.setText("Menu");
+        menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Radio1ActionPerformed(evt);
+                menuActionPerformed(evt);
             }
         });
-        getContentPane().add(Radio1);
-        Radio1.setBounds(100, 500, 120, 50);
-
-        ButtonGroup.add(Radio2);
-        Radio2.setFont(new java.awt.Font("Candara", 0, 24)); // NOI18N
-        Radio2.setForeground(new java.awt.Color(68, 68, 68));
-        Radio2.setText("saksofon");
-        Radio2.setToolTipText("");
-        Radio2.setFocusable(false);
-        Radio2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Radio2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Radio2);
-        Radio2.setBounds(600, 510, 120, 30);
-
-        ButtonGroup.add(Radio3);
-        Radio3.setFont(new java.awt.Font("Candara", 0, 24)); // NOI18N
-        Radio3.setForeground(new java.awt.Color(68, 68, 68));
-        Radio3.setText("gitara");
-        Radio3.setFocusable(false);
-        Radio3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Radio3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Radio3);
-        Radio3.setBounds(350, 510, 110, 30);
-        Radio3.getAccessibleContext().setAccessibleDescription("");
-
-        buttonMenu.setFont(new java.awt.Font("Candara", 0, 24)); // NOI18N
-        buttonMenu.setForeground(new java.awt.Color(68, 68, 68));
-        buttonMenu.setText("Menu");
-        buttonMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonMenuActionPerformed(evt);
-            }
-        });
-        getContentPane().add(buttonMenu);
-        buttonMenu.setBounds(900, 490, 200, 70);
+        getContentPane().add(menu);
+        menu.setBounds(1260, 680, 90, 40);
 
         Cis.setBackground(java.awt.Color.black);
         Cis.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -348,37 +296,18 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(E1);
         E1.setBounds(622, 77, 57, 275);
 
-        songs.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        songs.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sto lat", "Oda do radości" }));
-        songs.setFocusable(false);
-        getContentPane().add(songs);
-        songs.setBounds(900, 100, 200, 40);
-
-        learn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        learn.setText("Zagraj");
-        learn.setActionCommand("naucz");
-        learn.setFocusable(false);
-        learn.addActionListener(new java.awt.event.ActionListener() {
+        instrumentChoose.setBackground(new Color(0,0,0,0));
+        instrumentChoose.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        instrumentChoose.setForeground(new java.awt.Color(0, 102, 51));
+        instrumentChoose.setText("Instrument");
+        instrumentChoose.setFocusable(false);
+        instrumentChoose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                learnActionPerformed(evt);
+                instrumentChooseActionPerformed(evt);
             }
         });
-        getContentPane().add(learn);
-        learn.setBounds(900, 200, 200, 70);
-
-        check.setText("Sprawdź");
-        check.setFocusable(false);
-        check.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkActionPerformed(evt);
-            }
-        });
-        getContentPane().add(check);
-        check.setBounds(860, 340, 110, 40);
-
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/piano.png"))); // NOI18N
-        getContentPane().add(background);
-        background.setBounds(0, 0, 810, 430);
+        getContentPane().add(instrumentChoose);
+        instrumentChoose.setBounds(1070, 680, 150, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -451,25 +380,13 @@ public class Piano extends javax.swing.JFrame {
         pianoPressed("B");
     }//GEN-LAST:event_BActionPerformed
 
-    private void Radio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Radio1ActionPerformed
-        player.path = "piano\\";
-    }//GEN-LAST:event_Radio1ActionPerformed
-
-    private void Radio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Radio2ActionPerformed
-        player.path = "saksofon\\";
-    }//GEN-LAST:event_Radio2ActionPerformed
-
-    private void Radio3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Radio3ActionPerformed
-        player.path = "gitara\\";
-    }//GEN-LAST:event_Radio3ActionPerformed
-
-    private void buttonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMenuActionPerformed
+    private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
         EkranStartowy q = new EkranStartowy();
         q.setVisible(true);
         dispose();
-    }//GEN-LAST:event_buttonMenuActionPerformed
+    }//GEN-LAST:event_menuActionPerformed
 
-    private void addKeyboard() {
+    protected void addKeyboard() {
         String[] keyboardLetters = {"A", "S", "D", "F", "G", "H", "J", "K", "L", "SEMICOLON", "W", "E", "T", "Y", "U", "O", "P"};
         String[] keyboard = {"C", "D", "E", "F", "G", "A", "H", "C1", "D1", "E1", "Cis", "Dis", "Fis", "Gis", "B", "Cis1", "Dis1"};
         javax.swing.JButton[] buttons = {C, D, E, F, G, A, H, C1, D1, E1, Cis, Dis, Fis, Gis, B, Cis1, Dis1};
@@ -495,7 +412,8 @@ public class Piano extends javax.swing.JFrame {
         public void actionPerformed(ActionEvent e) {
             button.getModel().setPressed(true);
             button.getModel().setArmed(true);
-            pianoPressed(note);
+            sequence += note;
+            player.play(note);
         }
     }
 
@@ -512,119 +430,26 @@ public class Piano extends javax.swing.JFrame {
 
             button.getModel().setArmed(false);
             button.getModel().setPressed(false);
+            check();
         }
     }
 
-    private void timerPressed(final javax.swing.JButton button, final String note) {
-        timer = new Timer(100, new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                player.play(note);
-                button.getModel().setArmed(true);
-                button.getModel().setPressed(true);
-            }
-        });
-
-    }
-
-    private void timerReleased(final javax.swing.JButton button) {
-        timerOff = new Timer(100, new ReleasedKey(button));
-    }
-
-    private void playNote(final javax.swing.JButton button, final String note, int timeOn, int timeOff) {
-        timerPressed(button, note);
-        timerReleased(button);
-
-        timer.setRepeats(false);
-        timer.setInitialDelay(timeOn);
-        timerOff.setRepeats(false);
-        timerOff.setInitialDelay(timeOff);
-        timer.start();
-        timerOff.start();
-    }
-
-    private void playStoLat() {
-        playNote(G, "G", 0, 500);
-        playNote(E, "E", 1000, 1500);
-        playNote(G, "G", 2000, 2500);
-        playNote(E, "E", 3000, 3500);
-        playNote(G, "G", 4000, 4500);
-        playNote(A, "A", 5000, 5250);
-        playNote(G, "G", 5500, 5750);
-        playNote(F, "F", 6000, 6250);
-        playNote(E, "E", 6500, 6750);
-        playNote(F, "F", 7000, 7500);
-    }
-
-    private void playOda() {
-        playNote(E, "E", 0, 250);
-        playNote(E, "E", 500, 750);
-        playNote(F, "F", 1000, 1250);
-        playNote(G, "G", 1500, 1750);
-        playNote(G, "G", 2000, 2250);
-        playNote(F, "F", 2500, 2750);
-        playNote(E, "E", 3000, 3250);
-        playNote(D, "D", 3500, 3750);
-        playNote(C, "C", 4000, 4250);
-        playNote(C, "C", 4500, 4750);
-        playNote(D, "D", 5000, 5250);
-        playNote(E, "E", 5500, 5750);
-        playNote(E, "E", 6000, 6500);
-        playNote(D, "D", 6750, 6900);
-        playNote(D, "D", 7000, 7500);
-    }
-
-    private void learnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_learnActionPerformed
-
-        String message = (String) songs.getSelectedItem();
-        if ("Sto lat".equals(message)) {
-            playStoLat();
+    private void instrumentChooseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instrumentChooseActionPerformed
+        InstrumentChooser instrumentChoosingWindow = new InstrumentChooser(this, true);
+        String path = instrumentChoosingWindow.showDialog();
+        if (path != null) {
+            player.path = path;
         }
-        if ("Oda do radości".equals(message)) {
-            playOda();
-        }
-    }//GEN-LAST:event_learnActionPerformed
+    }//GEN-LAST:event_instrumentChooseActionPerformed
 
-    private void checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkActionPerformed
-        sequence = "";
-    }//GEN-LAST:event_checkActionPerformed
-
-    private void pianoPressed(String note) {
-        sequence += note;
+    protected void pianoPressed(String note) {
         player.play(note);
-        check();
     }
 
     private void check() {
-        if (sequence.equals("GEGEGAGFEF")) {
-            sequence = "";
-            final Congratulations congratulations = new Congratulations();
-
-            ScheduledExecutorService s = Executors.newSingleThreadScheduledExecutor();
-            s.schedule(new Runnable() {
-                public void run() {
-                    congratulations.setVisible(false);
-                    congratulations.dispose();
-                }
-            }, 7, TimeUnit.SECONDS);
-
-            congratulations.setVisible(true);
-
-        }
-    }
-
-    private void close() {
-        WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
-        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }
 
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -641,9 +466,7 @@ public class Piano extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Piano.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Piano().setVisible(true);
@@ -653,33 +476,24 @@ public class Piano extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton A;
-    private javax.swing.JButton B;
-    private javax.swing.ButtonGroup ButtonGroup;
-    private javax.swing.JButton C;
-    private javax.swing.JButton C1;
-    private javax.swing.JButton Cis;
-    private javax.swing.JButton Cis1;
-    private javax.swing.JButton D;
-    private javax.swing.JButton D1;
-    private javax.swing.JButton Dis;
-    private javax.swing.JButton Dis1;
-    private javax.swing.JButton E;
-    private javax.swing.JButton E1;
-    private javax.swing.JButton F;
-    private javax.swing.JButton Fis;
-    private javax.swing.JButton G;
-    private javax.swing.JButton Gis;
-    private javax.swing.JButton H;
-    private javax.swing.JRadioButton Radio1;
-    private javax.swing.JRadioButton Radio2;
-    private javax.swing.JRadioButton Radio3;
-    private javax.swing.JLabel background;
-    private javax.swing.JButton buttonMenu;
-    private javax.swing.JButton check;
-    private javax.swing.JButton learn;
-    private javax.swing.JComboBox<String> songs;
+    protected javax.swing.JButton A;
+    protected javax.swing.JButton B;
+    protected javax.swing.JButton C;
+    protected javax.swing.JButton C1;
+    protected javax.swing.JButton Cis;
+    protected javax.swing.JButton Cis1;
+    protected javax.swing.JButton D;
+    protected javax.swing.JButton D1;
+    protected javax.swing.JButton Dis;
+    protected javax.swing.JButton Dis1;
+    protected javax.swing.JButton E;
+    protected javax.swing.JButton E1;
+    protected javax.swing.JButton F;
+    protected javax.swing.JButton Fis;
+    protected javax.swing.JButton G;
+    protected javax.swing.JButton Gis;
+    protected javax.swing.JButton H;
+    private javax.swing.JButton instrumentChoose;
+    private javax.swing.JButton menu;
     // End of variables declaration//GEN-END:variables
-    private Timer timer;
-    private Timer timerOff;
 }
