@@ -165,8 +165,6 @@ public class QuizEnd extends QuizWindow {
         });
     }
 
-    
-    /*
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
     private javax.swing.JButton exit;
@@ -175,10 +173,4 @@ public class QuizEnd extends QuizWindow {
     private javax.swing.JLabel podsumowanieLabel1;
     private javax.swing.JLabel podsumowanieLabel2;
     // End of variables declaration//GEN-END:variables
-    */
-    private javax.swing.JLabel podsumowanieLabel1;
-    private javax.swing.JLabel podsumowanieLabel2;
-    private javax.swing.JLabel jLabel3;
-    
-
 }

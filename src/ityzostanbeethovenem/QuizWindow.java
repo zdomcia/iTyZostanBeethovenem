@@ -1,10 +1,9 @@
 
 package ityzostanbeethovenem;
 
+import java.awt.event.WindowEvent;
+
 public abstract class QuizWindow extends javax.swing.JFrame {
-    protected javax.swing.JLabel background;
-    protected javax.swing.JButton exit;
-    protected javax.swing.JButton menu;
      
     public void menuActionPerformed(java.awt.event.ActionEvent evt){
         Menu q = new Menu();

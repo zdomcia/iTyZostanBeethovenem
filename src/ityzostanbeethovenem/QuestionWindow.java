@@ -412,7 +412,6 @@ public class QuestionWindow extends QuizWindow {
         });
     }
 
-    /*
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
     private javax.swing.JRadioButton buttonA;
@@ -429,19 +428,4 @@ public class QuestionWindow extends QuizWindow {
     private javax.swing.JButton menu;
     private javax.swing.JButton powtorzButton;
     // End of variables declaration//GEN-END:variables
-*/
-    
-    private javax.swing.JRadioButton buttonA;
-    private javax.swing.JRadioButton buttonB;
-    private javax.swing.JRadioButton buttonC;
-    private javax.swing.JRadioButton buttonD;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JButton buttonSend;
-    private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JLabel labelQuestionNumber;
-    private javax.swing.JLabel labelQuestionText;
-    private javax.swing.JButton powtorzButton;
-
-
 }
