@@ -37,8 +37,6 @@ public class Question extends javax.swing.JFrame {
         checkOrNext = true;
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         setResizable(true);
-         background.setVisible(false);
-
     }
 
     void clearBackground() {
@@ -64,15 +62,36 @@ public class Question extends javax.swing.JFrame {
         
         if (JavaDB.pytania[number].pytanie.equals("Jaki to interwał?")  ) {
             odtworzInterwal(number);
-            background.setText("Odsłuchaj ponownie");
-            background.setVisible(true);
+            powtorzButton.setText("Odsłuchaj ponownie");
+            powtorzButton.setVisible(true);
+        }else {
+            powtorzButton.setVisible(false);
         }
     }
     
     
     public void odtworzInterwal(int number) {
         Player player = new Player();
-        player.path = "" + (number + 1);
+        String correct = JavaDB.pytania[number].prawidlowa;
+        String name = "";
+
+        switch (correct) {
+            case "A":
+                name = JavaDB.pytania[number].odpowiedzA;
+                break;
+            case "B":
+                name = JavaDB.pytania[number].odpowiedzB;
+                break;
+            case "C":
+                name = JavaDB.pytania[number].odpowiedzC;
+                break;
+            case "D":
+                name = JavaDB.pytania[number].odpowiedzD;
+                break;
+        }
+        
+        
+        player.path = name;
         player.play("");
     }
     

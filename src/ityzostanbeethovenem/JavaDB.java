@@ -106,7 +106,7 @@ public class JavaDB {
                     + "('Jaki to interwał?','pryma czysta','kwarta czysta','seksta wielka','septyma wielka','C', 4, 15),"
                     + "('Jaki to interwał?','seksta mała','septyma mała','tryton','oktawa czysta','B', 4, 15),"
                     + "('Jaki to interwał?','septyma wielka','oktawa czysta','tryton','tercja wielka','A', 4, 15),"
-                    + "('Jaki to interwał?','septyma mała','oktawa czysta','tryton','tercja wielka','D', 4, 15);";
+                    + "('Jaki to interwał?','septyma mała','oktawa czysta','tryton','tercja wielka','B', 4, 15);";
                             
             stat.executeUpdate(dodajSQL);
             stat.close();
