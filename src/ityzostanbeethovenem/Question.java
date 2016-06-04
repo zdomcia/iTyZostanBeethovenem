@@ -2,14 +2,16 @@ package ityzostanbeethovenem;
 
 import java.awt.Color;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
 import java.awt.event.WindowEvent;
+import static java.lang.Thread.sleep;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
-import javax.swing.AbstractAction;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
-import javax.swing.ButtonModel;
 import javax.swing.ImageIcon;
 
 public class Question extends javax.swing.JFrame {
@@ -35,6 +37,7 @@ public class Question extends javax.swing.JFrame {
         checkOrNext = true;
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         setResizable(true);
+         background.setVisible(false);
 
     }
 
@@ -58,8 +61,22 @@ public class Question extends javax.swing.JFrame {
         buttonC.setText(JavaDB.pytania[number].odpowiedzC);
         buttonD.setText(JavaDB.pytania[number].odpowiedzD);
         totalPoints += JavaDB.pytania[number].punkty;
+        
+        if (JavaDB.pytania[number].pytanie.equals("Jaki to interwał?")  ) {
+            odtworzInterwal(number);
+            background.setText("Odsłuchaj ponownie");
+            background.setVisible(true);
+        }
     }
-
+    
+    
+    public void odtworzInterwal(int number) {
+        Player player = new Player();
+        player.path = "" + (number + 1);
+        player.play("");
+    }
+    
+    
     public void close() {
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
@@ -90,6 +107,8 @@ public class Question extends javax.swing.JFrame {
         buttonSend = new javax.swing.JButton();
         menu = new javax.swing.JButton();
         exit = new javax.swing.JButton();
+        powtorzButton = new javax.swing.JButton();
+        background = new javax.swing.JLabel();
 
         jInternalFrame1.setVisible(true);
 
@@ -110,24 +129,26 @@ public class Question extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         labelQuestionNumber.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        labelQuestionNumber.setText("Pytanie nr 1");
         getContentPane().add(labelQuestionNumber);
-        labelQuestionNumber.setBounds(510, 20, 330, 59);
+        labelQuestionNumber.setBounds(660, 70, 330, 59);
 
         labelQuestionText.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        labelQuestionText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelQuestionText.setText("Treśc bardzo trudnego pytania");
         getContentPane().add(labelQuestionText);
-        labelQuestionText.setBounds(230, 60, 871, 146);
+        labelQuestionText.setBounds(300, 110, 871, 146);
 
         buttonA.setBackground(new java.awt.Color(0, 255, 0));
         buttonA.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         buttonA.setText("aaa");
         getContentPane().add(buttonA);
-        buttonA.setBounds(510, 230, 317, 54);
+        buttonA.setBounds(560, 260, 317, 54);
 
         buttonB.setBackground(new java.awt.Color(0, 255, 0));
         buttonB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         getContentPane().add(buttonB);
-        buttonB.setBounds(510, 300, 317, 54);
+        buttonB.setBounds(560, 330, 317, 54);
 
         buttonC.setBackground(new java.awt.Color(0, 255, 0));
         buttonC.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -137,12 +158,12 @@ public class Question extends javax.swing.JFrame {
             }
         });
         getContentPane().add(buttonC);
-        buttonC.setBounds(510, 370, 317, 54);
+        buttonC.setBounds(560, 400, 317, 54);
 
         buttonD.setBackground(new java.awt.Color(0, 255, 0));
         buttonD.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         getContentPane().add(buttonD);
-        buttonD.setBounds(510, 440, 317, 54);
+        buttonD.setBounds(560, 470, 317, 54);
 
         buttonSend.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         buttonSend.setText("Sprawdź");
@@ -152,7 +173,7 @@ public class Question extends javax.swing.JFrame {
             }
         });
         getContentPane().add(buttonSend);
-        buttonSend.setBounds(590, 530, 166, 57);
+        buttonSend.setBounds(800, 580, 166, 57);
 
         menu.setBackground(new Color(0,0,0,0));
         menu.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -177,6 +198,20 @@ public class Question extends javax.swing.JFrame {
         });
         getContentPane().add(exit);
         exit.setBounds(1300, 670, 50, 40);
+
+        powtorzButton.setText("Powtórz");
+        powtorzButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                powtorzButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(powtorzButton);
+        powtorzButton.setBounds(570, 580, 180, 60);
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/kwiatki.jpg"))); // NOI18N
+        background.setText("asasasasa");
+        getContentPane().add(background);
+        background.setBounds(-50, -60, 1630, 1110);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -204,6 +239,10 @@ public class Question extends javax.swing.JFrame {
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }//GEN-LAST:event_exitActionPerformed
+
+    private void powtorzButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_powtorzButtonActionPerformed
+       odtworzInterwal(number);
+    }//GEN-LAST:event_powtorzButtonActionPerformed
 
     private void groupButton() {
         ButtonGroup group = new ButtonGroup();
@@ -275,20 +314,40 @@ public class Question extends javax.swing.JFrame {
     }
     
     
-    void nextQuestion() {
+    void nextQuestion() throws InterruptedException {
         counter++;
         if (counter >= 10) {
-            QuizEnd a = new QuizEnd(points, totalPoints);
-            a.setVisible(true);
+            openCongratulations("flute", "/Grafika/pizza.gif", "Zdobyłeś " + points + " /  " + totalPoints + " punktów");
             counter = 0;
             points = 0;
             totalPoints = 0;
-            close();
+            sleep(7200);
+            Menu q = new Menu();
+            q.setVisible(true);
+            dispose();
+            //close();
         } else {
             initQuestion(chooseNumber());
         }
+        
     }
+    
+    private void openCongratulations(String song, String image, String text) {
+        final Congratulations congratulations = new Congratulations(song, image, text);
 
+        ScheduledExecutorService s = Executors.newSingleThreadScheduledExecutor();
+        s.schedule(new Runnable() {
+            public void run() {
+                congratulations.setVisible(false);
+                congratulations.dispose();
+            }
+        }, 10, TimeUnit.SECONDS);
+
+        congratulations.setVisible(true);
+
+    }
+    
+    
     void addPoints() {
         points += JavaDB.pytania[number].punkty;
     }
@@ -328,8 +387,11 @@ public class Question extends javax.swing.JFrame {
             player.play("");
         } else {
             clearBackground();
-            nextQuestion();
-
+            try {
+                nextQuestion();
+            }catch(Exception e) {
+                
+            }
             checkOrNext = true;
             buttonSend.setText("Sprawdź");
         }
@@ -364,6 +426,7 @@ public class Question extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel background;
     private javax.swing.JRadioButton buttonA;
     private javax.swing.JRadioButton buttonB;
     private javax.swing.JRadioButton buttonC;
@@ -376,5 +439,6 @@ public class Question extends javax.swing.JFrame {
     private javax.swing.JLabel labelQuestionNumber;
     private javax.swing.JLabel labelQuestionText;
     private javax.swing.JButton menu;
+    private javax.swing.JButton powtorzButton;
     // End of variables declaration//GEN-END:variables
 }

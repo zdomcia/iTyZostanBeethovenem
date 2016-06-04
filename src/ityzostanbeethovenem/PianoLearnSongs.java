@@ -169,8 +169,6 @@ public class PianoLearnSongs extends Piano {
         sequence += note;
         player.play(note);
 
-        
-
         check();
     }
 

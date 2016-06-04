@@ -90,7 +90,24 @@ public class JavaDB {
                     + "('W jakim mieście zmarł Fryderyk Chopin?','Londyn','Żelazowa Wola','Paryż','Warszawa', 'C', 2, 10),"
                     + "('Syn którego kompozytora miał wpływ na twórczość Mozarta?','Chopina','Beethovena','Bacha','Moniuszki', 'C', 2, 20),"
                     + "('Jakich utworów nie tworzył Jan Sebastian Bach?','oper','kantat','pasji','żadnych z powyższych', 'A', 2, 15),"
-                    + "('Beethoven stał się najpierw sławny jako:', 'śpiewak', 'wirtuoz fortepianu','skrzypek','aktor', 'B', 2, 10);";
+                    + "('Beethoven stał się najpierw sławny jako:', 'śpiewak', 'wirtuoz fortepianu','skrzypek','aktor', 'B', 2, 10),"
+            
+            
+                    //do interwalow
+                    + "('Jaki to interwał?','pryma czysta','kwarta czysta','sekunda mała','septyma wielka','A', 4, 15),"
+                    + "('Jaki to interwał?','pryma czysta','kwarta czysta','sekunda mała','septyma wielka','C', 4, 15),"
+                    + "('Jaki to interwał?','sekunda wielka','kwarta czysta','sekunda mała','septyma wielka','A', 4, 15),"
+                    + "('Jaki to interwał?','tercja wielka','kwarta czysta','sekunda mała','tercja mała','D', 4, 15),"
+                    + "('Jaki to interwał?','septyma mała','oktawa czysta','tryton','tercja wielka','D', 4, 15),"
+                    + "('Jaki to interwał?','pryma czysta','kwarta czysta','sekunda mała','septyma wielka','B', 4, 15),"
+                    + "('Jaki to interwał?','kwarta zwiększona','kwarta czysta','kwinta czysta','sekunda','A', 4, 15),"
+                    + "('Jaki to interwał?','tercja wielka','kwarta czysta','kwinta czysta','tercja mała','C', 4, 15),"
+                    + "('Jaki to interwał?','seksta mała','tryton','sekunda mała','seksta wielka','A', 4, 15),"
+                    + "('Jaki to interwał?','pryma czysta','kwarta czysta','seksta wielka','septyma wielka','C', 4, 15),"
+                    + "('Jaki to interwał?','seksta mała','septyma mała','tryton','oktawa czysta','B', 4, 15),"
+                    + "('Jaki to interwał?','septyma wielka','oktawa czysta','tryton','tercja wielka','A', 4, 15),"
+                    + "('Jaki to interwał?','septyma mała','oktawa czysta','tryton','tercja wielka','D', 4, 15);";
+                            
             stat.executeUpdate(dodajSQL);
             stat.close();
             polaczenie.close();

@@ -24,16 +24,18 @@ public class QuizCategories extends javax.swing.JFrame {
         buttonWszystko = new javax.swing.JButton();
         menu = new javax.swing.JButton();
         exit = new javax.swing.JButton();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 3, 48)); // NOI18N
         jLabel1.setText("WYBIERZ KATEGORIĘ");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(440, 50, 470, 32);
+        jLabel1.setBounds(690, 40, 570, 67);
 
-        buttonInstrumenty.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        buttonInstrumenty.setBackground(new Color(0,0,0,0));
+        buttonInstrumenty.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         buttonInstrumenty.setText("Instrumenty");
         buttonInstrumenty.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -41,9 +43,10 @@ public class QuizCategories extends javax.swing.JFrame {
             }
         });
         getContentPane().add(buttonInstrumenty);
-        buttonInstrumenty.setBounds(480, 120, 290, 70);
+        buttonInstrumenty.setBounds(800, 110, 290, 70);
 
-        buttonKompozytorzy.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        buttonKompozytorzy.setBackground(new Color(0,0,0,0));
+        buttonKompozytorzy.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         buttonKompozytorzy.setText("Kompozytorzy");
         buttonKompozytorzy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,9 +54,10 @@ public class QuizCategories extends javax.swing.JFrame {
             }
         });
         getContentPane().add(buttonKompozytorzy);
-        buttonKompozytorzy.setBounds(480, 220, 290, 70);
+        buttonKompozytorzy.setBounds(800, 190, 290, 70);
 
-        buttonNotacja.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        buttonNotacja.setBackground(new Color(0,0,0,0));
+        buttonNotacja.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         buttonNotacja.setText("Notacja muzyczna");
         buttonNotacja.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,9 +65,10 @@ public class QuizCategories extends javax.swing.JFrame {
             }
         });
         getContentPane().add(buttonNotacja);
-        buttonNotacja.setBounds(480, 320, 290, 70);
+        buttonNotacja.setBounds(800, 270, 290, 70);
 
-        buttonRozpoznawanieDzwiekow.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        buttonRozpoznawanieDzwiekow.setBackground(new Color(0,0,0,0));
+        buttonRozpoznawanieDzwiekow.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         buttonRozpoznawanieDzwiekow.setText("Dźwięki");
         buttonRozpoznawanieDzwiekow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,9 +76,10 @@ public class QuizCategories extends javax.swing.JFrame {
             }
         });
         getContentPane().add(buttonRozpoznawanieDzwiekow);
-        buttonRozpoznawanieDzwiekow.setBounds(480, 420, 290, 70);
+        buttonRozpoznawanieDzwiekow.setBounds(800, 350, 290, 70);
 
-        buttonWszystko.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        buttonWszystko.setBackground(new Color(0,0,0,0));
+        buttonWszystko.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         buttonWszystko.setText("Wszystko");
         buttonWszystko.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,7 +87,7 @@ public class QuizCategories extends javax.swing.JFrame {
             }
         });
         getContentPane().add(buttonWszystko);
-        buttonWszystko.setBounds(480, 520, 290, 70);
+        buttonWszystko.setBounds(800, 430, 290, 70);
 
         menu.setBackground(new Color(0,0,0,0));
         menu.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -106,6 +112,11 @@ public class QuizCategories extends javax.swing.JFrame {
         });
         getContentPane().add(exit);
         exit.setBounds(1300, 670, 50, 40);
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/trawka.jpg"))); // NOI18N
+        background.setText("jLabel2");
+        getContentPane().add(background);
+        background.setBounds(-10, -180, 1470, 1010);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -205,6 +216,7 @@ public class QuizCategories extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel background;
     private javax.swing.JButton buttonInstrumenty;
     private javax.swing.JButton buttonKompozytorzy;
     private javax.swing.JButton buttonNotacja;

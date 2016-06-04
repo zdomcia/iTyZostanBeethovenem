@@ -4,6 +4,9 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class QuizEnd extends javax.swing.JFrame {
 
@@ -11,13 +14,12 @@ public class QuizEnd extends javax.swing.JFrame {
     
     public QuizEnd( int points, int totalPoints) {
         initComponents();
-        Player player = new Player();
-        player.path = "flute";
-        player.play("");
         jLabel2.setText(points + " /  " + totalPoints + " punktów");
+        
         this.points = points;
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         setResizable(true);
+        
     }
     
     public void close() {
@@ -50,7 +52,7 @@ public class QuizEnd extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("100 punktów");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(140, 230, 930, 190);
+        jLabel2.setBounds(160, 210, 930, 190);
 
         menu.setBackground(new Color(0,0,0,0));
         menu.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -92,7 +94,23 @@ public class QuizEnd extends javax.swing.JFrame {
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }//GEN-LAST:event_exitActionPerformed
+    
+    private void openCongratulations(String song, String image, String text) {
+        final Congratulations congratulations = new Congratulations(song, image, text);
 
+        ScheduledExecutorService s = Executors.newSingleThreadScheduledExecutor();
+        s.schedule(new Runnable() {
+            public void run() {
+                congratulations.setVisible(true);
+                congratulations.dispose();
+            }
+        }, 10, TimeUnit.SECONDS);
+
+        congratulations.setVisible(true);
+
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
