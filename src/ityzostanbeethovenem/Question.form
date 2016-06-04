@@ -58,27 +58,27 @@
     <Component class="javax.swing.JLabel" name="labelQuestionNumber">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Century Gothic" size="20" style="0"/>
+          <Font name="Comic Sans MS" size="20" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Pytanie nr 1"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="660" y="70" width="330" height="59"/>
+          <AbsoluteConstraints x="870" y="50" width="330" height="59"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="labelQuestionText">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Century Gothic" size="24" style="0"/>
+          <Font name="Comic Sans MS" size="24" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Tre&#x15b;c bardzo trudnego pytania"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="300" y="110" width="871" height="146"/>
+          <AbsoluteConstraints x="510" y="40" width="871" height="146"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -88,13 +88,13 @@
           <Color blue="0" green="ff" red="0" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Century Gothic" size="18" style="0"/>
+          <Font name="Comic Sans MS" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="aaa"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="560" y="260" width="317" height="54"/>
+          <AbsoluteConstraints x="800" y="180" width="317" height="54"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -104,12 +104,12 @@
           <Color blue="0" green="ff" red="0" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Century Gothic" size="18" style="0"/>
+          <Font name="Comic Sans MS" size="18" style="1"/>
         </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="560" y="330" width="317" height="54"/>
+          <AbsoluteConstraints x="800" y="250" width="317" height="54"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -119,7 +119,7 @@
           <Color blue="0" green="ff" red="0" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Century Gothic" size="18" style="0"/>
+          <Font name="Comic Sans MS" size="18" style="1"/>
         </Property>
       </Properties>
       <Events>
@@ -127,7 +127,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="560" y="400" width="317" height="54"/>
+          <AbsoluteConstraints x="800" y="320" width="317" height="54"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -137,19 +137,19 @@
           <Color blue="0" green="ff" red="0" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Century Gothic" size="18" style="0"/>
+          <Font name="Comic Sans MS" size="18" style="1"/>
         </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="560" y="470" width="317" height="54"/>
+          <AbsoluteConstraints x="800" y="390" width="317" height="54"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="buttonSend">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Century Gothic" size="24" style="0"/>
+          <Font name="Comic Sans MS" size="24" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Sprawd&#x17a;"/>
       </Properties>
@@ -158,7 +158,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="800" y="580" width="166" height="57"/>
+          <AbsoluteConstraints x="990" y="490" width="166" height="57"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -212,6 +212,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="powtorzButton">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="24" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Powt&#xf3;rz"/>
       </Properties>
       <Events>
@@ -219,20 +222,20 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="570" y="580" width="180" height="60"/>
+          <AbsoluteConstraints x="770" y="490" width="180" height="60"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="background">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Grafika/kwiatki.jpg"/>
+          <Image iconType="3" name="/Grafika/trawka.jpg"/>
         </Property>
         <Property name="text" type="java.lang.String" value="asasasasa"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="-50" y="-60" width="1630" height="1110"/>
+          <AbsoluteConstraints x="-140" y="-340" width="1630" height="1110"/>
         </Constraint>
       </Constraints>
     </Component>

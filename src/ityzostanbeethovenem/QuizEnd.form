@@ -38,11 +38,11 @@
           <Font name="Century Gothic" size="48" style="0"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="100 punkt&#xf3;w"/>
+        <Property name="text" type="java.lang.String" value="Zdoby&#x142;e&#x15b; 23 / 100 punkt&#xf3;w!"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="160" y="210" width="930" height="190"/>
+          <AbsoluteConstraints x="350" y="90" width="930" height="190"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -91,6 +91,19 @@
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="1300" y="670" width="50" height="40"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Grafika/trawka.jpg"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="background"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="10" y="-240" width="1160" height="880"/>
         </Constraint>
       </Constraints>
     </Component>

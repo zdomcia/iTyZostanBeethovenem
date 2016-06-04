@@ -15,7 +15,9 @@ public class QuizEnd extends javax.swing.JFrame {
     public QuizEnd( int points, int totalPoints) {
         initComponents();
         jLabel2.setText("Zdobyłeś " + points + " /  " + totalPoints + " punktów");
-        openCongratulations("flute", "/Grafika/pizza.gif", "Gratulacje!");
+        if ( (points / totalPoints) >= 0.5 ) {
+            openCongratulations("flute", "/Grafika/pizza.gif", "Gratulacje!");
+        }
         this.points = points;
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         setResizable(true);
@@ -33,6 +35,7 @@ public class QuizEnd extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         menu = new javax.swing.JButton();
         exit = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -42,9 +45,9 @@ public class QuizEnd extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 48)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("100 punktów");
+        jLabel2.setText("Zdobyłeś 23 / 100 punktów!");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(160, 210, 930, 190);
+        jLabel2.setBounds(350, 90, 930, 190);
 
         menu.setBackground(new Color(0,0,0,0));
         menu.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -70,6 +73,11 @@ public class QuizEnd extends javax.swing.JFrame {
         getContentPane().add(exit);
         exit.setBounds(1300, 670, 50, 40);
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/trawka.jpg"))); // NOI18N
+        jLabel1.setText("background");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(10, -240, 1160, 880);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
    
@@ -89,7 +97,7 @@ public class QuizEnd extends javax.swing.JFrame {
     
     private void openCongratulations(String song, String image, String text) {
         final Congratulations congratulations = new Congratulations(song, image, text);
-
+        congratulations.setAlwaysOnTop(rootPaneCheckingEnabled);
         ScheduledExecutorService s = Executors.newSingleThreadScheduledExecutor();
         s.schedule(new Runnable() {
             public void run() {
@@ -140,6 +148,7 @@ public class QuizEnd extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton exit;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton menu;
     // End of variables declaration//GEN-END:variables

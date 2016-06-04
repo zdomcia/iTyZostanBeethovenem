@@ -147,44 +147,44 @@ public class Question extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1250, 800));
         getContentPane().setLayout(null);
 
-        labelQuestionNumber.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        labelQuestionNumber.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
         labelQuestionNumber.setText("Pytanie nr 1");
         getContentPane().add(labelQuestionNumber);
-        labelQuestionNumber.setBounds(660, 70, 330, 59);
+        labelQuestionNumber.setBounds(870, 50, 330, 59);
 
-        labelQuestionText.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        labelQuestionText.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         labelQuestionText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelQuestionText.setText("Treśc bardzo trudnego pytania");
         getContentPane().add(labelQuestionText);
-        labelQuestionText.setBounds(300, 110, 871, 146);
+        labelQuestionText.setBounds(510, 40, 871, 146);
 
         buttonA.setBackground(new java.awt.Color(0, 255, 0));
-        buttonA.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        buttonA.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         buttonA.setText("aaa");
         getContentPane().add(buttonA);
-        buttonA.setBounds(560, 260, 317, 54);
+        buttonA.setBounds(800, 180, 317, 54);
 
         buttonB.setBackground(new java.awt.Color(0, 255, 0));
-        buttonB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        buttonB.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         getContentPane().add(buttonB);
-        buttonB.setBounds(560, 330, 317, 54);
+        buttonB.setBounds(800, 250, 317, 54);
 
         buttonC.setBackground(new java.awt.Color(0, 255, 0));
-        buttonC.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        buttonC.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         buttonC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonCActionPerformed(evt);
             }
         });
         getContentPane().add(buttonC);
-        buttonC.setBounds(560, 400, 317, 54);
+        buttonC.setBounds(800, 320, 317, 54);
 
         buttonD.setBackground(new java.awt.Color(0, 255, 0));
-        buttonD.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        buttonD.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         getContentPane().add(buttonD);
-        buttonD.setBounds(560, 470, 317, 54);
+        buttonD.setBounds(800, 390, 317, 54);
 
-        buttonSend.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        buttonSend.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         buttonSend.setText("Sprawdź");
         buttonSend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,7 +192,7 @@ public class Question extends javax.swing.JFrame {
             }
         });
         getContentPane().add(buttonSend);
-        buttonSend.setBounds(800, 580, 166, 57);
+        buttonSend.setBounds(990, 490, 166, 57);
 
         menu.setBackground(new Color(0,0,0,0));
         menu.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -218,6 +218,7 @@ public class Question extends javax.swing.JFrame {
         getContentPane().add(exit);
         exit.setBounds(1300, 670, 50, 40);
 
+        powtorzButton.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         powtorzButton.setText("Powtórz");
         powtorzButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -225,12 +226,12 @@ public class Question extends javax.swing.JFrame {
             }
         });
         getContentPane().add(powtorzButton);
-        powtorzButton.setBounds(570, 580, 180, 60);
+        powtorzButton.setBounds(770, 490, 180, 60);
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/kwiatki.jpg"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/trawka.jpg"))); // NOI18N
         background.setText("asasasasa");
         getContentPane().add(background);
-        background.setBounds(-50, -60, 1630, 1110);
+        background.setBounds(-140, -340, 1630, 1110);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
