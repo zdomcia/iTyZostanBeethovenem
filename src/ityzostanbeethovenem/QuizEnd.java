@@ -1,26 +1,37 @@
-
 package ityzostanbeethovenem;
+
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import java.util.Random;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class QuizEnd extends javax.swing.JFrame {
 
-    private static int points;
-    
-    public QuizEnd( int points, int totalPoints) {
+    private static String tablicaKotow[] = {"balloonOne", "balloons", "meGusta", "thankYou"};
+
+    public QuizEnd(int points, int totalPoints) {
         initComponents();
-        jLabel2.setText("Zdobyłeś " + points + " /  " + totalPoints + " punktów");
-        openCongratulations("flute", "/Grafika/pizza.gif", "Gratulacje!");
-        this.points = points;
+        podsumowanieLabel1.setText("Zdobyłeś " + points + " punktów");
+        podsumowanieLabel2.setText("na " + totalPoints + " możliwych ");
+
+        if ((points / totalPoints) >= 0.3) {
+            pokazKota();
+        }
+
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         setResizable(true);
     }
-    
+
+    private void pokazKota() {
+        Random rand = new Random();
+        int los = rand.nextInt(tablicaKotow.length - 1);
+        openCongratulations("flute", "/Grafika/" + tablicaKotow[los] + ".gif", "Gratulacje!");
+    }
+
     public void close() {
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
@@ -30,9 +41,12 @@ public class QuizEnd extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
+        podsumowanieLabel1 = new javax.swing.JLabel();
         menu = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         exit = new javax.swing.JButton();
+        podsumowanieLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -40,11 +54,11 @@ public class QuizEnd extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1250, 800));
         getContentPane().setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 48)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("100 punktów");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(160, 210, 930, 190);
+        podsumowanieLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
+        podsumowanieLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        podsumowanieLabel1.setText("Zdobyłeś 23 punkty");
+        getContentPane().add(podsumowanieLabel1);
+        podsumowanieLabel1.setBounds(350, 190, 930, 90);
 
         menu.setBackground(new Color(0,0,0,0));
         menu.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -58,6 +72,11 @@ public class QuizEnd extends javax.swing.JFrame {
         getContentPane().add(menu);
         menu.setBounds(1240, 662, 50, 50);
 
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        jLabel3.setText("To już wszystkie pytania");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(560, 60, 510, 80);
+
         exit.setBackground(new Color(0,0,0,0));
         exit.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         exit.setForeground(new java.awt.Color(2, 40, 21));
@@ -70,12 +89,21 @@ public class QuizEnd extends javax.swing.JFrame {
         getContentPane().add(exit);
         exit.setBounds(1300, 670, 50, 40);
 
+        podsumowanieLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        podsumowanieLabel2.setText("na 100 możliwych");
+        getContentPane().add(podsumowanieLabel2);
+        podsumowanieLabel2.setBounds(750, 270, 320, 40);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/trawka.jpg"))); // NOI18N
+        jLabel1.setText("Gratu");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(10, -240, 1130, 880);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
-   
-    
-    private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
 
+
+    private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
         Menu q = new Menu();
         q.setVisible(true);
         dispose();
@@ -86,10 +114,10 @@ public class QuizEnd extends javax.swing.JFrame {
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }//GEN-LAST:event_exitActionPerformed
-    
+
     private void openCongratulations(String song, String image, String text) {
         final Congratulations congratulations = new Congratulations(song, image, text);
-
+        congratulations.setAlwaysOnTop(rootPaneCheckingEnabled);
         ScheduledExecutorService s = Executors.newSingleThreadScheduledExecutor();
         s.schedule(new Runnable() {
             public void run() {
@@ -101,8 +129,7 @@ public class QuizEnd extends javax.swing.JFrame {
         congratulations.setVisible(true);
 
     }
-    
-    
+
     /**
      * @param args the command line arguments
      */
@@ -140,7 +167,10 @@ public class QuizEnd extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton exit;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JButton menu;
+    private javax.swing.JLabel podsumowanieLabel1;
+    private javax.swing.JLabel podsumowanieLabel2;
     // End of variables declaration//GEN-END:variables
 }

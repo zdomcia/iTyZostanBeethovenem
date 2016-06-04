@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 
-public class QuizCategories extends javax.swing.JFrame {
+public class QuizCategories extends javax.swing.JFrame {//javax.swing.JFrame {
 
     public QuizCategories() {
         initComponents();
@@ -121,49 +121,37 @@ public class QuizCategories extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonInstrumentyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInstrumentyActionPerformed
+    private void zaladujPytania (int number) {
         JavaDB db = new JavaDB();
         db.uploadQuestions();
-        db.dodajPytaniaKategorii(1);
-        Question q = new Question();
+        if ( number == 0){
+            db.dodajPytania();
+        }else {
+            db.dodajPytaniaKategorii(number);
+        }
+        QuestionWindow q = new QuestionWindow();
         q.setVisible(true);
         close();
+    }
+    
+    private void buttonInstrumentyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInstrumentyActionPerformed
+        zaladujPytania(1);
     }//GEN-LAST:event_buttonInstrumentyActionPerformed
 
     private void buttonKompozytorzyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonKompozytorzyActionPerformed
-        JavaDB db = new JavaDB();
-        db.uploadQuestions();
-        db.dodajPytaniaKategorii(2);
-        Question q = new Question();
-        q.setVisible(true);
-        close();
+        zaladujPytania(2);
     }//GEN-LAST:event_buttonKompozytorzyActionPerformed
 
     private void buttonNotacjaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNotacjaActionPerformed
-        JavaDB db = new JavaDB();
-        db.uploadQuestions();
-        db.dodajPytaniaKategorii(3);
-        Question q = new Question();
-        q.setVisible(true);
-        close();
+        zaladujPytania(3);
     }//GEN-LAST:event_buttonNotacjaActionPerformed
 
     private void buttonRozpoznawanieDzwiekowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRozpoznawanieDzwiekowActionPerformed
-        JavaDB db = new JavaDB();
-        db.uploadQuestions();
-        db.dodajPytaniaKategorii(4);
-        Question q = new Question();
-        q.setVisible(true);
-        close();
+        zaladujPytania(4);
     }//GEN-LAST:event_buttonRozpoznawanieDzwiekowActionPerformed
 
     private void buttonWszystkoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonWszystkoActionPerformed
-        JavaDB db = new JavaDB();
-        db.uploadQuestions();
-        db.dodajPytania();
-        Question q = new Question();
-        q.setVisible(true);
-        close();
+        zaladujPytania(0);
     }//GEN-LAST:event_buttonWszystkoActionPerformed
 
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
@@ -173,7 +161,6 @@ public class QuizCategories extends javax.swing.JFrame {
     }//GEN-LAST:event_menuActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }//GEN-LAST:event_exitActionPerformed
@@ -222,7 +209,7 @@ public class QuizCategories extends javax.swing.JFrame {
     private javax.swing.JButton buttonNotacja;
     private javax.swing.JButton buttonRozpoznawanieDzwiekow;
     private javax.swing.JButton buttonWszystko;
-    private javax.swing.JButton exit;
+    public javax.swing.JButton exit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton menu;
     // End of variables declaration//GEN-END:variables
