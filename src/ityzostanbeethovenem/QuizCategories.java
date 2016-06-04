@@ -201,6 +201,7 @@ public class QuizCategories extends javax.swing.JFrame {//javax.swing.JFrame {
             }
         });
     }
+    /*
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
@@ -213,4 +214,14 @@ public class QuizCategories extends javax.swing.JFrame {//javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton menu;
     // End of variables declaration//GEN-END:variables
+*/
+    
+    
+    private javax.swing.JButton buttonInstrumenty;
+    private javax.swing.JButton buttonKompozytorzy;
+    private javax.swing.JButton buttonNotacja;
+    private javax.swing.JButton buttonRozpoznawanieDzwiekow;
+    private javax.swing.JButton buttonWszystko;
+    private javax.swing.JLabel jLabel1;
+
 }

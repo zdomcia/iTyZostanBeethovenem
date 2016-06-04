@@ -165,6 +165,8 @@ public class QuizEnd extends javax.swing.JFrame {
         });
     }
 
+    
+    /*
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton exit;
     private javax.swing.JLabel jLabel1;
@@ -173,4 +175,10 @@ public class QuizEnd extends javax.swing.JFrame {
     private javax.swing.JLabel podsumowanieLabel1;
     private javax.swing.JLabel podsumowanieLabel2;
     // End of variables declaration//GEN-END:variables
+    */
+    private javax.swing.JLabel podsumowanieLabel1;
+    private javax.swing.JLabel podsumowanieLabel2;
+    private javax.swing.JLabel jLabel3;
+    
+
 }
