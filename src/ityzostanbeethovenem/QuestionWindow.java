@@ -57,7 +57,6 @@ public class QuestionWindow extends QuizWindow {
 
     void updateFields() {
         labelQuestionNumber.setText("Pytanie " + (counter + 1));
-        System.out.println("jestem w apdejt");
         labelQuestionText.setText(actualQuestion.pytanie);
 
         buttonA.setText(actualQuestion.odpowiedzA);
