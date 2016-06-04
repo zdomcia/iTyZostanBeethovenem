@@ -12,7 +12,7 @@ public class Player {
     public String path;
 
     public Player() {
-        path = "piano\\";
+        path = "sounds\\piano\\";
     }
 
     public void play(String note) {

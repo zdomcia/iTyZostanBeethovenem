@@ -1,6 +1,5 @@
 package ityzostanbeethovenem;
 
-import java.awt.Color;
 
 public class InstrumentChooser extends javax.swing.JDialog {
 
@@ -26,18 +25,22 @@ public class InstrumentChooser extends javax.swing.JDialog {
         setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(null);
 
+        instrument.setBackground(new java.awt.Color(108, 173, 173));
         instrument.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        instrument.setForeground(new java.awt.Color(73, 73, 79));
-        instrument.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pianino", "Saksofon", "Gitara" }));
+        instrument.setForeground(new java.awt.Color(0, 153, 153));
+        instrument.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pianino", "Obój", "Gitara" }));
         instrument.setFocusable(false);
+        instrument.setMinimumSize(new java.awt.Dimension(161, 32));
+        instrument.setPreferredSize(new java.awt.Dimension(161, 32));
         instrument.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 instrumentActionPerformed(evt);
             }
         });
         getContentPane().add(instrument);
-        instrument.setBounds(120, 70, 100, 40);
+        instrument.setBounds(80, 80, 170, 40);
 
+        confirm.setBackground(new java.awt.Color(189, 204, 204));
         confirm.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         confirm.setForeground(new java.awt.Color(73, 73, 79));
         confirm.setText("OK");
@@ -60,13 +63,13 @@ public class InstrumentChooser extends javax.swing.JDialog {
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
         switch ((String) instrument.getSelectedItem()) {
             case "Gitara":
-                path = "gitara\\";
+                path = "sounds\\guitar\\";
                 break;
-            case "Saksofon":
-                path = "saksofon\\";
+            case "Obój":
+                path = "sounds\\oboe\\";
                 break;
             default:
-                path = "piano\\";
+                path = "sounds\\piano\\";
                 break;
         }
         setVisible(false);
@@ -105,9 +108,7 @@ public class InstrumentChooser extends javax.swing.JDialog {
             java.util.logging.Logger.getLogger(InstrumentChooser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
