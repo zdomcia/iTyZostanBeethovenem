@@ -14,6 +14,7 @@ public class QuestionWindow extends javax.swing.JFrame {
     private static int points;
     private static int number;
     private static int totalPoints;
+    private Question actualQuestion;
     
     private static boolean checkOrNext;
     private ArrayList <Integer> randomTable;
@@ -46,16 +47,31 @@ public class QuestionWindow extends javax.swing.JFrame {
 
     void initQuestion(int number) {
         enableOrNotButtons(true);
+ 
+        actualQuestion.pytanie = JavaDB.pytania[number].pytanie;
+        actualQuestion.kategoria = JavaDB.pytania[number].kategoria;
+        actualQuestion.punkty = JavaDB.pytania[number].punkty;
+        actualQuestion.prawidlowa = JavaDB.pytania[number].prawidlowa;
+        
+        actualQuestion.odpowiedzA = JavaDB.pytania[number].odpowiedzA;
+        actualQuestion.odpowiedzB = JavaDB.pytania[number].odpowiedzB;
+        actualQuestion.odpowiedzA = JavaDB.pytania[number].odpowiedzA;
+        actualQuestion.odpowiedzB = JavaDB.pytania[number].odpowiedzB;
+        
+        updateFields();
+    }
+    
+    void updateFields(){ 
         labelQuestionNumber.setText("Pytanie " + (counter + 1));
-        labelQuestionText.setText(JavaDB.pytania[number].pytanie);
+        labelQuestionText.setText(actualQuestion.pytanie);
         
-        buttonA.setText(JavaDB.pytania[number].odpowiedzA);
-        buttonB.setText(JavaDB.pytania[number].odpowiedzB);
-        buttonC.setText(JavaDB.pytania[number].odpowiedzC);
-        buttonD.setText(JavaDB.pytania[number].odpowiedzD);
-        totalPoints += JavaDB.pytania[number].punkty;
+        buttonA.setText(actualQuestion.odpowiedzA);
+        buttonB.setText(actualQuestion.odpowiedzB);
+        buttonC.setText(actualQuestion.odpowiedzC);
+        buttonD.setText(actualQuestion.odpowiedzD);
+        totalPoints += actualQuestion.punkty;
         
-        if (JavaDB.pytania[number].pytanie.equals("Jaki to interwał?")  ) {
+        if (actualQuestion.pytanie.equals("Jaki to interwał?")  ) {
             odtworzInterwal(number);
             powtorzButton.setText("Powtórz");
             powtorzButton.setVisible(true);
@@ -64,24 +80,23 @@ public class QuestionWindow extends javax.swing.JFrame {
         }
     }
     
-    
     public void odtworzInterwal(int number) {
         Player player = new Player();
-        String correct = JavaDB.pytania[number].prawidlowa;
+        String correct = actualQuestion.prawidlowa;
         String name = "";
 
         switch (correct) {
             case "A":
-                name = JavaDB.pytania[number].odpowiedzA;
+                name = actualQuestion.odpowiedzA;
                 break;
             case "B":
-                name = JavaDB.pytania[number].odpowiedzB;
+                name = actualQuestion.odpowiedzB;
                 break;
             case "C":
-                name = JavaDB.pytania[number].odpowiedzC;
+                name = actualQuestion.odpowiedzC;
                 break;
             case "D":
-                name = JavaDB.pytania[number].odpowiedzD;
+                name = actualQuestion.odpowiedzD;
                 break;
         }
         
@@ -261,7 +276,7 @@ public class QuestionWindow extends javax.swing.JFrame {
     }
 
     private boolean checkAnswer() {
-        String correct = JavaDB.pytania[number].prawidlowa;
+        String correct = actualQuestion.prawidlowa;
         enableOrNotButtons(false);
 
         switch (correct) {
@@ -319,7 +334,7 @@ public class QuestionWindow extends javax.swing.JFrame {
     }
     
     void addPoints() {
-        points += JavaDB.pytania[number].punkty;
+        points += actualQuestion.punkty;
     }
 
     void colorBadAnswer() {
