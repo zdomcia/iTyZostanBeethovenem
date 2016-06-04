@@ -30,8 +30,8 @@ public class Menu extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1250, 800));
         getContentPane().setLayout(null);
 
-        piano.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
-        piano.setForeground(new java.awt.Color(98, 114, 130));
+        piano.setFont(new java.awt.Font("Comic Sans MS", 0, 40)); // NOI18N
+        piano.setForeground(new java.awt.Color(76, 76, 76));
         piano.setText("Pianino");
         piano.setBorder(null);
         piano.setDefaultCapable(false);
@@ -43,10 +43,10 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(piano);
-        piano.setBounds(830, 220, 330, 80);
+        piano.setBounds(830, 240, 280, 80);
 
-        quiz.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
-        quiz.setForeground(new java.awt.Color(98, 114, 130));
+        quiz.setFont(new java.awt.Font("Comic Sans MS", 0, 40)); // NOI18N
+        quiz.setForeground(new java.awt.Color(76, 76, 76));
         quiz.setText("Quiz");
         quiz.setBorder(null);
         quiz.setBorderPainted(false);
@@ -58,7 +58,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(quiz);
-        quiz.setBounds(830, 120, 330, 80);
+        quiz.setBounds(830, 140, 280, 80);
 
         exit.setBackground(new Color(0,0,0,0));
         exit.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -127,7 +127,7 @@ public class Menu extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(500);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
                 }

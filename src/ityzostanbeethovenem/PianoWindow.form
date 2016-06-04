@@ -36,7 +36,10 @@
     <Component class="javax.swing.JButton" name="learnSongs">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Comic Sans MS" size="12" style="1"/>
+          <Font name="Comic Sans MS" size="24" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="4c" green="4c" red="4c" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Naucz si&#x119; gra&#x107; piosenk&#x119;"/>
       </Properties>
@@ -45,7 +48,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="780" y="220" width="190" height="50"/>
+          <AbsoluteConstraints x="710" y="170" width="310" height="70"/>
         </Constraint>
       </Constraints>
     </Component>

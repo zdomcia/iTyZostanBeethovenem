@@ -54,7 +54,8 @@ public class PianoLearnSongs extends Piano {
         tryAgain.setBounds(160, 200, 1400, 460);
 
         playSong.setBackground(new Color(0,0,0,0));
-        playSong.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        playSong.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        playSong.setForeground(new java.awt.Color(76, 76, 76));
         playSong.setText("Naucz");
         playSong.setActionCommand("naucz");
         playSong.setFocusable(false);
@@ -64,11 +65,12 @@ public class PianoLearnSongs extends Piano {
             }
         });
         getContentPane().add(playSong);
-        playSong.setBounds(270, 440, 170, 60);
+        playSong.setBounds(150, 440, 340, 80);
         getContentPane().add(progress);
-        progress.setBounds(510, 440, 170, 40);
+        progress.setBounds(150, 370, 340, 50);
 
-        songChoose.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        songChoose.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        songChoose.setForeground(new java.awt.Color(76, 76, 76));
         songChoose.setText("Wybierz piosenkę");
         songChoose.setFocusable(false);
         songChoose.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +79,7 @@ public class PianoLearnSongs extends Piano {
             }
         });
         getContentPane().add(songChoose);
-        songChoose.setBounds(270, 510, 170, 60);
+        songChoose.setBounds(150, 530, 340, 80);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/chatka.jpg"))); // NOI18N
         getContentPane().add(background);
