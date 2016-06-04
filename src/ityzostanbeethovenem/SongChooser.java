@@ -18,19 +18,24 @@ public class SongChooser extends javax.swing.JDialog {
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setForeground(new java.awt.Color(153, 153, 153));
         setMaximumSize(new java.awt.Dimension(330, 250));
         setMinimumSize(new java.awt.Dimension(330, 250));
         setPreferredSize(new java.awt.Dimension(330, 250));
         setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(null);
 
+        songs.setBackground(new java.awt.Color(108, 173, 173));
         songs.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        songs.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sto lat", "Oda do radości" }));
+        songs.setForeground(new java.awt.Color(0, 153, 153));
+        songs.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "V symfonia", "Oda do radości", "Dla Elizy" }));
         songs.setFocusable(false);
         getContentPane().add(songs);
         songs.setBounds(80, 80, 170, 40);
 
+        confirm.setBackground(new java.awt.Color(189, 204, 204));
         confirm.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        confirm.setForeground(new java.awt.Color(73, 73, 79));
         confirm.setText("OK");
         confirm.setFocusable(false);
         confirm.addActionListener(new java.awt.event.ActionListener() {

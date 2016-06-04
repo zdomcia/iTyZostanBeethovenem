@@ -14,21 +14,21 @@ public class PianoLearnSongs extends Piano {
     public String songCongratulations;
     public String gifCongratulations;
     public String textCongratulations;
-    
+
     public String songToLearn;
     private String songToLearnNotes;
 
     public PianoLearnSongs() {
         player = new Player();
-        //progressCount = 0;
+        progressCount = 0;
         sequence = "";
         initComponents();
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         addKeyboard();
         setSongToLearn("Sto lat");
-        
+
         tryAgain.setVisible(false);
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -53,9 +53,9 @@ public class PianoLearnSongs extends Piano {
         getContentPane().add(tryAgain);
         tryAgain.setBounds(160, 200, 1400, 460);
 
-        playSong.setBackground(new Color(0,0,0,0));
-        playSong.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
-        playSong.setForeground(new java.awt.Color(76, 76, 76));
+        playSong.setBackground(new java.awt.Color(189, 204, 204));
+        playSong.setFont(new java.awt.Font("Comic Sans MS", 0, 30)); // NOI18N
+        playSong.setForeground(new java.awt.Color(73, 73, 79));
         playSong.setText("Naucz");
         playSong.setActionCommand("naucz");
         playSong.setFocusable(false);
@@ -65,12 +65,15 @@ public class PianoLearnSongs extends Piano {
             }
         });
         getContentPane().add(playSong);
-        playSong.setBounds(150, 440, 340, 80);
-        getContentPane().add(progress);
-        progress.setBounds(150, 370, 340, 50);
+        playSong.setBounds(150, 460, 290, 60);
 
-        songChoose.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
-        songChoose.setForeground(new java.awt.Color(76, 76, 76));
+        progress.setMaximum(15);
+        getContentPane().add(progress);
+        progress.setBounds(150, 380, 290, 60);
+
+        songChoose.setBackground(new java.awt.Color(189, 204, 204));
+        songChoose.setFont(new java.awt.Font("Comic Sans MS", 0, 30)); // NOI18N
+        songChoose.setForeground(new java.awt.Color(73, 73, 79));
         songChoose.setText("Wybierz piosenkę");
         songChoose.setFocusable(false);
         songChoose.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +82,7 @@ public class PianoLearnSongs extends Piano {
             }
         });
         getContentPane().add(songChoose);
-        songChoose.setBounds(150, 530, 340, 80);
+        songChoose.setBounds(150, 530, 290, 60);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/chatka.jpg"))); // NOI18N
         getContentPane().add(background);
@@ -116,43 +119,60 @@ public class PianoLearnSongs extends Piano {
         timerOff.start();
     }
 
-    private void playStoLat() {
-        playNote(G, "G", 0, 500);
-        playNote(E, "E", 1000, 1500);
-        playNote(G, "G", 2000, 2500);
-        playNote(E, "E", 3000, 3500);
-        playNote(G, "G", 4000, 4500);
-        playNote(A, "A", 5000, 5250);
-        playNote(G, "G", 5500, 5750);
-        playNote(F, "F", 6000, 6250);
-        playNote(E, "E", 6500, 6750);
-        playNote(F, "F", 7000, 7500);
+    private void playVSymphony() {
+        playNote(G, "G", 0, 250);
+        playNote(G, "G", 500, 750);
+        playNote(G, "G", 1000, 1250);
+        playNote(Dis, "Dis", 1500, 2250);
+        playNote(F, "F", 3000, 3250);
+        playNote(F, "F", 3500, 3750);
+        playNote(F, "F", 4000, 4250);
+        playNote(D, "D", 4500, 4750);
     }
 
-    private void playOda() {
-        playNote(E, "E", 0, 250);
-        playNote(E, "E", 500, 750);
-        playNote(F, "F", 1000, 1250);
-        playNote(G, "G", 1500, 1750);
-        playNote(G, "G", 2000, 2250);
-        playNote(F, "F", 2500, 2750);
-        playNote(E, "E", 3000, 3250);
-        playNote(D, "D", 3500, 3750);
-        playNote(C, "C", 4000, 4250);
-        playNote(C, "C", 4500, 4750);
-        playNote(D, "D", 5000, 5250);
-        playNote(E, "E", 5500, 5750);
-        playNote(E, "E", 6000, 6500);
-        playNote(D, "D", 6750, 6900);
-        playNote(D, "D", 7000, 7500);
+    private void playOdeToJoy() {
+        playNote(E, "Fis", 0, 250);
+        playNote(E, "Fis", 500, 750);
+        playNote(F, "G", 1000, 1250);
+        playNote(G, "A", 1500, 1750);
+        playNote(G, "A", 2000, 2250);
+        playNote(F, "G", 2500, 2750);
+        playNote(E, "Fis", 3000, 3250);
+        playNote(D, "E", 3500, 3750);
+        playNote(C, "D", 4000, 4250);
+        playNote(C, "D", 4500, 4750);
+        playNote(D, "E", 5000, 5250);
+        playNote(E, "Fis", 5500, 5750);
+        playNote(E, "Fis", 6000, 6500);
+        playNote(D, "E", 6750, 6900);
+        playNote(D, "E", 7000, 7500);
+    }
+
+    private void playFurElise() {
+        playNote(E1, "E1", 0, 250);
+        playNote(Dis1, "Dis1", 500, 750);
+        playNote(E1, "E1", 1000, 1250);
+        playNote(Dis1, "Dis1", 1500, 1750);
+        playNote(E1, "E1", 2000, 2250);
+        playNote(H, "H", 2500, 2750);
+        playNote(D1, "D1", 3000, 3250);
+        playNote(C1, "C1", 3500, 3750);
+        playNote(A, "A", 4000, 4250);
     }
 
     private void playSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playSongActionPerformed
 
-        if ("Sto lat".equals(songToLearn)) {
-            playStoLat();
-        } else if ("Oda do radości".equals(songToLearn)) {
-            playOda();
+        zeroProgress();
+        switch (songToLearn) {
+            case "Oda do radości":
+                playOdeToJoy();
+                break;
+            case "Dla Elizy":
+                playFurElise();
+                break;
+            default:
+                playVSymphony();
+                break;
         }
     }//GEN-LAST:event_playSongActionPerformed
 
@@ -169,45 +189,47 @@ public class PianoLearnSongs extends Piano {
     @Override
     public void pianoPressed(String note) {
         sequence += note;
+        progressCount++;
         player.play(note);
-
         check();
     }
 
+    private void zeroProgress() {
+        sequence = "";
+        progress.setValue(0);
+        progressCount = 0;
+    }
+
     protected void check() {
-        progress.setValue(sequence.length());
-        
+        progress.setValue(progressCount);
+
         if (sequence.equals(songToLearnNotes)) {
-            sequence = "";
-            progress.setValue(0);
+            zeroProgress();
 
             openCongratulations(songCongratulations, gifCongratulations, textCongratulations);
         } else if (!sequence.equals(songToLearnNotes.substring(0, sequence.length()))) {
-            sequence = "";
-            progress.setValue(0);
+            zeroProgress();
             Player playerWrong = new Player();
             playerWrong.path = "wrong";
             playerWrong.play("");
-            
-            //tryAgain.setVisible(true);
+
             showLabel();
         }
     }
 
-        private void showLabel() {
-        
+    private void showLabel() {
+
         ScheduledExecutorService s = Executors.newSingleThreadScheduledExecutor();
         s.schedule(new Runnable() {
             public void run() {
                 tryAgain.setVisible(false);
-                //congratulations.dispose();
             }
         }, 1, TimeUnit.SECONDS);
 
         tryAgain.setVisible(true);
 
     }
-    
+
     private void openCongratulations(String song, String image, String text) {
         final Congratulations congratulations = new Congratulations(song, image, text);
 
@@ -226,25 +248,33 @@ public class PianoLearnSongs extends Piano {
     private void setSongToLearn(String song) {
         progress.setMinimum(0);
 
-        if ("Oda do radości".equals(song)) {
-            songToLearn = "Oda do radości";
-            //songToLearnNotes = "EEFGGFEDCCDEEDD";
-            songToLearnNotes = "EEF";
-            songCongratulations = "cat";
-            gifCongratulations = "/Grafika/pizza.gif";
-            textCongratulations = "SUPER!";
-            //progress.setMaximum(15);
-            progress.setMaximum(3);
-        } else {
-            songToLearn = "Sto lat";
-            songCongratulations = "when-mom";
-            //songToLearnNotes = "GEGEGAGFEF";
-            songToLearnNotes = "GEGE";
-            gifCongratulations = "/Grafika/kotKrolik.gif";
-            textCongratulations = "EKSTRA!";
-            //progress.setMaximum(10);
-            progress.setMaximum(4);
+        switch (song) {
+            case "Oda do radości":
+                songToLearn = "Oda do radości";
+                songToLearnNotes = "FisFisGAAGFisEDDEFisFisEE";
+                songCongratulations = "cat";
+                gifCongratulations = "/Grafika/pizza.gif";
+                textCongratulations = "SUPER!";
+                progress.setMaximum(15);
+                break;
+            case "Dla Elizy":
+                songToLearn = "Dla Elizy";
+                songCongratulations = "witch";
+                songToLearnNotes = "E1Dis1E1Dis1E1HD1C1A";
+                gifCongratulations = "/Grafika/danceCat.gif";
+                textCongratulations = "CUDOWNIE!";
+                progress.setMaximum(9);
+                break;
+            default:
+                songToLearn = "V symfonia";
+                songCongratulations = "when-mom";
+                songToLearnNotes = "GGGDisFFFD";
+                gifCongratulations = "/Grafika/kotKrolik.gif";
+                textCongratulations = "EKSTRA!";
+                progress.setMaximum(8);
+                break;
         }
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
