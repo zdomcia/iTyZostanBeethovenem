@@ -14,11 +14,11 @@ public class QuestionWindow extends QuizWindow {
     private static int points;
     private static int number;
     private static int totalPoints;
-    
+    public Question actualQuestion;
+
     private static boolean checkOrNext;
-    private ArrayList <Integer> randomTable;
-    
-   
+    private ArrayList<Integer> randomTable;
+
     public QuestionWindow() {
         initComponents();
         randomQuestions();
@@ -29,7 +29,7 @@ public class QuestionWindow extends QuizWindow {
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         setResizable(true);
     }
-    
+
     void clearConstantValues() {
         counter = 0;
         points = 0;
@@ -46,16 +46,27 @@ public class QuestionWindow extends QuizWindow {
 
     void initQuestion(int number) {
         enableOrNotButtons(true);
+        System.out.println("wrzucilam" + JavaDB.pytania[number].pytanie);
+        actualQuestion = new Question(JavaDB.pytania[number].pytanie, JavaDB.pytania[number].odpowiedzA,
+                JavaDB.pytania[number].odpowiedzB, JavaDB.pytania[number].odpowiedzC,
+                JavaDB.pytania[number].odpowiedzD, JavaDB.pytania[number].prawidlowa,
+                JavaDB.pytania[number].punkty, JavaDB.pytania[number].kategoria);
+
+        updateFields();
+    }
+
+    void updateFields() {
         labelQuestionNumber.setText("Pytanie " + (counter + 1));
-        labelQuestionText.setText(JavaDB.pytania[number].pytanie);
-        
-        buttonA.setText(JavaDB.pytania[number].odpowiedzA);
-        buttonB.setText(JavaDB.pytania[number].odpowiedzB);
-        buttonC.setText(JavaDB.pytania[number].odpowiedzC);
-        buttonD.setText(JavaDB.pytania[number].odpowiedzD);
-        totalPoints += JavaDB.pytania[number].punkty;
-        
-        if (JavaDB.pytania[number].pytanie.equals("Jaki to interwał?")  ) {
+        System.out.println("jestem w apdejt");
+        labelQuestionText.setText(actualQuestion.pytanie);
+
+        buttonA.setText(actualQuestion.odpowiedzA);
+        buttonB.setText(actualQuestion.odpowiedzB);
+        buttonC.setText(actualQuestion.odpowiedzC);
+        buttonD.setText(actualQuestion.odpowiedzD);
+        totalPoints += actualQuestion.punkty;
+
+        if (actualQuestion.pytanie.equals("Jaki to interwał?")) {
             odtworzInterwal(number);
             powtorzButton.setText("Powtórz");
             powtorzButton.setVisible(true);
@@ -63,47 +74,44 @@ public class QuestionWindow extends QuizWindow {
             powtorzButton.setVisible(false);
         }
     }
-    
-    
+
     public void odtworzInterwal(int number) {
         Player player = new Player();
-        String correct = JavaDB.pytania[number].prawidlowa;
+        String correct = actualQuestion.prawidlowa;
         String name = "";
 
         switch (correct) {
             case "A":
-                name = JavaDB.pytania[number].odpowiedzA;
+                name = actualQuestion.odpowiedzA;
                 break;
             case "B":
-                name = JavaDB.pytania[number].odpowiedzB;
+                name = actualQuestion.odpowiedzB;
                 break;
             case "C":
-                name = JavaDB.pytania[number].odpowiedzC;
+                name = actualQuestion.odpowiedzC;
                 break;
             case "D":
-                name = JavaDB.pytania[number].odpowiedzD;
+                name = actualQuestion.odpowiedzD;
                 break;
         }
-        
+
         player.path = name;
         player.play("");
     }
-    
-    
+
     public void close() {
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }
-    
-    
-    private int chooseNumber( ) {
+
+    private int chooseNumber() {
         Random rand = new Random();
         int los = rand.nextInt(randomTable.size() - 1);
         number = randomTable.get(los);
         randomTable.remove(los);
         return number;
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -250,7 +258,7 @@ public class QuestionWindow extends QuizWindow {
     }//GEN-LAST:event_exitActionPerformed
 
     private void powtorzButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_powtorzButtonActionPerformed
-       odtworzInterwal(number);
+        odtworzInterwal(number);
     }//GEN-LAST:event_powtorzButtonActionPerformed
 
     private void groupButton() {
@@ -269,7 +277,7 @@ public class QuestionWindow extends QuizWindow {
     }
 
     private boolean checkAnswer() {
-        String correct = JavaDB.pytania[number].prawidlowa;
+        String correct = actualQuestion.prawidlowa;
         enableOrNotButtons(false);
 
         switch (correct) {
@@ -302,8 +310,7 @@ public class QuestionWindow extends QuizWindow {
         }
         return false;
     }
-    
-    
+
     void randomQuestions() {
         int length = JavaDB.size;
         randomTable = new ArrayList();
@@ -311,8 +318,7 @@ public class QuestionWindow extends QuizWindow {
             randomTable.add(i);
         }
     }
-    
-    
+
     void nextQuestion() {
         counter++;
         if (counter >= 10) {
@@ -323,11 +329,11 @@ public class QuestionWindow extends QuizWindow {
         } else {
             initQuestion(chooseNumber());
         }
-        
+
     }
-    
+
     void addPoints() {
-        points += JavaDB.pytania[number].punkty;
+        points += actualQuestion.punkty;
     }
 
     void colorBadAnswer() {
@@ -359,8 +365,8 @@ public class QuestionWindow extends QuizWindow {
             clearBackground();
             try {
                 nextQuestion();
-            }catch(Exception e) {
-                
+            } catch (Exception e) {
+
             }
             checkOrNext = true;
             buttonSend.setText("Sprawdź");
