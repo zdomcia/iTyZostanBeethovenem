@@ -1,11 +1,11 @@
 package ityzostanbeethovenem;
 
-import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
-import javax.swing.KeyStroke;
 
 public class Menu extends javax.swing.JFrame {
 
@@ -15,12 +15,12 @@ public class Menu extends javax.swing.JFrame {
         setResizable(true);
     }
 
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         piano = new javax.swing.JButton();
         quiz = new javax.swing.JButton();
+        exit = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -60,6 +60,18 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().add(quiz);
         quiz.setBounds(830, 120, 330, 80);
 
+        exit.setBackground(new Color(0,0,0,0));
+        exit.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        exit.setForeground(new java.awt.Color(2, 40, 21));
+        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/exit.png"))); // NOI18N
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
+        getContentPane().add(exit);
+        exit.setBounds(1300, 670, 50, 40);
+
         background.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/zyrafa.jpg"))); // NOI18N
         getContentPane().add(background);
@@ -79,15 +91,21 @@ public class Menu extends javax.swing.JFrame {
         java.awt.Toolkit.getDefaultToolkit().getSystemEventQueue().
                 postEvent(new java.awt.event.WindowEvent(this, java.awt.event.WindowEvent.WINDOW_CLOSING));
     }
-    
+
     private void quizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizActionPerformed
-        Quiz quiz = new Quiz();
+        QuizCategories quiz = new QuizCategories();
         quiz.setVisible(true);
         close();
     }//GEN-LAST:event_quizActionPerformed
 
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+
+        WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
+    }//GEN-LAST:event_exitActionPerformed
+
     public static void main(String args[]) {
-        
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -108,7 +126,7 @@ public class Menu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try{
+                try {
                     Thread.sleep(2000);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
@@ -118,12 +136,11 @@ public class Menu extends javax.swing.JFrame {
         });
     }
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
+    private javax.swing.JButton exit;
     private javax.swing.JButton piano;
     private javax.swing.JButton quiz;
     // End of variables declaration//GEN-END:variables
 
-    //jLabel1.setText()
 }
