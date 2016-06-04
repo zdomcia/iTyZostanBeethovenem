@@ -46,7 +46,6 @@ public class QuestionWindow extends QuizWindow {
 
     void initQuestion(int number) {
         enableOrNotButtons(true);
-        System.out.println("wrzucilam" + JavaDB.pytania[number].pytanie);
         actualQuestion = new Question(JavaDB.pytania[number].pytanie, JavaDB.pytania[number].odpowiedzA,
                 JavaDB.pytania[number].odpowiedzB, JavaDB.pytania[number].odpowiedzC,
                 JavaDB.pytania[number].odpowiedzD, JavaDB.pytania[number].prawidlowa,

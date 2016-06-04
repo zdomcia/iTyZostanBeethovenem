@@ -33,6 +33,7 @@ public class JavaDB {
                 licznik++;
             }
             size = licznik;
+            System.out.println("mam teraz " + size);
             wynik.close();
             stat.close();
             polaczenie.close();
