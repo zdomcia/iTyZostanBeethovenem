@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class QuizEnd extends javax.swing.JFrame {
+public class QuizEnd extends QuizWindow {
 
     private static String tablicaKotow[] = {"balloonOne", "balloons", "meGusta", "thankYou"};
 
@@ -46,7 +46,7 @@ public class QuizEnd extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         exit = new javax.swing.JButton();
         podsumowanieLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -94,23 +94,23 @@ public class QuizEnd extends javax.swing.JFrame {
         getContentPane().add(podsumowanieLabel2);
         podsumowanieLabel2.setBounds(750, 270, 320, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/trawka.jpg"))); // NOI18N
-        jLabel1.setText("Gratu");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, -240, 1130, 880);
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/trawka.jpg"))); // NOI18N
+        background.setText("Gratu");
+        getContentPane().add(background);
+        background.setBounds(10, -240, 1130, 880);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
+    /*
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
-        Menu q = new Menu();
-        q.setVisible(true);
-        dispose();
+
+  
     }//GEN-LAST:event_menuActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-
+    */
+    public void exitActionPerformed(java.awt.event.ActionEvent evt){
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }//GEN-LAST:event_exitActionPerformed
@@ -166,8 +166,8 @@ public class QuizEnd extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel background;
     private javax.swing.JButton exit;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JButton menu;
     private javax.swing.JLabel podsumowanieLabel1;
