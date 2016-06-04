@@ -333,16 +333,14 @@ public class Question extends javax.swing.JFrame {
     }
     
     
-    void nextQuestion() throws InterruptedException {
+    void nextQuestion() {
         counter++;
         if (counter >= 10) {
-            openCongratulations("flute", "/Grafika/pizza.gif", "Zdobyłeś " + points + " /  " + totalPoints + " punktów");
+            QuizEnd q = new QuizEnd(points, totalPoints);
+            q.setVisible(true);
             counter = 0;
             points = 0;
             totalPoints = 0;
-            sleep(7200);
-            Menu q = new Menu();
-            q.setVisible(true);
             dispose();
             //close();
         } else {

@@ -14,12 +14,11 @@ public class QuizEnd extends javax.swing.JFrame {
     
     public QuizEnd( int points, int totalPoints) {
         initComponents();
-        jLabel2.setText(points + " /  " + totalPoints + " punktów");
-        
+        jLabel2.setText("Zdobyłeś " + points + " /  " + totalPoints + " punktów");
+        openCongratulations("flute", "/Grafika/pizza.gif", "Gratulacje!");
         this.points = points;
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         setResizable(true);
-        
     }
     
     public void close() {
@@ -31,7 +30,6 @@ public class QuizEnd extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         menu = new javax.swing.JButton();
         exit = new javax.swing.JButton();
@@ -41,12 +39,6 @@ public class QuizEnd extends javax.swing.JFrame {
         setIconImage(new ImageIcon(getClass().getResource("/Grafika/ikonka.png")).getImage());
         setMinimumSize(new java.awt.Dimension(1250, 800));
         getContentPane().setLayout(null);
-
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Udało Ci się zdobyć:");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(370, 90, 370, 180);
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 48)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -148,7 +140,6 @@ public class QuizEnd extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton exit;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton menu;
     // End of variables declaration//GEN-END:variables
