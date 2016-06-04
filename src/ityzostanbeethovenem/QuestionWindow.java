@@ -22,10 +22,10 @@ public class QuestionWindow extends QuizWindow {
     public QuestionWindow() {
         initComponents();
         randomQuestions();
+        clearConstantValues();
         initQuestion(chooseNumber());
         groupButton();
         setSize(500, 500);
-        clearConstantValues();
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         setResizable(true);
     }
@@ -63,7 +63,8 @@ public class QuestionWindow extends QuizWindow {
         buttonC.setText(actualQuestion.odpowiedzC);
         buttonD.setText(actualQuestion.odpowiedzD);
         totalPoints += actualQuestion.punkty;
-
+        
+        
         if (actualQuestion.pytanie.equals("Jaki to interwał?")) {
             odtworzInterwal(number);
             powtorzButton.setText("Powtórz");
