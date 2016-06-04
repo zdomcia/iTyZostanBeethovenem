@@ -62,7 +62,7 @@ public class Piano extends javax.swing.JFrame {
             }
         });
         getContentPane().add(menu);
-        menu.setBounds(1240, 662, 50, 50);
+        menu.setBounds(1240, 660, 50, 50);
 
         Cis.setBackground(java.awt.Color.black);
         Cis.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -299,9 +299,9 @@ public class Piano extends javax.swing.JFrame {
         E1.setBounds(622, 77, 57, 275);
 
         instrumentChoose.setBackground(new Color(0,0,0,0));
-        instrumentChoose.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        instrumentChoose.setForeground(new java.awt.Color(4, 65, 35));
-        instrumentChoose.setText("Instrument");
+        instrumentChoose.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        instrumentChoose.setForeground(new java.awt.Color(76, 76, 76));
+        instrumentChoose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/options.png"))); // NOI18N
         instrumentChoose.setFocusable(false);
         instrumentChoose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -309,7 +309,7 @@ public class Piano extends javax.swing.JFrame {
             }
         });
         getContentPane().add(instrumentChoose);
-        instrumentChoose.setBounds(750, 190, 180, 40);
+        instrumentChoose.setBounds(1185, 661, 50, 50);
 
         exit.setBackground(new Color(0,0,0,0));
         exit.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -321,7 +321,7 @@ public class Piano extends javax.swing.JFrame {
             }
         });
         getContentPane().add(exit);
-        exit.setBounds(1300, 670, 50, 40);
+        exit.setBounds(1298, 666, 50, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
