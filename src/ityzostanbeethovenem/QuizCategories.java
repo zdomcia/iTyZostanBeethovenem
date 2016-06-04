@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 
-public class QuizCategories extends QuizWindow {
+public class QuizCategories extends javax.swing.JFrame {//javax.swing.JFrame {
 
     public QuizCategories() {
         initComponents();
@@ -121,19 +121,19 @@ public class QuizCategories extends QuizWindow {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void zaladujPytania(int number) {
+    private void zaladujPytania (int number) {
         JavaDB db = new JavaDB();
         db.uploadQuestions();
-        if (number == 0) {
+        if ( number == 0){
             db.dodajPytania();
-        } else {
+        }else {
             db.dodajPytaniaKategorii(number);
         }
         QuestionWindow q = new QuestionWindow();
         q.setVisible(true);
         close();
     }
-
+    
     private void buttonInstrumentyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInstrumentyActionPerformed
         zaladujPytania(1);
     }//GEN-LAST:event_buttonInstrumentyActionPerformed
@@ -154,17 +154,13 @@ public class QuizCategories extends QuizWindow {
         zaladujPytania(0);
     }//GEN-LAST:event_buttonWszystkoActionPerformed
 
-    /*
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
-
+        Menu q = new Menu();
+        q.setVisible(true);
+        dispose();
     }//GEN-LAST:event_menuActionPerformed
 
-    /*
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-    */
-    
-    
-    public void exitActionPerformed(java.awt.event.ActionEvent evt) {
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }//GEN-LAST:event_exitActionPerformed

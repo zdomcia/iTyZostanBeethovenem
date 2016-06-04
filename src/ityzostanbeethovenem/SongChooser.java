@@ -1,6 +1,6 @@
 package ityzostanbeethovenem;
 
-public class SongChooser extends Chooser {
+public class SongChooser extends javax.swing.JDialog {
 
     private String piosenka;
 
@@ -54,6 +54,10 @@ public class SongChooser extends Chooser {
         dispose();
     }//GEN-LAST:event_confirmActionPerformed
 
+    public String showDialog() {
+        setVisible(true);
+        return piosenka;
+    }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

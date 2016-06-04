@@ -2,9 +2,9 @@ package ityzostanbeethovenem;
 
 import java.awt.Color;
 
-public class InstrumentChooser extends Chooser {
+public class InstrumentChooser extends javax.swing.JDialog {
 
-    String path;
+    private String path;
 
     public InstrumentChooser(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -77,7 +77,10 @@ public class InstrumentChooser extends Chooser {
         // TODO add your handling code here:
     }//GEN-LAST:event_instrumentActionPerformed
 
-    
+    public String showDialog() {
+        setVisible(true);
+        return path;
+    }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
