@@ -9,17 +9,12 @@ public class QuizEnd extends javax.swing.JFrame {
 
     private static int points;
     
-    public QuizEnd() {
+    public QuizEnd( int points, int totalPoints) {
         initComponents();
-        jLabel2.setText(points + " punktów");
-        points = 0;
-        setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
-        setResizable(true);
-    }
-    
-    public QuizEnd( int points) {
-        initComponents();
-        jLabel2.setText(points + " punktów");
+        Player player = new Player();
+        player.path = "flute";
+        player.play("");
+        jLabel2.setText(points + " /  " + totalPoints + " punktów");
         this.points = points;
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         setResizable(true);
@@ -36,8 +31,6 @@ public class QuizEnd extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        buttonExit = new javax.swing.JButton();
-        buttonMenu = new javax.swing.JButton();
         menu = new javax.swing.JButton();
         exit = new javax.swing.JButton();
 
@@ -49,33 +42,15 @@ public class QuizEnd extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("<html> Udało Ci się zdobyć <br> <br> </html>");
+        jLabel1.setText("Udało Ci się zdobyć:");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(460, 90, 370, 180);
+        jLabel1.setBounds(370, 90, 370, 180);
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 48)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("100 punktów");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(520, 210, 280, 160);
-
-        buttonExit.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
-        buttonExit.setText("Wyjście");
-        buttonExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonExitActionPerformed(evt);
-            }
-        });
-        getContentPane().add(buttonExit);
-        buttonExit.setBounds(550, 570, 170, 90);
-
-        buttonMenu.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
-        buttonMenu.setText("Menu");
-        buttonMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonMenuActionPerformed(evt);
-            }
-        });
-        getContentPane().add(buttonMenu);
-        buttonMenu.setBounds(550, 430, 170, 90);
+        jLabel2.setBounds(140, 230, 930, 190);
 
         menu.setBackground(new Color(0,0,0,0));
         menu.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -105,17 +80,8 @@ public class QuizEnd extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
    
     
-    private void buttonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMenuActionPerformed
-        Menu q = new Menu();
-        q.setVisible(true);
-        close();
-    }//GEN-LAST:event_buttonMenuActionPerformed
-
-    private void buttonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExitActionPerformed
-        close();
-    }//GEN-LAST:event_buttonExitActionPerformed
-
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
+
         Menu q = new Menu();
         q.setVisible(true);
         dispose();
@@ -157,14 +123,12 @@ public class QuizEnd extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new QuizEnd().setVisible(true);
+                new QuizEnd(0, 0).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonExit;
-    private javax.swing.JButton buttonMenu;
     private javax.swing.JButton exit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

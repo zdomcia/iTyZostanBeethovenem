@@ -54,10 +54,8 @@ public class JavaDB {
             polaczenie = DriverManager.getConnection("jdbc:sqlite:" + baza + ".db");
 
             stat = polaczenie.createStatement();
-            String dodajSQL = "INSERT OR IGNORE INTO " + baza + " (Question, AnswerA, AnswerB, AnswerC, AnswerD, CorrectAnswer, idCategory, Scores)"
-                    + "VALUES ('Pytanie1','odpowiedzA','odpowiedzB','odpowiedzC','odpowiedzD','A', 1, 10),"
-                    + "('Pytanie2','odpowiedzA','odpowiedzB','odpowiedzC','odpowiedzD', 'B', 1, 15);";
-            String dodajSQL1 = "INSERT INTO " + baza + " (Question, AnswerA, AnswerB, AnswerC, AnswerD, CorrectAnswer, idCategory, Scores)"
+          
+            String dodajSQL = "INSERT INTO " + baza + " (Question, AnswerA, AnswerB, AnswerC, AnswerD, CorrectAnswer, idCategory, Scores)"
 
                     //kategoria instrumenty
                     + "VALUES ('Ile klawiszy ma typowy współczesny fortepian?','134','88','17','79','B', 1, 10),"
@@ -93,7 +91,7 @@ public class JavaDB {
                     + "('Syn którego kompozytora miał wpływ na twórczość Mozarta?','Chopina','Beethovena','Bacha','Moniuszki', 'C', 2, 20),"
                     + "('Jakich utworów nie tworzył Jan Sebastian Bach?','oper','kantat','pasji','żadnych z powyższych', 'A', 2, 15),"
                     + "('Beethoven stał się najpierw sławny jako:', 'śpiewak', 'wirtuoz fortepianu','skrzypek','aktor', 'B', 2, 10);";
-            stat.executeUpdate(dodajSQL1);
+            stat.executeUpdate(dodajSQL);
             stat.close();
             polaczenie.close();
         } catch (Exception e) {

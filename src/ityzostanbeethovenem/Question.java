@@ -17,11 +17,12 @@ public class Question extends javax.swing.JFrame {
     public static int counter;
     private static int points;
     private static int number;
+    private static int totalPoints;
     
     private static boolean checkOrNext;
     private ArrayList <Integer> randomTable;
     
-    
+   
     public Question() {
         initComponents();
         randomQuestions();
@@ -30,6 +31,7 @@ public class Question extends javax.swing.JFrame {
         setSize(500, 500);
         counter = 0;
         points = 0;
+        totalPoints = 0;
         checkOrNext = true;
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         setResizable(true);
@@ -55,6 +57,7 @@ public class Question extends javax.swing.JFrame {
         buttonB.setText(JavaDB.pytania[number].odpowiedzB);
         buttonC.setText(JavaDB.pytania[number].odpowiedzC);
         buttonD.setText(JavaDB.pytania[number].odpowiedzD);
+        totalPoints += JavaDB.pytania[number].punkty;
     }
 
     public void close() {
@@ -80,8 +83,6 @@ public class Question extends javax.swing.JFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         labelQuestionNumber = new javax.swing.JLabel();
         labelQuestionText = new javax.swing.JLabel();
-        buttonMenu = new javax.swing.JButton();
-        buttonExit = new javax.swing.JButton();
         buttonA = new javax.swing.JRadioButton();
         buttonB = new javax.swing.JRadioButton();
         buttonC = new javax.swing.JRadioButton();
@@ -113,28 +114,9 @@ public class Question extends javax.swing.JFrame {
         labelQuestionNumber.setBounds(510, 20, 330, 59);
 
         labelQuestionText.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        labelQuestionText.setText("Treśc bardzo trudnego pytania");
         getContentPane().add(labelQuestionText);
-        labelQuestionText.setBounds(440, 70, 871, 146);
-
-        buttonMenu.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
-        buttonMenu.setText("Menu");
-        buttonMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonMenuActionPerformed(evt);
-            }
-        });
-        getContentPane().add(buttonMenu);
-        buttonMenu.setBounds(50, 590, 137, 57);
-
-        buttonExit.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
-        buttonExit.setText("Wyjście");
-        buttonExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonExitActionPerformed(evt);
-            }
-        });
-        getContentPane().add(buttonExit);
-        buttonExit.setBounds(50, 660, 137, 57);
+        labelQuestionText.setBounds(230, 60, 871, 146);
 
         buttonA.setBackground(new java.awt.Color(0, 255, 0));
         buttonA.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -199,18 +181,6 @@ public class Question extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMenuActionPerformed
-        Menu q = new Menu();
-        q.setVisible(true);
-        counter = 0;
-        close();
-    }//GEN-LAST:event_buttonMenuActionPerformed
-
-
-    private void buttonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExitActionPerformed
-        counter = 0;
-        close();
-    }//GEN-LAST:event_buttonExitActionPerformed
 
 //GEN-FIRST:event_buttonSendActionPerformed
  
@@ -221,6 +191,9 @@ public class Question extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonCActionPerformed
 
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
+        points = 0;
+        totalPoints = 0;
+        counter = 0;
         Menu q = new Menu();
         q.setVisible(true);
         dispose();
@@ -234,12 +207,10 @@ public class Question extends javax.swing.JFrame {
 
     private void groupButton() {
         ButtonGroup group = new ButtonGroup();
-
         group.add(buttonA);
         group.add(buttonB);
         group.add(buttonC);
         group.add(buttonD);
-
     }
 
     private void enableOrNotButtons(boolean flag) {
@@ -307,9 +278,11 @@ public class Question extends javax.swing.JFrame {
     void nextQuestion() {
         counter++;
         if (counter >= 10) {
-            QuizEnd a = new QuizEnd(points);
+            QuizEnd a = new QuizEnd(points, totalPoints);
             a.setVisible(true);
             counter = 0;
+            points = 0;
+            totalPoints = 0;
             close();
         } else {
             initQuestion(chooseNumber());
@@ -342,13 +315,17 @@ public class Question extends javax.swing.JFrame {
 
     private void buttonSendActionPerformed(java.awt.event.ActionEvent evt) {
         if (checkOrNext) {
+            Player player = new Player();
             if (checkAnswer()) {
                 addPoints();
+                player.path = "correct";
             } else {
                 colorBadAnswer();
+                player.path = "wrong";
             }
             buttonSend.setText("Dalej");
             checkOrNext = false;
+            player.play("");
         } else {
             clearBackground();
             nextQuestion();
@@ -391,10 +368,8 @@ public class Question extends javax.swing.JFrame {
     private javax.swing.JRadioButton buttonB;
     private javax.swing.JRadioButton buttonC;
     private javax.swing.JRadioButton buttonD;
-    private javax.swing.JButton buttonExit;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JButton buttonMenu;
     private javax.swing.JButton buttonSend;
     private javax.swing.JButton exit;
     private javax.swing.JInternalFrame jInternalFrame1;
