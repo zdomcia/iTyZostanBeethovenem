@@ -87,6 +87,8 @@ public class Question extends javax.swing.JFrame {
         buttonC = new javax.swing.JRadioButton();
         buttonD = new javax.swing.JRadioButton();
         buttonSend = new javax.swing.JButton();
+        menu = new javax.swing.JButton();
+        exit = new javax.swing.JButton();
 
         jInternalFrame1.setVisible(true);
 
@@ -170,6 +172,30 @@ public class Question extends javax.swing.JFrame {
         getContentPane().add(buttonSend);
         buttonSend.setBounds(590, 530, 166, 57);
 
+        menu.setBackground(new Color(0,0,0,0));
+        menu.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        menu.setForeground(new java.awt.Color(2, 40, 21));
+        menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/home.png"))); // NOI18N
+        menu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuActionPerformed(evt);
+            }
+        });
+        getContentPane().add(menu);
+        menu.setBounds(1240, 662, 50, 50);
+
+        exit.setBackground(new Color(0,0,0,0));
+        exit.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        exit.setForeground(new java.awt.Color(2, 40, 21));
+        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/exit.png"))); // NOI18N
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
+        getContentPane().add(exit);
+        exit.setBounds(1300, 670, 50, 40);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -193,6 +219,18 @@ public class Question extends javax.swing.JFrame {
     private void buttonCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonCActionPerformed
+
+    private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
+        Menu q = new Menu();
+        q.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_menuActionPerformed
+
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+
+        WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
+    }//GEN-LAST:event_exitActionPerformed
 
     private void groupButton() {
         ButtonGroup group = new ButtonGroup();
@@ -358,8 +396,10 @@ public class Question extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton buttonMenu;
     private javax.swing.JButton buttonSend;
+    private javax.swing.JButton exit;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel labelQuestionNumber;
     private javax.swing.JLabel labelQuestionText;
+    private javax.swing.JButton menu;
     // End of variables declaration//GEN-END:variables
 }

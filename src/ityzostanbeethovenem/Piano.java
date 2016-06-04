@@ -1,8 +1,10 @@
 package ityzostanbeethovenem;
 
 import java.awt.Color;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowEvent;
 import javax.swing.AbstractAction;
 import javax.swing.KeyStroke;
 
@@ -41,6 +43,7 @@ public class Piano extends javax.swing.JFrame {
         E = new javax.swing.JButton();
         E1 = new javax.swing.JButton();
         instrumentChoose = new javax.swing.JButton();
+        exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFocusCycleRoot(false);
@@ -52,14 +55,14 @@ public class Piano extends javax.swing.JFrame {
         menu.setBackground(new Color(0,0,0,0));
         menu.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         menu.setForeground(new java.awt.Color(2, 40, 21));
-        menu.setText("Menu");
+        menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/home.png"))); // NOI18N
         menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuActionPerformed(evt);
             }
         });
         getContentPane().add(menu);
-        menu.setBounds(1240, 680, 100, 40);
+        menu.setBounds(1240, 662, 50, 50);
 
         Cis.setBackground(java.awt.Color.black);
         Cis.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -306,7 +309,19 @@ public class Piano extends javax.swing.JFrame {
             }
         });
         getContentPane().add(instrumentChoose);
-        instrumentChoose.setBounds(980, 680, 180, 40);
+        instrumentChoose.setBounds(750, 190, 180, 40);
+
+        exit.setBackground(new Color(0,0,0,0));
+        exit.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        exit.setForeground(new java.awt.Color(2, 40, 21));
+        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/exit.png"))); // NOI18N
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
+        getContentPane().add(exit);
+        exit.setBounds(1300, 670, 50, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -441,6 +456,12 @@ public class Piano extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_instrumentChooseActionPerformed
 
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+
+        WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
+    }//GEN-LAST:event_exitActionPerformed
+
     protected void pianoPressed(String note) {
         player.play(note);
     }
@@ -466,6 +487,7 @@ public class Piano extends javax.swing.JFrame {
     protected javax.swing.JButton G;
     protected javax.swing.JButton Gis;
     protected javax.swing.JButton H;
+    private javax.swing.JButton exit;
     private javax.swing.JButton instrumentChoose;
     private javax.swing.JButton menu;
     // End of variables declaration//GEN-END:variables

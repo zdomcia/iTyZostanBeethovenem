@@ -25,7 +25,7 @@ public class PianoWindow extends Piano {
         setMinimumSize(new java.awt.Dimension(810, 450));
         getContentPane().setLayout(null);
 
-        learnSongs.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        learnSongs.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         learnSongs.setText("Naucz się grać piosenkę");
         learnSongs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -33,7 +33,7 @@ public class PianoWindow extends Piano {
             }
         });
         getContentPane().add(learnSongs);
-        learnSongs.setBounds(813, 220, 180, 60);
+        learnSongs.setBounds(780, 220, 190, 50);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/chatka.jpg"))); // NOI18N
         getContentPane().add(background);
