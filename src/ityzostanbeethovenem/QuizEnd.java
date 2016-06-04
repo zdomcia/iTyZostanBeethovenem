@@ -34,8 +34,9 @@ public class QuizEnd extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         menu = new javax.swing.JButton();
-        exit = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -47,7 +48,7 @@ public class QuizEnd extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Zdobyłeś 23 / 100 punktów!");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(350, 90, 930, 190);
+        jLabel2.setBounds(390, 220, 930, 190);
 
         menu.setBackground(new Color(0,0,0,0));
         menu.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -61,6 +62,15 @@ public class QuizEnd extends javax.swing.JFrame {
         getContentPane().add(menu);
         menu.setBounds(1240, 662, 50, 50);
 
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(740, 120, 41, 16);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/trawka.jpg"))); // NOI18N
+        jLabel1.setText("Gratu");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(10, -240, 1130, 880);
+
         exit.setBackground(new Color(0,0,0,0));
         exit.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         exit.setForeground(new java.awt.Color(2, 40, 21));
@@ -72,11 +82,6 @@ public class QuizEnd extends javax.swing.JFrame {
         });
         getContentPane().add(exit);
         exit.setBounds(1300, 670, 50, 40);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/trawka.jpg"))); // NOI18N
-        jLabel1.setText("background");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, -240, 1160, 880);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -150,6 +155,7 @@ public class QuizEnd extends javax.swing.JFrame {
     private javax.swing.JButton exit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JButton menu;
     // End of variables declaration//GEN-END:variables
 }
