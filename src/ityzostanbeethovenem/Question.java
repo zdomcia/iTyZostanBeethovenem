@@ -40,14 +40,10 @@ public class Question extends javax.swing.JFrame {
     }
 
     void clearBackground() {
-        buttonA.setOpaque(false);
-        buttonA.repaint();
-        buttonB.setOpaque(false);
-        buttonB.repaint();
-        buttonC.setOpaque(false);
-        buttonC.repaint();
-        buttonD.setOpaque(false);
-        buttonD.repaint();
+        buttonA.setForeground(Color.black);
+        buttonB.setForeground(Color.black);
+        buttonC.setForeground(Color.black);
+        buttonD.setForeground(Color.black);
     }
 
     void initQuestion(int number) {
@@ -286,35 +282,27 @@ public class Question extends javax.swing.JFrame {
         switch (correct) {
 
             case "A":
-                buttonA.setBackground(Color.GREEN);
-                buttonA.setOpaque(true);
-                buttonA.repaint();
+                buttonA.setForeground(Color.GREEN);
                 if (buttonA.isSelected()) {
                     return true;
                 }
                 return false;
 
             case "B":
-                buttonB.setBackground(Color.GREEN);
-                buttonB.setOpaque(true);
-                buttonB.repaint();
+                buttonB.setForeground(Color.GREEN);
                 if (buttonB.isSelected()) {
                     return true;
                 }
                 return false;
 
             case "C":
-                buttonC.setBackground(Color.GREEN);
-                buttonC.setOpaque(true);
-                buttonC.repaint();
+                buttonC.setForeground(Color.GREEN);
                 if (buttonC.isSelected()) {
                     return true;
                 }
                 return false;
             case "D":
-                buttonD.setBackground(Color.GREEN);
-                buttonD.setOpaque(true);
-                buttonD.repaint();
+                buttonD.setForeground(Color.GREEN);
                 if (buttonD.isSelected()) {
                     return true;
                 }
@@ -350,21 +338,6 @@ public class Question extends javax.swing.JFrame {
         
     }
     
-    private void openCongratulations(String song, String image, String text) {
-        final Congratulations congratulations = new Congratulations(song, image, text);
-
-        ScheduledExecutorService s = Executors.newSingleThreadScheduledExecutor();
-        s.schedule(new Runnable() {
-            public void run() {
-                congratulations.setVisible(false);
-                congratulations.dispose();
-            }
-        }, 10, TimeUnit.SECONDS);
-
-        congratulations.setVisible(true);
-
-    }
-    
     
     void addPoints() {
         points += JavaDB.pytania[number].punkty;
@@ -372,21 +345,13 @@ public class Question extends javax.swing.JFrame {
 
     void colorBadAnswer() {
         if (buttonA.isSelected()) {
-            buttonA.setBackground(Color.red);
-            buttonA.setOpaque(true);
-            buttonA.repaint();
+            buttonA.setForeground(Color.red);
         } else if (buttonB.isSelected()) {
-            buttonB.setBackground(Color.red);
-            buttonB.setOpaque(true);
-            buttonB.repaint();
+            buttonB.setForeground(Color.red);
         } else if (buttonC.isSelected()) {
-            buttonC.setBackground(Color.red);
-            buttonC.setOpaque(true);
-            buttonC.repaint();
+            buttonC.setForeground(Color.red);
         } else {
-            buttonD.setBackground(Color.red);
-            buttonD.setOpaque(true);
-            buttonD.repaint();
+            buttonD.setForeground(Color.red);
         }
     }
 
