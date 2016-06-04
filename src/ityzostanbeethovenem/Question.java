@@ -58,7 +58,7 @@ public class Question extends javax.swing.JFrame {
         
         if (JavaDB.pytania[number].pytanie.equals("Jaki to interwał?")  ) {
             odtworzInterwal(number);
-            powtorzButton.setText("Odsłuchaj ponownie");
+            powtorzButton.setText("Powtórz");
             powtorzButton.setVisible(true);
         }else {
             powtorzButton.setVisible(false);
