@@ -64,11 +64,6 @@ public class Menu extends javax.swing.JFrame {
         exit.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         exit.setForeground(new java.awt.Color(2, 40, 21));
         exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/exit.png"))); // NOI18N
-        exit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitActionPerformed(evt);
-            }
-        });
         getContentPane().add(exit);
         exit.setBounds(1300, 670, 50, 40);
 
@@ -87,7 +82,7 @@ public class Menu extends javax.swing.JFrame {
         close();
     }//GEN-LAST:event_pianoActionPerformed
 
-    private void close() {
+    public void close() {
         java.awt.Toolkit.getDefaultToolkit().getSystemEventQueue().
                 postEvent(new java.awt.event.WindowEvent(this, java.awt.event.WindowEvent.WINDOW_CLOSING));
     }
@@ -97,12 +92,6 @@ public class Menu extends javax.swing.JFrame {
         quiz.setVisible(true);
         close();
     }//GEN-LAST:event_quizActionPerformed
-
-    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-
-        WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
-        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
-    }//GEN-LAST:event_exitActionPerformed
 
     public static void main(String args[]) {
 

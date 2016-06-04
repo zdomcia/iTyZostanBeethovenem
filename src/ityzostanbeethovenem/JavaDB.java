@@ -9,9 +9,96 @@ import java.sql.Statement;
 
 public class JavaDB {
 
-    public static Pytanie[] pytania = new Pytanie[100];
+    public static Question[] pytania = new Question[100];
     public static int size;
 
+    
+    public static void dodajPytania() {
+        Connection polaczenie = null;
+        Statement stat = null;
+        try {
+            Class.forName("org.sqlite.JDBC");
+            polaczenie = DriverManager.getConnection("jdbc:sqlite:" + "Quiz" + ".db");
+            stat = polaczenie.createStatement();
+
+            String szukajSQL = "SELECT * FROM " + "Quiz" + ";";
+
+            ResultSet wynik = stat.executeQuery(szukajSQL);
+            int licznik = 0;
+            while (wynik.next()) {
+                Question p = new Question(wynik.getString("Question"), wynik.getString("AnswerA"), wynik.getString("AnswerB"),
+                        wynik.getString("AnswerC"), wynik.getString("AnswerD"), wynik.getString("CorrectAnswer"), Integer.parseInt(wynik.getString("Scores")),
+                        Integer.parseInt(wynik.getString("idCategory")));
+                pytania[licznik] = p;
+                licznik++;
+            }
+            size = licznik;
+            wynik.close();
+            stat.close();
+            polaczenie.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void dodajPytaniaKategorii(int idKategorii) {
+        Connection polaczenie = null;
+        Statement stat = null;
+        pytania = new Question[100];
+        try {
+            Class.forName("org.sqlite.JDBC");
+            polaczenie = DriverManager.getConnection("jdbc:sqlite:" + "Quiz" + ".db");
+            stat = polaczenie.createStatement();
+
+            String szukajSQL = "SELECT * FROM " + "Quiz" + " WHERE idCategory = " + idKategorii + ";";
+
+            ResultSet wynik = stat.executeQuery(szukajSQL);
+            int licznik = 0;
+            while (wynik.next()) {
+                Question p = new Question(wynik.getString("Question"), wynik.getString("AnswerA"), wynik.getString("AnswerB"),
+                        wynik.getString("AnswerC"), wynik.getString("AnswerD"), wynik.getString("CorrectAnswer"), Integer.parseInt(wynik.getString("Scores")),
+                        Integer.parseInt(wynik.getString("idCategory")));
+                pytania[licznik] = p;
+                licznik++;
+            }
+            size = licznik;
+            wynik.close();
+            stat.close();
+            polaczenie.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+
+    public static void stworzTablice(Connection polaczenie, String tablica) {
+        
+        Statement stat = null;
+        try {
+            stat = polaczenie.createStatement();
+
+            String tablicaSQL = "CREATE TABLE IF NOT EXISTS [Quiz] (\n"
+                    + "    [id] INTEGER PRIMARY KEY NOT NULL,\n"
+                    + "	[Question] VARCHAR(255) NULL,\n"
+                    + "    [AnswerA] VARCHAR(255) NULL,\n"
+                    + "    [AnswerB] VARCHAR(13) NULL,\n"
+                    + "    [AnswerC] VARCHAR(255),\n"
+                    + "    [AnswerD] VARCHAR(255) NULL,\n"
+                    + "	[CorrectAnswer] VARCHAR(255) NULL,\n"
+                    + "	[idCategory] INTEGER NULL,\n"
+                    + "	[Scores] INTEGER NULL, "
+                    + " UNIQUE (id, Question));";
+            
+            stat.executeUpdate(tablicaSQL);
+            stat.close();
+            polaczenie.close();
+
+        } catch (SQLException e) {
+            System.out.println("Nie mogę stworzyć tablicy" + e.getMessage());
+        }
+    }
+    
+    
     void uploadQuestions() {
         try {
 
@@ -121,117 +208,6 @@ public class JavaDB {
             polaczenie.close();
         } catch (Exception e) {
             System.out.println("Nie mogę dodać danych " + e.getMessage());
-        }
-    }
-
-    public static void dodajPytania() {
-        Connection polaczenie = null;
-        Statement stat = null;
-        try {
-            Class.forName("org.sqlite.JDBC");
-            polaczenie = DriverManager.getConnection("jdbc:sqlite:" + "Quiz" + ".db");
-            stat = polaczenie.createStatement();
-
-            String szukajSQL = "SELECT * FROM " + "Quiz" + ";";
-
-            ResultSet wynik = stat.executeQuery(szukajSQL);
-            int licznik = 0;
-            while (wynik.next()) {
-                Pytanie p = new Pytanie(wynik.getString("Question"), wynik.getString("AnswerA"), wynik.getString("AnswerB"),
-                        wynik.getString("AnswerC"), wynik.getString("AnswerD"), wynik.getString("CorrectAnswer"), Integer.parseInt(wynik.getString("Scores")),
-                        Integer.parseInt(wynik.getString("idCategory")));
-                pytania[licznik] = p;
-                licznik++;
-            }
-            size = licznik;
-            wynik.close();
-            stat.close();
-            polaczenie.close();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    public static void dodajPytaniaKategorii(int idKategorii) {
-        Connection polaczenie = null;
-        Statement stat = null;
-        pytania = new Pytanie[100];
-        try {
-            Class.forName("org.sqlite.JDBC");
-            polaczenie = DriverManager.getConnection("jdbc:sqlite:" + "Quiz" + ".db");
-            stat = polaczenie.createStatement();
-
-            String szukajSQL = "SELECT * FROM " + "Quiz" + " WHERE idCategory = " + idKategorii + ";";
-
-            ResultSet wynik = stat.executeQuery(szukajSQL);
-            int licznik = 0;
-            while (wynik.next()) {
-                Pytanie p = new Pytanie(wynik.getString("Question"), wynik.getString("AnswerA"), wynik.getString("AnswerB"),
-                        wynik.getString("AnswerC"), wynik.getString("AnswerD"), wynik.getString("CorrectAnswer"), Integer.parseInt(wynik.getString("Scores")),
-                        Integer.parseInt(wynik.getString("idCategory")));
-                pytania[licznik] = p;
-                licznik++;
-            }
-            size = licznik;
-            wynik.close();
-            stat.close();
-            polaczenie.close();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    public static void zmien(String baza, String poleSzukane, String wartoscSzukana,
-            String poleZmieniane, String nowaWartosc) {
-        Connection polaczenie = null;
-        Statement stat = null;
-        try {
-            Class.forName("org.sqlite.JDBC");
-            polaczenie = DriverManager.getConnection("jdbc:sqlite:" + baza + ".db");
-            stat = polaczenie.createStatement();
-
-            String zmienSQL = "UPDATE " + baza + " SET "
-                    + poleZmieniane + " = '" + nowaWartosc
-                    + "' WHERE " + poleSzukane + "='" + wartoscSzukana + "';";
-
-            ResultSet wynik = stat.executeQuery(zmienSQL);
-            System.out.println("Polecenie:\n" + zmienSQL);
-            wynik.close();
-            stat.close();
-            polaczenie.close();
-        } catch (Exception e) {
-            System.out.println("Nie mogę poprawić danych " + e.getMessage());
-        }
-
-    }
-
-    public static void stworzTablice(Connection polaczenie, String tablica) {
-        // Obiekt odpowiadający za wykonanie instrukcji
-
-        Statement stat = null;
-        try {
-            stat = polaczenie.createStatement();
-            // polecenie SQL tworzące tablicę
-
-            String tablicaSQL = "CREATE TABLE IF NOT EXISTS [Quiz] (\n"
-                    + "    [id] INTEGER PRIMARY KEY NOT NULL,\n"
-                    + "	[Question] VARCHAR(255) NULL,\n"
-                    + "    [AnswerA] VARCHAR(255) NULL,\n"
-                    + "    [AnswerB] VARCHAR(13) NULL,\n"
-                    + "    [AnswerC] VARCHAR(255),\n"
-                    + "    [AnswerD] VARCHAR(255) NULL,\n"
-                    + "	[CorrectAnswer] VARCHAR(255) NULL,\n"
-                    + "	[idCategory] INTEGER NULL,\n"
-                    + "	[Scores] INTEGER NULL, "
-                    + " UNIQUE (id, Question));";
-            // wywołanie polecenia
-            stat.executeUpdate(tablicaSQL);
-            // zamykanie wywołania i połączenia
-            stat.close();
-            polaczenie.close();
-
-        } catch (SQLException e) {
-            System.out.println("Nie mogę stworzyć tablicy" + e.getMessage());
         }
     }
 }
