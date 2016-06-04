@@ -8,7 +8,7 @@ import java.util.Random;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 
-public class QuestionWindow extends javax.swing.JFrame {
+public class QuestionWindow extends QuizWindow {
 
     public static int counter;
     private static int points;
@@ -228,15 +228,23 @@ public class QuestionWindow extends javax.swing.JFrame {
 //GEN-FIRST:event_buttonSendActionPerformed
  
 //GEN-LAST:event_buttonSendActionPerformed
-
+/*
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
+
+    }//GEN-LAST:event_menuActionPerformed
+*/
+    
+    public void menuActionPerformed(java.awt.event.ActionEvent evt) {
         clearConstantValues();
         Menu q = new Menu();
         q.setVisible(true);
         dispose();
-    }//GEN-LAST:event_menuActionPerformed
-
+    }
+    
+    /*
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+      */
+    public void exitActionPerformed(java.awt.event.ActionEvent evt){
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }//GEN-LAST:event_exitActionPerformed
