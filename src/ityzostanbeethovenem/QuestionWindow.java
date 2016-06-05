@@ -8,28 +8,28 @@ import java.util.Random;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 
-public class QuestionWindow extends javax.swing.JFrame {
+public class QuestionWindow extends QuizWindow {
 
     public static int counter;
     private static int points;
     private static int number;
     private static int totalPoints;
-    
+    public Question actualQuestion;
+
     private static boolean checkOrNext;
-    private ArrayList <Integer> randomTable;
-    
-   
+    private ArrayList<Integer> randomTable;
+
     public QuestionWindow() {
         initComponents();
         randomQuestions();
+        clearConstantValues();
         initQuestion(chooseNumber());
         groupButton();
         setSize(500, 500);
-        clearConstantValues();
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         setResizable(true);
     }
-    
+
     void clearConstantValues() {
         counter = 0;
         points = 0;
@@ -46,16 +46,26 @@ public class QuestionWindow extends javax.swing.JFrame {
 
     void initQuestion(int number) {
         enableOrNotButtons(true);
+        actualQuestion = new Question(JavaDB.pytania[number].pytanie, JavaDB.pytania[number].odpowiedzA,
+                JavaDB.pytania[number].odpowiedzB, JavaDB.pytania[number].odpowiedzC,
+                JavaDB.pytania[number].odpowiedzD, JavaDB.pytania[number].prawidlowa,
+                JavaDB.pytania[number].punkty, JavaDB.pytania[number].kategoria);
+
+        updateFields();
+    }
+
+    void updateFields() {
         labelQuestionNumber.setText("Pytanie " + (counter + 1));
-        labelQuestionText.setText(JavaDB.pytania[number].pytanie);
+        labelQuestionText.setText(actualQuestion.pytanie);
+
+        buttonA.setText(actualQuestion.odpowiedzA);
+        buttonB.setText(actualQuestion.odpowiedzB);
+        buttonC.setText(actualQuestion.odpowiedzC);
+        buttonD.setText(actualQuestion.odpowiedzD);
+        totalPoints += actualQuestion.punkty;
         
-        buttonA.setText(JavaDB.pytania[number].odpowiedzA);
-        buttonB.setText(JavaDB.pytania[number].odpowiedzB);
-        buttonC.setText(JavaDB.pytania[number].odpowiedzC);
-        buttonD.setText(JavaDB.pytania[number].odpowiedzD);
-        totalPoints += JavaDB.pytania[number].punkty;
         
-        if (JavaDB.pytania[number].pytanie.equals("Jaki to interwał?")  ) {
+        if (actualQuestion.pytanie.equals("Jaki to interwał?")) {
             odtworzInterwal(number);
             powtorzButton.setText("Powtórz");
             powtorzButton.setVisible(true);
@@ -63,47 +73,44 @@ public class QuestionWindow extends javax.swing.JFrame {
             powtorzButton.setVisible(false);
         }
     }
-    
-    
+
     public void odtworzInterwal(int number) {
         Player player = new Player();
-        String correct = JavaDB.pytania[number].prawidlowa;
+        String correct = actualQuestion.prawidlowa;
         String name = "";
 
         switch (correct) {
             case "A":
-                name = JavaDB.pytania[number].odpowiedzA;
+                name = actualQuestion.odpowiedzA;
                 break;
             case "B":
-                name = JavaDB.pytania[number].odpowiedzB;
+                name = actualQuestion.odpowiedzB;
                 break;
             case "C":
-                name = JavaDB.pytania[number].odpowiedzC;
+                name = actualQuestion.odpowiedzC;
                 break;
             case "D":
-                name = JavaDB.pytania[number].odpowiedzD;
+                name = actualQuestion.odpowiedzD;
                 break;
         }
-        
+
         player.path = name;
         player.play("");
     }
-    
-    
+
     public void close() {
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }
-    
-    
-    private int chooseNumber( ) {
+
+    private int chooseNumber() {
         Random rand = new Random();
         int los = rand.nextInt(randomTable.size() - 1);
         number = randomTable.get(los);
         randomTable.remove(los);
         return number;
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -228,21 +235,29 @@ public class QuestionWindow extends javax.swing.JFrame {
 //GEN-FIRST:event_buttonSendActionPerformed
  
 //GEN-LAST:event_buttonSendActionPerformed
-
+/*
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
+
+    }//GEN-LAST:event_menuActionPerformed
+*/
+    
+    public void menuActionPerformed(java.awt.event.ActionEvent evt) {
         clearConstantValues();
         Menu q = new Menu();
         q.setVisible(true);
         dispose();
-    }//GEN-LAST:event_menuActionPerformed
-
+    }
+    
+    /*
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+      */
+    public void exitActionPerformed(java.awt.event.ActionEvent evt){
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }//GEN-LAST:event_exitActionPerformed
 
     private void powtorzButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_powtorzButtonActionPerformed
-       odtworzInterwal(number);
+        odtworzInterwal(number);
     }//GEN-LAST:event_powtorzButtonActionPerformed
 
     private void groupButton() {
@@ -261,7 +276,7 @@ public class QuestionWindow extends javax.swing.JFrame {
     }
 
     private boolean checkAnswer() {
-        String correct = JavaDB.pytania[number].prawidlowa;
+        String correct = actualQuestion.prawidlowa;
         enableOrNotButtons(false);
 
         switch (correct) {
@@ -294,8 +309,7 @@ public class QuestionWindow extends javax.swing.JFrame {
         }
         return false;
     }
-    
-    
+
     void randomQuestions() {
         int length = JavaDB.size;
         randomTable = new ArrayList();
@@ -303,8 +317,7 @@ public class QuestionWindow extends javax.swing.JFrame {
             randomTable.add(i);
         }
     }
-    
-    
+
     void nextQuestion() {
         counter++;
         if (counter >= 10) {
@@ -315,11 +328,11 @@ public class QuestionWindow extends javax.swing.JFrame {
         } else {
             initQuestion(chooseNumber());
         }
-        
+
     }
-    
+
     void addPoints() {
-        points += JavaDB.pytania[number].punkty;
+        points += actualQuestion.punkty;
     }
 
     void colorBadAnswer() {
@@ -351,8 +364,8 @@ public class QuestionWindow extends javax.swing.JFrame {
             clearBackground();
             try {
                 nextQuestion();
-            }catch(Exception e) {
-                
+            } catch (Exception e) {
+
             }
             checkOrNext = true;
             buttonSend.setText("Sprawdź");
@@ -389,6 +402,7 @@ public class QuestionWindow extends javax.swing.JFrame {
         });
     }
 
+    /*
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
     private javax.swing.JRadioButton buttonA;
@@ -405,4 +419,19 @@ public class QuestionWindow extends javax.swing.JFrame {
     private javax.swing.JButton menu;
     private javax.swing.JButton powtorzButton;
     // End of variables declaration//GEN-END:variables
+*/
+    
+    private javax.swing.JRadioButton buttonA;
+    private javax.swing.JRadioButton buttonB;
+    private javax.swing.JRadioButton buttonC;
+    private javax.swing.JRadioButton buttonD;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JButton buttonSend;
+    private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JLabel labelQuestionNumber;
+    private javax.swing.JLabel labelQuestionText;
+    private javax.swing.JButton powtorzButton;
+
+
 }

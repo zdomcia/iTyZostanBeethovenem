@@ -7,7 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 
-public class Menu extends javax.swing.JFrame {
+public class Menu extends QuizWindow {
 
     public Menu() {
         initComponents();
@@ -64,6 +64,11 @@ public class Menu extends javax.swing.JFrame {
         exit.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         exit.setForeground(new java.awt.Color(2, 40, 21));
         exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/exit.png"))); // NOI18N
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
         getContentPane().add(exit);
         exit.setBounds(1300, 670, 50, 40);
 
@@ -92,7 +97,16 @@ public class Menu extends javax.swing.JFrame {
         quiz.setVisible(true);
         close();
     }//GEN-LAST:event_quizActionPerformed
+    /*
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+      */
+    public void exitActionPerformed (java.awt.event.ActionEvent evt){
+        WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
+    }//GEN-LAST:event_exitActionPerformed
+    
 
+    
     public static void main(String args[]) {
 
         try {
