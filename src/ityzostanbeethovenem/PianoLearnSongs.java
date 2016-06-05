@@ -99,6 +99,7 @@ public class PianoLearnSongs extends Piano {
                 player.play(note);
                 button.getModel().setArmed(true);
                 button.getModel().setPressed(true);
+                
             }
         });
     }
