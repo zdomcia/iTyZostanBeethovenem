@@ -131,21 +131,21 @@ public class PianoLearnSongs extends Piano {
     }
 
     private void playOdeToJoy() {
-        playNote(E, "Fis", 0, 250);
-        playNote(E, "Fis", 500, 750);
-        playNote(F, "G", 1000, 1250);
-        playNote(G, "A", 1500, 1750);
-        playNote(G, "A", 2000, 2250);
-        playNote(F, "G", 2500, 2750);
-        playNote(E, "Fis", 3000, 3250);
-        playNote(D, "E", 3500, 3750);
-        playNote(C, "D", 4000, 4250);
-        playNote(C, "D", 4500, 4750);
-        playNote(D, "E", 5000, 5250);
-        playNote(E, "Fis", 5500, 5750);
-        playNote(E, "Fis", 6000, 6500);
-        playNote(D, "E", 6750, 6900);
-        playNote(D, "E", 7000, 7500);
+        playNote(Fis, "Fis", 0, 250);
+        playNote(Fis, "Fis", 500, 750);
+        playNote(G, "G", 1000, 1250);
+        playNote(A, "A", 1500, 1750);
+        playNote(A, "A", 2000, 2250);
+        playNote(G, "G", 2500, 2750);
+        playNote(Fis, "Fis", 3000, 3250);
+        playNote(E, "E", 3500, 3750);
+        playNote(D, "D", 4000, 4250);
+        playNote(D, "D", 4500, 4750);
+        playNote(E, "E", 5000, 5250);
+        playNote(Fis, "Fis", 5500, 5750);
+        playNote(Fis, "Fis", 6000, 6500);
+        playNote(E, "E", 6750, 6900);
+        playNote(E, "E", 7000, 7500);
     }
 
     private void playFurElise() {
