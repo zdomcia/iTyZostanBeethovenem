@@ -3,8 +3,6 @@ package ityzostanbeethovenem;
 
 public class InstrumentChooser extends Chooser {
 
-    String path;
-
     public InstrumentChooser(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();

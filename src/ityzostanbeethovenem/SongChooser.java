@@ -2,8 +2,6 @@ package ityzostanbeethovenem;
 
 public class SongChooser extends Chooser {
 
-    private String piosenka;
-
     public SongChooser(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -54,7 +52,7 @@ public class SongChooser extends Chooser {
     }// </editor-fold>//GEN-END:initComponents
 
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
-        piosenka = (String) songs.getSelectedItem();
+        path = (String) songs.getSelectedItem();
         setVisible(false);
         dispose();
     }//GEN-LAST:event_confirmActionPerformed
