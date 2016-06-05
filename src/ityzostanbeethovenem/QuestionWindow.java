@@ -46,27 +46,27 @@ public class QuestionWindow extends QuizWindow {
 
     void initQuestion(int number) {
         enableOrNotButtons(true);
-        actualQuestion = new Question(JavaDB.pytania[number].pytanie, JavaDB.pytania[number].odpowiedzA,
-                JavaDB.pytania[number].odpowiedzB, JavaDB.pytania[number].odpowiedzC,
-                JavaDB.pytania[number].odpowiedzD, JavaDB.pytania[number].prawidlowa,
-                JavaDB.pytania[number].punkty, JavaDB.pytania[number].kategoria);
+        actualQuestion = new Question(JavaDB.questions[number].questionText, JavaDB.questions[number].answerA,
+                JavaDB.questions[number].answerB, JavaDB.questions[number].answerC,
+                JavaDB.questions[number].answerD, JavaDB.questions[number].correctAnswer,
+                JavaDB.questions[number].pointsForQuestion, JavaDB.questions[number].questionCategory);
 
         updateFields();
     }
 
     void updateFields() {
         labelQuestionNumber.setText("Pytanie " + (counter + 1));
-        labelQuestionText.setText(actualQuestion.pytanie);
+        labelQuestionText.setText(actualQuestion.questionText);
 
-        buttonA.setText(actualQuestion.odpowiedzA);
-        buttonB.setText(actualQuestion.odpowiedzB);
-        buttonC.setText(actualQuestion.odpowiedzC);
-        buttonD.setText(actualQuestion.odpowiedzD);
-        totalPoints += actualQuestion.punkty;
+        buttonA.setText(actualQuestion.answerA);
+        buttonB.setText(actualQuestion.answerB);
+        buttonC.setText(actualQuestion.answerC);
+        buttonD.setText(actualQuestion.answerD);
+        totalPoints += actualQuestion.pointsForQuestion;
         
         
-        if (actualQuestion.pytanie.equals("Jaki to interwał?")) {
-            odtworzInterwal(number);
+        if (actualQuestion.questionText.equals("Jaki to interwał?")) {
+            playInterval(number);
             powtorzButton.setText("Powtórz");
             powtorzButton.setVisible(true);
         }else {
@@ -74,23 +74,23 @@ public class QuestionWindow extends QuizWindow {
         }
     }
 
-    public void odtworzInterwal(int number) {
+    public void playInterval(int number) {
         Player player = new Player();
-        String correct = actualQuestion.prawidlowa;
+        String correct = actualQuestion.correctAnswer;
         String name = "";
 
         switch (correct) {
             case "A":
-                name = actualQuestion.odpowiedzA;
+                name = actualQuestion.answerA;
                 break;
             case "B":
-                name = actualQuestion.odpowiedzB;
+                name = actualQuestion.answerB;
                 break;
             case "C":
-                name = actualQuestion.odpowiedzC;
+                name = actualQuestion.answerC;
                 break;
             case "D":
-                name = actualQuestion.odpowiedzD;
+                name = actualQuestion.answerD;
                 break;
         }
 
@@ -163,22 +163,22 @@ public class QuestionWindow extends QuizWindow {
         buttonA.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         buttonA.setText("aaa");
         getContentPane().add(buttonA);
-        buttonA.setBounds(800, 180, 317, 54);
+        buttonA.setBounds(800, 180, 380, 54);
 
         buttonB.setBackground(new java.awt.Color(0, 255, 0));
         buttonB.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         getContentPane().add(buttonB);
-        buttonB.setBounds(800, 250, 317, 54);
+        buttonB.setBounds(800, 250, 380, 54);
 
         buttonC.setBackground(new java.awt.Color(0, 255, 0));
         buttonC.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         getContentPane().add(buttonC);
-        buttonC.setBounds(800, 320, 317, 54);
+        buttonC.setBounds(800, 320, 380, 54);
 
         buttonD.setBackground(new java.awt.Color(0, 255, 0));
         buttonD.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         getContentPane().add(buttonD);
-        buttonD.setBounds(800, 390, 317, 54);
+        buttonD.setBounds(800, 390, 380, 54);
 
         buttonSend.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         buttonSend.setText("Sprawdź");
@@ -257,7 +257,7 @@ public class QuestionWindow extends QuizWindow {
     }//GEN-LAST:event_exitActionPerformed
 
     private void powtorzButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_powtorzButtonActionPerformed
-        odtworzInterwal(number);
+        playInterval(number);
     }//GEN-LAST:event_powtorzButtonActionPerformed
 
     private void groupButton() {
@@ -276,7 +276,7 @@ public class QuestionWindow extends QuizWindow {
     }
 
     private boolean checkAnswer() {
-        String correct = actualQuestion.prawidlowa;
+        String correct = actualQuestion.correctAnswer;
         enableOrNotButtons(false);
 
         switch (correct) {
@@ -332,7 +332,7 @@ public class QuestionWindow extends QuizWindow {
     }
 
     void addPoints() {
-        points += actualQuestion.punkty;
+        points += actualQuestion.pointsForQuestion;
     }
 
     void colorBadAnswer() {

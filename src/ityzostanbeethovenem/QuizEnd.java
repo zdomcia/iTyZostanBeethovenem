@@ -11,25 +11,25 @@ import java.util.concurrent.TimeUnit;
 
 public class QuizEnd extends QuizWindow {
 
-    private static String tablicaKotow[] = {"balloonOne", "balloons", "meGusta", "thankYou"};
+    private static String tableOfCats[] = {"balloonOne", "balloons", "meGusta", "thankYou"};
 
     public QuizEnd(int points, int totalPoints) {
         initComponents();
-        podsumowanieLabel1.setText("Zdobyłeś " + points + " punktów");
-        podsumowanieLabel2.setText("na " + totalPoints + " możliwych ");
+        summaryLabel1.setText("Zdobyłeś " + points + " punktów");
+        summaryLabel2.setText("na " + totalPoints + " możliwych ");
 
         if ((points / totalPoints) >= 0.3) {
-            pokazKota();
+            showCat();
         }
 
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         setResizable(true);
     }
 
-    private void pokazKota() {
+    private void showCat() {
         Random rand = new Random();
-        int los = rand.nextInt(tablicaKotow.length - 1);
-        openCongratulations("flute", "/Grafika/" + tablicaKotow[los] + ".gif", "Gratulacje!");
+        int los = rand.nextInt(tableOfCats.length - 1);
+        openCongratulations("flute", "/Grafika/" + tableOfCats[los] + ".gif", "Gratulacje!");
     }
 
     public void close() {
@@ -41,11 +41,11 @@ public class QuizEnd extends QuizWindow {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        podsumowanieLabel1 = new javax.swing.JLabel();
+        summaryLabel1 = new javax.swing.JLabel();
         menu = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         exit = new javax.swing.JButton();
-        podsumowanieLabel2 = new javax.swing.JLabel();
+        summaryLabel2 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -54,11 +54,11 @@ public class QuizEnd extends QuizWindow {
         setMinimumSize(new java.awt.Dimension(1250, 800));
         getContentPane().setLayout(null);
 
-        podsumowanieLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
-        podsumowanieLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        podsumowanieLabel1.setText("Zdobyłeś 23 punkty");
-        getContentPane().add(podsumowanieLabel1);
-        podsumowanieLabel1.setBounds(350, 190, 930, 90);
+        summaryLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
+        summaryLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        summaryLabel1.setText("Zdobyłeś 23 punkty");
+        getContentPane().add(summaryLabel1);
+        summaryLabel1.setBounds(280, 190, 930, 90);
 
         menu.setBackground(new Color(0,0,0,0));
         menu.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -75,7 +75,7 @@ public class QuizEnd extends QuizWindow {
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         jLabel3.setText("To już wszystkie pytania");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(560, 60, 510, 80);
+        jLabel3.setBounds(520, 60, 510, 80);
 
         exit.setBackground(new Color(0,0,0,0));
         exit.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -89,10 +89,10 @@ public class QuizEnd extends QuizWindow {
         getContentPane().add(exit);
         exit.setBounds(1300, 670, 50, 40);
 
-        podsumowanieLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
-        podsumowanieLabel2.setText("na 100 możliwych");
-        getContentPane().add(podsumowanieLabel2);
-        podsumowanieLabel2.setBounds(750, 270, 320, 40);
+        summaryLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        summaryLabel2.setText("na 100 możliwych");
+        getContentPane().add(summaryLabel2);
+        summaryLabel2.setBounds(560, 290, 410, 40);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/trawka.jpg"))); // NOI18N
         background.setText("Gratu");
@@ -172,12 +172,12 @@ public class QuizEnd extends QuizWindow {
     private javax.swing.JButton exit;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JButton menu;
-    private javax.swing.JLabel podsumowanieLabel1;
-    private javax.swing.JLabel podsumowanieLabel2;
+    private javax.swing.JLabel summaryLabel1;
+    private javax.swing.JLabel summaryLabel2;
     // End of variables declaration//GEN-END:variables
     */
-    private javax.swing.JLabel podsumowanieLabel1;
-    private javax.swing.JLabel podsumowanieLabel2;
+    private javax.swing.JLabel summaryLabel1;
+    private javax.swing.JLabel summaryLabel2;
     private javax.swing.JLabel jLabel3;
     
 
