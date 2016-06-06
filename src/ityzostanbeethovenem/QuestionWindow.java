@@ -2,6 +2,8 @@ package ityzostanbeethovenem;
 
 import java.awt.Color;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.Random;
@@ -21,6 +23,7 @@ public class QuestionWindow extends QuizWindow {
 
     public QuestionWindow() {
         initComponents();
+        addListener();
         randomQuestions();
         clearConstantValues();
         initQuestion(chooseNumber());
@@ -46,6 +49,7 @@ public class QuestionWindow extends QuizWindow {
 
     void initQuestion(int number) {
         enableOrNotButtons(true);
+        buttonSend.setEnabled(false);
         actualQuestion = new Question(JavaDB.questions[number].questionText, JavaDB.questions[number].answerA,
                 JavaDB.questions[number].answerB, JavaDB.questions[number].answerC,
                 JavaDB.questions[number].answerD, JavaDB.questions[number].correctAnswer,
@@ -63,13 +67,12 @@ public class QuestionWindow extends QuizWindow {
         buttonC.setText(actualQuestion.answerC);
         buttonD.setText(actualQuestion.answerD);
         totalPoints += actualQuestion.pointsForQuestion;
-        
-        
+
         if (actualQuestion.questionText.equals("Jaki to interwał?")) {
             playInterval(number);
             powtorzButton.setText("Powtórz");
             powtorzButton.setVisible(true);
-        }else {
+        } else {
             powtorzButton.setVisible(false);
         }
     }
@@ -246,23 +249,22 @@ public class QuestionWindow extends QuizWindow {
 //GEN-FIRST:event_buttonSendActionPerformed
  
 //GEN-LAST:event_buttonSendActionPerformed
-/*
+    /*
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
 
     }//GEN-LAST:event_menuActionPerformed
 */
-    
     public void menuActionPerformed(java.awt.event.ActionEvent evt) {
         clearConstantValues();
         Menu q = new Menu();
         q.setVisible(true);
         dispose();
     }
-    
+
     /*
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
       */
-    public void exitActionPerformed(java.awt.event.ActionEvent evt){
+    public void exitActionPerformed(java.awt.event.ActionEvent evt) {
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }//GEN-LAST:event_exitActionPerformed
@@ -272,11 +274,11 @@ public class QuestionWindow extends QuizWindow {
     }//GEN-LAST:event_powtorzButtonActionPerformed
 
     private void groupButton() {
-        ButtonGroup group = new ButtonGroup();
-        group.add(buttonA);
-        group.add(buttonB);
-        group.add(buttonC);
-        group.add(buttonD);
+        buttonGroup1 = new ButtonGroup();
+        buttonGroup1.add(buttonA);
+        buttonGroup1.add(buttonB);
+        buttonGroup1.add(buttonC);
+        buttonGroup1.add(buttonD);
     }
 
     private void enableOrNotButtons(boolean flag) {
@@ -338,8 +340,35 @@ public class QuestionWindow extends QuizWindow {
             dispose();
         } else {
             initQuestion(chooseNumber());
+            buttonGroup1.clearSelection();
         }
 
+    }
+
+    void addListener() {
+        buttonSend.setEnabled(false);
+        buttonA.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                buttonSend.setEnabled(true);
+            }
+        });
+         buttonB.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                buttonSend.setEnabled(true);
+            }
+        });
+          buttonC.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                buttonSend.setEnabled(true);
+            }
+        });
+           buttonD.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                buttonSend.setEnabled(true);
+            }
+        });
+           
+           
     }
 
     void addPoints() {
@@ -359,6 +388,7 @@ public class QuestionWindow extends QuizWindow {
     }
 
     private void buttonSendActionPerformed(java.awt.event.ActionEvent evt) {
+
         if (checkOrNext) {
             Player player = new Player();
             if (checkAnswer()) {
@@ -431,7 +461,6 @@ public class QuestionWindow extends QuizWindow {
     private javax.swing.JButton powtorzButton;
     // End of variables declaration//GEN-END:variables
 */
-    
     private javax.swing.JRadioButton buttonA;
     private javax.swing.JRadioButton buttonB;
     private javax.swing.JRadioButton buttonC;
@@ -443,6 +472,5 @@ public class QuestionWindow extends QuizWindow {
     private javax.swing.JLabel labelQuestionNumber;
     private javax.swing.JLabel labelQuestionText;
     private javax.swing.JButton powtorzButton;
-
 
 }
