@@ -1,8 +1,6 @@
 package ityzostanbeethovenem;
 
-public class SongChooser extends javax.swing.JDialog {
-
-    private String piosenka;
+public class SongChooser extends Chooser {
 
     public SongChooser(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -54,15 +52,11 @@ public class SongChooser extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
-        piosenka = (String) songs.getSelectedItem();
+        path = (String) songs.getSelectedItem();
         setVisible(false);
         dispose();
     }//GEN-LAST:event_confirmActionPerformed
 
-    public String showDialog() {
-        setVisible(true);
-        return piosenka;
-    }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

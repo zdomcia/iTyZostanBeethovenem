@@ -78,7 +78,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(menu);
         menu.setBounds(1240, 660, 50, 50);
 
-        Cis.setBackground(java.awt.Color.black);
+        Cis.setBackground(java.awt.Color.darkGray);
         Cis.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         Cis.setForeground(new java.awt.Color(255, 255, 255));
         Cis.setToolTipText(""); // NOI18N
@@ -93,7 +93,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(Cis);
         Cis.setBounds(170, 76, 32, 170);
 
-        Dis.setBackground(java.awt.Color.black);
+        Dis.setBackground(java.awt.Color.darkGray);
         Dis.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         Dis.setForeground(new java.awt.Color(255, 255, 255));
         Dis.setToolTipText("");
@@ -108,7 +108,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(Dis);
         Dis.setBounds(230, 76, 32, 170);
 
-        Fis.setBackground(java.awt.Color.black);
+        Fis.setBackground(java.awt.Color.darkGray);
         Fis.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         Fis.setForeground(new java.awt.Color(255, 255, 255));
         Fis.setToolTipText("");
@@ -123,7 +123,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(Fis);
         Fis.setBounds(330, 76, 32, 170);
 
-        Gis.setBackground(java.awt.Color.black);
+        Gis.setBackground(java.awt.Color.darkGray);
         Gis.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         Gis.setForeground(new java.awt.Color(255, 255, 255));
         Gis.setToolTipText("");
@@ -138,7 +138,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(Gis);
         Gis.setBounds(390, 76, 32, 170);
 
-        B.setBackground(java.awt.Color.black);
+        B.setBackground(java.awt.Color.darkGray);
         B.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         B.setForeground(new java.awt.Color(255, 255, 255));
         B.setToolTipText("");
@@ -153,7 +153,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(B);
         B.setBounds(450, 76, 32, 170);
 
-        Cis1.setBackground(java.awt.Color.black);
+        Cis1.setBackground(java.awt.Color.darkGray);
         Cis1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         Cis1.setForeground(new java.awt.Color(255, 255, 255));
         Cis1.setToolTipText("");
@@ -168,7 +168,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(Cis1);
         Cis1.setBounds(554, 76, 32, 170);
 
-        Dis1.setBackground(java.awt.Color.black);
+        Dis1.setBackground(java.awt.Color.darkGray);
         Dis1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         Dis1.setForeground(new java.awt.Color(255, 255, 255));
         Dis1.setToolTipText("");
@@ -183,8 +183,8 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(Dis1);
         Dis1.setBounds(610, 76, 32, 170);
 
+        C.setBackground(new java.awt.Color(245, 245, 245));
         C.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        C.setForeground(javax.swing.UIManager.getDefaults().getColor("Button.background"));
         C.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216)));
         C.setFocusable(false);
         C.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
@@ -196,6 +196,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(C);
         C.setBounds(127, 77, 58, 275);
 
+        D1.setBackground(new java.awt.Color(245, 245, 245));
         D1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         D1.setToolTipText("");
         D1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216)));
@@ -210,6 +211,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(D1);
         D1.setBounds(567, 77, 58, 275);
 
+        C1.setBackground(new java.awt.Color(245, 245, 245));
         C1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         C1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216)));
         C1.setFocusable(false);
@@ -225,6 +227,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(C1);
         C1.setBounds(512, 77, 58, 275);
 
+        H.setBackground(new java.awt.Color(245, 245, 245));
         H.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         H.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216)));
         H.setFocusable(false);
@@ -237,6 +240,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(H);
         H.setBounds(457, 77, 58, 275);
 
+        A.setBackground(new java.awt.Color(245, 245, 245));
         A.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         A.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216)));
         A.setFocusable(false);
@@ -249,6 +253,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(A);
         A.setBounds(402, 77, 58, 275);
 
+        G.setBackground(new java.awt.Color(245, 245, 245));
         G.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         G.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216)));
         G.setFocusable(false);
@@ -261,6 +266,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(G);
         G.setBounds(347, 77, 58, 275);
 
+        D.setBackground(new java.awt.Color(245, 245, 245));
         D.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         D.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216)));
         D.setFocusable(false);
@@ -273,6 +279,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(D);
         D.setBounds(182, 77, 58, 275);
 
+        F.setBackground(new java.awt.Color(245, 245, 245));
         F.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         F.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216)));
         F.setFocusable(false);
@@ -285,6 +292,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(F);
         F.setBounds(292, 77, 58, 275);
 
+        E.setBackground(new java.awt.Color(245, 245, 245));
         E.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         E.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216)));
         E.setFocusable(false);
@@ -297,6 +305,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(E);
         E.setBounds(237, 77, 58, 275);
 
+        E1.setBackground(new java.awt.Color(245, 245, 245));
         E1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         E1.setToolTipText("");
         E1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216)));
@@ -337,7 +346,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(exit);
         exit.setBounds(1298, 666, 50, 40);
 
-        Fis1.setBackground(java.awt.Color.black);
+        Fis1.setBackground(java.awt.Color.darkGray);
         Fis1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         Fis1.setForeground(new java.awt.Color(255, 255, 255));
         Fis1.setToolTipText("");
@@ -352,7 +361,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(Fis1);
         Fis1.setBounds(710, 76, 32, 170);
 
-        Gis1.setBackground(java.awt.Color.black);
+        Gis1.setBackground(java.awt.Color.darkGray);
         Gis1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         Gis1.setForeground(new java.awt.Color(255, 255, 255));
         Gis1.setToolTipText("");
@@ -367,7 +376,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(Gis1);
         Gis1.setBounds(770, 76, 32, 170);
 
-        B1.setBackground(java.awt.Color.black);
+        B1.setBackground(java.awt.Color.darkGray);
         B1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         B1.setForeground(new java.awt.Color(255, 255, 255));
         B1.setToolTipText("");
@@ -382,6 +391,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(B1);
         B1.setBounds(830, 76, 32, 170);
 
+        F1.setBackground(new java.awt.Color(245, 245, 245));
         F1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         F1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216)));
         F1.setFocusable(false);
@@ -394,6 +404,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(F1);
         F1.setBounds(677, 77, 58, 275);
 
+        G1.setBackground(new java.awt.Color(245, 245, 245));
         G1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         G1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216)));
         G1.setFocusable(false);
@@ -406,6 +417,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(G1);
         G1.setBounds(732, 77, 58, 275);
 
+        A1.setBackground(new java.awt.Color(245, 245, 245));
         A1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         A1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216)));
         A1.setFocusable(false);
@@ -418,6 +430,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(A1);
         A1.setBounds(787, 77, 58, 275);
 
+        H1.setBackground(new java.awt.Color(245, 245, 245));
         H1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         H1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216)));
         H1.setFocusable(false);
@@ -430,7 +443,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(H1);
         H1.setBounds(842, 77, 58, 275);
 
-        Cis2.setBackground(java.awt.Color.black);
+        Cis2.setBackground(java.awt.Color.darkGray);
         Cis2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         Cis2.setForeground(new java.awt.Color(255, 255, 255));
         Cis2.setToolTipText("");
@@ -445,7 +458,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(Cis2);
         Cis2.setBounds(940, 77, 32, 170);
 
-        Dis2.setBackground(java.awt.Color.black);
+        Dis2.setBackground(java.awt.Color.darkGray);
         Dis2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         Dis2.setForeground(new java.awt.Color(255, 255, 255));
         Dis2.setToolTipText("");
@@ -460,6 +473,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(Dis2);
         Dis2.setBounds(998, 77, 32, 170);
 
+        D2.setBackground(new java.awt.Color(245, 245, 245));
         D2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         D2.setToolTipText("");
         D2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216)));
@@ -474,6 +488,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(D2);
         D2.setBounds(952, 77, 58, 275);
 
+        C2.setBackground(new java.awt.Color(245, 245, 245));
         C2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         C2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216)));
         C2.setFocusable(false);
@@ -489,6 +504,7 @@ public class Piano extends javax.swing.JFrame {
         getContentPane().add(C2);
         C2.setBounds(897, 77, 58, 275);
 
+        E2.setBackground(new java.awt.Color(245, 245, 245));
         E2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         E2.setToolTipText("");
         E2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216), new java.awt.Color(216, 213, 216)));

@@ -3,8 +3,9 @@ package ityzostanbeethovenem;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import javax.swing.ImageIcon;
 
-public class QuizCategories extends javax.swing.JFrame {
+public class QuizCategories extends QuizWindow {
 
     public QuizCategories() {
         initComponents();
@@ -17,77 +18,85 @@ public class QuizCategories extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        buttonInstrumenty = new javax.swing.JButton();
-        buttonKompozytorzy = new javax.swing.JButton();
-        buttonNotacja = new javax.swing.JButton();
-        buttonRozpoznawanieDzwiekow = new javax.swing.JButton();
-        buttonWszystko = new javax.swing.JButton();
+        buttonInstruments = new javax.swing.JButton();
+        buttonCompositors = new javax.swing.JButton();
+        buttonNotation = new javax.swing.JButton();
+        buttonSoundsRecognition = new javax.swing.JButton();
+        buttonEverything = new javax.swing.JButton();
         menu = new javax.swing.JButton();
         exit = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("I Ty możesz zostać Beethovenem");
+        setIconImage(new ImageIcon(getClass().getResource("/Grafika/ikonka.png")).getImage());
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 3, 48)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(78, 78, 78));
         jLabel1.setText("WYBIERZ KATEGORIĘ");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(690, 40, 570, 67);
+        jLabel1.setBounds(610, 40, 570, 67);
 
-        buttonInstrumenty.setBackground(new Color(0,0,0,0));
-        buttonInstrumenty.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        buttonInstrumenty.setText("Instrumenty");
-        buttonInstrumenty.addActionListener(new java.awt.event.ActionListener() {
+        buttonInstruments.setBackground(new Color(0,0,0,0));
+        buttonInstruments.setFont(new java.awt.Font("Comic Sans MS", 1, 23)); // NOI18N
+        buttonInstruments.setForeground(new java.awt.Color(78, 78, 78));
+        buttonInstruments.setText("Instrumenty");
+        buttonInstruments.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonInstrumentyActionPerformed(evt);
+                buttonInstrumentsActionPerformed(evt);
             }
         });
-        getContentPane().add(buttonInstrumenty);
-        buttonInstrumenty.setBounds(800, 110, 290, 70);
+        getContentPane().add(buttonInstruments);
+        buttonInstruments.setBounds(740, 120, 290, 70);
 
-        buttonKompozytorzy.setBackground(new Color(0,0,0,0));
-        buttonKompozytorzy.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        buttonKompozytorzy.setText("Kompozytorzy");
-        buttonKompozytorzy.addActionListener(new java.awt.event.ActionListener() {
+        buttonCompositors.setBackground(new Color(0,0,0,0));
+        buttonCompositors.setFont(new java.awt.Font("Comic Sans MS", 1, 23)); // NOI18N
+        buttonCompositors.setForeground(new java.awt.Color(78, 78, 78));
+        buttonCompositors.setText("Kompozytorzy");
+        buttonCompositors.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonKompozytorzyActionPerformed(evt);
+                buttonCompositorsActionPerformed(evt);
             }
         });
-        getContentPane().add(buttonKompozytorzy);
-        buttonKompozytorzy.setBounds(800, 190, 290, 70);
+        getContentPane().add(buttonCompositors);
+        buttonCompositors.setBounds(740, 200, 290, 70);
 
-        buttonNotacja.setBackground(new Color(0,0,0,0));
-        buttonNotacja.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        buttonNotacja.setText("Notacja muzyczna");
-        buttonNotacja.addActionListener(new java.awt.event.ActionListener() {
+        buttonNotation.setBackground(new Color(0,0,0,0));
+        buttonNotation.setFont(new java.awt.Font("Comic Sans MS", 1, 23)); // NOI18N
+        buttonNotation.setForeground(new java.awt.Color(78, 78, 78));
+        buttonNotation.setText("Notacja muzyczna");
+        buttonNotation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonNotacjaActionPerformed(evt);
+                buttonNotationActionPerformed(evt);
             }
         });
-        getContentPane().add(buttonNotacja);
-        buttonNotacja.setBounds(800, 270, 290, 70);
+        getContentPane().add(buttonNotation);
+        buttonNotation.setBounds(740, 280, 290, 70);
 
-        buttonRozpoznawanieDzwiekow.setBackground(new Color(0,0,0,0));
-        buttonRozpoznawanieDzwiekow.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        buttonRozpoznawanieDzwiekow.setText("Dźwięki");
-        buttonRozpoznawanieDzwiekow.addActionListener(new java.awt.event.ActionListener() {
+        buttonSoundsRecognition.setBackground(new Color(0,0,0,0));
+        buttonSoundsRecognition.setFont(new java.awt.Font("Comic Sans MS", 1, 23)); // NOI18N
+        buttonSoundsRecognition.setForeground(new java.awt.Color(78, 78, 78));
+        buttonSoundsRecognition.setText("Interwały");
+        buttonSoundsRecognition.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonRozpoznawanieDzwiekowActionPerformed(evt);
+                buttonSoundsRecognitionActionPerformed(evt);
             }
         });
-        getContentPane().add(buttonRozpoznawanieDzwiekow);
-        buttonRozpoznawanieDzwiekow.setBounds(800, 350, 290, 70);
+        getContentPane().add(buttonSoundsRecognition);
+        buttonSoundsRecognition.setBounds(740, 360, 290, 70);
 
-        buttonWszystko.setBackground(new Color(0,0,0,0));
-        buttonWszystko.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        buttonWszystko.setText("Wszystko");
-        buttonWszystko.addActionListener(new java.awt.event.ActionListener() {
+        buttonEverything.setBackground(new Color(0,0,0,0));
+        buttonEverything.setFont(new java.awt.Font("Comic Sans MS", 1, 23)); // NOI18N
+        buttonEverything.setForeground(new java.awt.Color(78, 78, 78));
+        buttonEverything.setText("Wszystko");
+        buttonEverything.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonWszystkoActionPerformed(evt);
+                buttonEverythingActionPerformed(evt);
             }
         });
-        getContentPane().add(buttonWszystko);
-        buttonWszystko.setBounds(800, 430, 290, 70);
+        getContentPane().add(buttonEverything);
+        buttonEverything.setBounds(740, 440, 290, 70);
 
         menu.setBackground(new Color(0,0,0,0));
         menu.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -113,67 +122,57 @@ public class QuizCategories extends javax.swing.JFrame {
         getContentPane().add(exit);
         exit.setBounds(1300, 670, 50, 40);
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/trawka.jpg"))); // NOI18N
-        background.setText("jLabel2");
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/ogrod.jpg"))); // NOI18N
         getContentPane().add(background);
-        background.setBounds(-10, -180, 1470, 1010);
+        background.setBounds(0, -150, 1640, 1080);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonInstrumentyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInstrumentyActionPerformed
+    private void loadQuestions(int number) {
         JavaDB db = new JavaDB();
         db.uploadQuestions();
-        db.dodajPytaniaKategorii(1);
-        Question q = new Question();
+        if (number == 0) {
+            db.addQuestions();
+        } else {
+            db.addQuestionsForCategory(number);
+        }
+        QuestionWindow q = new QuestionWindow();
         q.setVisible(true);
         close();
-    }//GEN-LAST:event_buttonInstrumentyActionPerformed
+    }
 
-    private void buttonKompozytorzyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonKompozytorzyActionPerformed
-        JavaDB db = new JavaDB();
-        db.uploadQuestions();
-        db.dodajPytaniaKategorii(2);
-        Question q = new Question();
-        q.setVisible(true);
-        close();
-    }//GEN-LAST:event_buttonKompozytorzyActionPerformed
+    private void buttonInstrumentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInstrumentsActionPerformed
+        loadQuestions(1);
+    }//GEN-LAST:event_buttonInstrumentsActionPerformed
 
-    private void buttonNotacjaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNotacjaActionPerformed
-        JavaDB db = new JavaDB();
-        db.uploadQuestions();
-        db.dodajPytaniaKategorii(3);
-        Question q = new Question();
-        q.setVisible(true);
-        close();
-    }//GEN-LAST:event_buttonNotacjaActionPerformed
+    private void buttonCompositorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCompositorsActionPerformed
+        loadQuestions(2);
+    }//GEN-LAST:event_buttonCompositorsActionPerformed
 
-    private void buttonRozpoznawanieDzwiekowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRozpoznawanieDzwiekowActionPerformed
-        JavaDB db = new JavaDB();
-        db.uploadQuestions();
-        db.dodajPytaniaKategorii(4);
-        Question q = new Question();
-        q.setVisible(true);
-        close();
-    }//GEN-LAST:event_buttonRozpoznawanieDzwiekowActionPerformed
+    private void buttonNotationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNotationActionPerformed
+        loadQuestions(3);
+    }//GEN-LAST:event_buttonNotationActionPerformed
 
-    private void buttonWszystkoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonWszystkoActionPerformed
-        JavaDB db = new JavaDB();
-        db.uploadQuestions();
-        db.dodajPytania();
-        Question q = new Question();
-        q.setVisible(true);
-        close();
-    }//GEN-LAST:event_buttonWszystkoActionPerformed
+    private void buttonSoundsRecognitionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSoundsRecognitionActionPerformed
+        loadQuestions(4);
+    }//GEN-LAST:event_buttonSoundsRecognitionActionPerformed
 
+    private void buttonEverythingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEverythingActionPerformed
+        loadQuestions(0);
+    }//GEN-LAST:event_buttonEverythingActionPerformed
+
+    /*
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
-        Menu q = new Menu();
-        q.setVisible(true);
-        dispose();
+
     }//GEN-LAST:event_menuActionPerformed
 
+    /*
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-
+    */
+    
+    
+    public void exitActionPerformed(java.awt.event.ActionEvent evt) {
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }//GEN-LAST:event_exitActionPerformed
@@ -214,16 +213,27 @@ public class QuizCategories extends javax.swing.JFrame {
             }
         });
     }
+    /*
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
-    private javax.swing.JButton buttonInstrumenty;
-    private javax.swing.JButton buttonKompozytorzy;
-    private javax.swing.JButton buttonNotacja;
-    private javax.swing.JButton buttonRozpoznawanieDzwiekow;
-    private javax.swing.JButton buttonWszystko;
-    private javax.swing.JButton exit;
+    private javax.swing.JButton buttonCompositors;
+    private javax.swing.JButton buttonEverything;
+    private javax.swing.JButton buttonInstruments;
+    private javax.swing.JButton buttonNotation;
+    private javax.swing.JButton buttonSoundsRecognition;
+    public javax.swing.JButton exit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton menu;
     // End of variables declaration//GEN-END:variables
+*/
+    
+    
+    private javax.swing.JButton buttonInstruments;
+    private javax.swing.JButton buttonCompositors;
+    private javax.swing.JButton buttonNotation;
+    private javax.swing.JButton buttonSoundsRecognition;
+    private javax.swing.JButton buttonEverything;
+    private javax.swing.JLabel jLabel1;
+
 }
