@@ -24,14 +24,16 @@ public class Menu extends QuizWindow {
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("I Ty możesz zostać Beethovenem");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setIconImage(new ImageIcon(getClass().getResource("/Grafika/ikonka.png")).getImage());
         setLocationByPlatform(true);
         setMinimumSize(new java.awt.Dimension(1250, 800));
         getContentPane().setLayout(null);
 
-        piano.setFont(new java.awt.Font("Comic Sans MS", 0, 40)); // NOI18N
-        piano.setForeground(new java.awt.Color(76, 76, 76));
+        piano.setBackground(new java.awt.Color(189, 204, 204));
+        piano.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        piano.setForeground(new java.awt.Color(78, 78, 78));
         piano.setText("Pianino");
         piano.setBorder(null);
         piano.setDefaultCapable(false);
@@ -43,10 +45,11 @@ public class Menu extends QuizWindow {
             }
         });
         getContentPane().add(piano);
-        piano.setBounds(830, 240, 280, 80);
+        piano.setBounds(830, 240, 280, 70);
 
-        quiz.setFont(new java.awt.Font("Comic Sans MS", 0, 40)); // NOI18N
-        quiz.setForeground(new java.awt.Color(76, 76, 76));
+        quiz.setBackground(new java.awt.Color(189, 204, 204));
+        quiz.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        quiz.setForeground(new java.awt.Color(78, 78, 78));
         quiz.setText("Quiz");
         quiz.setBorder(null);
         quiz.setBorderPainted(false);
@@ -58,7 +61,7 @@ public class Menu extends QuizWindow {
             }
         });
         getContentPane().add(quiz);
-        quiz.setBounds(830, 140, 280, 80);
+        quiz.setBounds(830, 140, 280, 70);
 
         exit.setBackground(new Color(0,0,0,0));
         exit.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N

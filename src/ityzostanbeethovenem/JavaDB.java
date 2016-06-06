@@ -33,7 +33,7 @@ public class JavaDB {
                 counter++;
             }
             size = counter;
-            System.out.println("mam teraz " + size);
+            //System.out.println("mam teraz " + size);
             result.close();
             stat.close();
             connection.close();
@@ -165,7 +165,7 @@ public class JavaDB {
                     + "('Na co cierpiał Beethoven?','na głuchotę','na ślepotę','był niemy','żadna z powyższych', 'A', 2, 10),"
                     + "('Kto skomponował polski hymn?','Mozart','Bach','Wybicki','Chopin', 'C', 2, 15),"
                     + "('Jakiej narodowości był Vivaldi?','hiszpańskiej','portugalskiej','włoskiej','czeskiej', 'C', 2, 15),"
-                    + "('Na czyją cześć co 5 lat odbywa się Międzynarodowy Konkurs Pianistyczny?','Bacha','Haydna','Chopina','Beethovena', 'C', 2, 20),"
+                    + "('Na czyją cześć co 5 lat odbywa się Konkurs Pianistyczny?','Bacha','Haydna','Chopina','Beethovena', 'C', 2, 20),"
                     + "('Gdzie znajduje się serce Fryderyka Chopina?','w Krakowie','w Gdańsku','w Poznaniu','w Warszawie', 'D', 2, 15),"
                     + "('W jakim wieku Chopin zaczął komponować?','3 lata','18 lat','7 lat','15 lat', 'C', 2, 20),"
                     + "('W jakim mieście urodził się Fryderyk Chopin?','Londyn','Żelazowa Wola','Paryż','Warszawa', 'B', 2, 10),"

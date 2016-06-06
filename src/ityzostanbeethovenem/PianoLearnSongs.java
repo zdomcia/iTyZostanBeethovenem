@@ -41,6 +41,7 @@ public class PianoLearnSongs extends Piano {
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("I Ty możesz zostać Beethovenem");
         setFocusCycleRoot(false);
         setFocusable(false);
         setIconImage(new ImageIcon(getClass().getResource("/Grafika/ikonka.png")).getImage());
@@ -49,13 +50,14 @@ public class PianoLearnSongs extends Piano {
 
         tryAgain.setBackground(new Color(0, 0, 0, 0));
         tryAgain.setFont(new java.awt.Font("Comic Sans MS", 1, 180)); // NOI18N
+        tryAgain.setForeground(new java.awt.Color(25, 25, 25));
         tryAgain.setText("Jeszcze raz");
         getContentPane().add(tryAgain);
         tryAgain.setBounds(160, 200, 1400, 460);
 
         playSong.setBackground(new java.awt.Color(189, 204, 204));
-        playSong.setFont(new java.awt.Font("Comic Sans MS", 0, 30)); // NOI18N
-        playSong.setForeground(new java.awt.Color(73, 73, 79));
+        playSong.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        playSong.setForeground(new java.awt.Color(78, 78, 78));
         playSong.setText("Naucz");
         playSong.setActionCommand("naucz");
         playSong.setFocusable(false);
@@ -65,15 +67,17 @@ public class PianoLearnSongs extends Piano {
             }
         });
         getContentPane().add(playSong);
-        playSong.setBounds(150, 460, 290, 60);
+        playSong.setBounds(250, 400, 270, 60);
 
+        progress.setBackground(new java.awt.Color(189, 204, 204));
+        progress.setForeground(new java.awt.Color(78, 78, 78));
         progress.setMaximum(15);
         getContentPane().add(progress);
-        progress.setBounds(150, 380, 290, 60);
+        progress.setBounds(210, 560, 340, 50);
 
         songChoose.setBackground(new java.awt.Color(189, 204, 204));
-        songChoose.setFont(new java.awt.Font("Comic Sans MS", 0, 30)); // NOI18N
-        songChoose.setForeground(new java.awt.Color(73, 73, 79));
+        songChoose.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        songChoose.setForeground(new java.awt.Color(78, 78, 78));
         songChoose.setText("Wybierz piosenkę");
         songChoose.setFocusable(false);
         songChoose.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +86,7 @@ public class PianoLearnSongs extends Piano {
             }
         });
         getContentPane().add(songChoose);
-        songChoose.setBounds(150, 530, 290, 60);
+        songChoose.setBounds(250, 480, 270, 60);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/chatka.jpg"))); // NOI18N
         getContentPane().add(background);

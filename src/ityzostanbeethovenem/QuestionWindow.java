@@ -144,43 +144,52 @@ public class QuestionWindow extends QuizWindow {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("I Ty możesz zostać Beethovenem");
         setIconImage(new ImageIcon(getClass().getResource("/Grafika/ikonka.png")).getImage());
         setMinimumSize(new java.awt.Dimension(1250, 800));
         getContentPane().setLayout(null);
 
-        labelQuestionNumber.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
+        labelQuestionNumber.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
+        labelQuestionNumber.setForeground(new java.awt.Color(78, 78, 78));
         labelQuestionNumber.setText("Pytanie nr 1");
         getContentPane().add(labelQuestionNumber);
-        labelQuestionNumber.setBounds(870, 50, 330, 59);
+        labelQuestionNumber.setBounds(700, 50, 160, 59);
 
-        labelQuestionText.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        labelQuestionText.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        labelQuestionText.setForeground(new java.awt.Color(78, 78, 78));
         labelQuestionText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelQuestionText.setText("Treśc bardzo trudnego pytania");
         getContentPane().add(labelQuestionText);
-        labelQuestionText.setBounds(510, 40, 871, 146);
+        labelQuestionText.setBounds(310, 110, 871, 40);
 
         buttonA.setBackground(new java.awt.Color(0, 255, 0));
-        buttonA.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        buttonA.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        buttonA.setForeground(new java.awt.Color(78, 78, 78));
         buttonA.setText("aaa");
         getContentPane().add(buttonA);
-        buttonA.setBounds(800, 180, 380, 54);
+        buttonA.setBounds(580, 180, 380, 54);
 
         buttonB.setBackground(new java.awt.Color(0, 255, 0));
-        buttonB.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        buttonB.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        buttonB.setForeground(new java.awt.Color(78, 78, 78));
         getContentPane().add(buttonB);
-        buttonB.setBounds(800, 250, 380, 54);
+        buttonB.setBounds(580, 250, 380, 54);
 
         buttonC.setBackground(new java.awt.Color(0, 255, 0));
-        buttonC.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        buttonC.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        buttonC.setForeground(new java.awt.Color(78, 78, 78));
         getContentPane().add(buttonC);
-        buttonC.setBounds(800, 320, 380, 54);
+        buttonC.setBounds(580, 320, 380, 54);
 
         buttonD.setBackground(new java.awt.Color(0, 255, 0));
-        buttonD.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        buttonD.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        buttonD.setForeground(new java.awt.Color(78, 78, 78));
         getContentPane().add(buttonD);
-        buttonD.setBounds(800, 390, 380, 54);
+        buttonD.setBounds(580, 390, 380, 54);
 
-        buttonSend.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        buttonSend.setBackground(new java.awt.Color(189, 204, 204));
+        buttonSend.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        buttonSend.setForeground(new java.awt.Color(78, 78, 78));
         buttonSend.setText("Sprawdź");
         buttonSend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,7 +197,7 @@ public class QuestionWindow extends QuizWindow {
             }
         });
         getContentPane().add(buttonSend);
-        buttonSend.setBounds(990, 490, 166, 57);
+        buttonSend.setBounds(760, 480, 180, 60);
 
         menu.setBackground(new Color(0,0,0,0));
         menu.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -214,7 +223,9 @@ public class QuestionWindow extends QuizWindow {
         getContentPane().add(exit);
         exit.setBounds(1300, 670, 50, 40);
 
-        powtorzButton.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        powtorzButton.setBackground(new java.awt.Color(189, 204, 204));
+        powtorzButton.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        powtorzButton.setForeground(new java.awt.Color(78, 78, 78));
         powtorzButton.setText("Powtórz");
         powtorzButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -222,12 +233,12 @@ public class QuestionWindow extends QuizWindow {
             }
         });
         getContentPane().add(powtorzButton);
-        powtorzButton.setBounds(770, 490, 180, 60);
+        powtorzButton.setBounds(520, 480, 180, 60);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/trawka.jpg"))); // NOI18N
         background.setText("asasasasa");
         getContentPane().add(background);
-        background.setBounds(-140, -340, 1630, 1110);
+        background.setBounds(-140, -180, 1630, 1110);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

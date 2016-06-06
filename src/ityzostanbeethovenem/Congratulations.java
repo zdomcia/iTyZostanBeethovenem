@@ -37,6 +37,7 @@ public class Congratulations extends javax.swing.JFrame {
         setType(java.awt.Window.Type.UTILITY);
 
         text.setFont(new java.awt.Font("Comic Sans MS", 1, 100)); // NOI18N
+        text.setForeground(new java.awt.Color(25, 25, 25));
         text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text.setText("SUPER!");
         text.setToolTipText("");
