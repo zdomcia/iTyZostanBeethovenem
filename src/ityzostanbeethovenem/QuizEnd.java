@@ -51,6 +51,8 @@ public class QuizEnd extends QuizWindow {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("I Ty możesz zostać Beethovenem");
         setAutoRequestFocus(false);
+        setExtendedState(MAXIMIZED_BOTH);
+        setFocusCycleRoot(false);
         setIconImage(new ImageIcon(getClass().getResource("/Grafika/ikonka.png")).getImage());
         setMinimumSize(new java.awt.Dimension(1250, 800));
         getContentPane().setLayout(null);
@@ -60,7 +62,7 @@ public class QuizEnd extends QuizWindow {
         summaryLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         summaryLabel1.setText("Zdobyłeś 23 punkty");
         getContentPane().add(summaryLabel1);
-        summaryLabel1.setBounds(220, 200, 930, 90);
+        summaryLabel1.setBounds(890, 250, 930, 90);
 
         menu.setBackground(new Color(0,0,0,0));
         menu.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -72,13 +74,13 @@ public class QuizEnd extends QuizWindow {
             }
         });
         getContentPane().add(menu);
-        menu.setBounds(1240, 662, 50, 50);
+        menu.setBounds(1760, 40, 50, 50);
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(25, 25, 25));
         jLabel3.setText("To już wszystkie pytania");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(490, 120, 510, 80);
+        jLabel3.setBounds(1040, 160, 510, 90);
 
         exit.setBackground(new Color(0,0,0,0));
         exit.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -90,18 +92,21 @@ public class QuizEnd extends QuizWindow {
             }
         });
         getContentPane().add(exit);
-        exit.setBounds(1300, 670, 50, 40);
+        exit.setBounds(1830, 40, 50, 40);
 
         summaryLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         summaryLabel2.setForeground(new java.awt.Color(25, 25, 25));
         summaryLabel2.setText("na 100 możliwych");
         getContentPane().add(summaryLabel2);
-        summaryLabel2.setBounds(560, 290, 410, 40);
+        summaryLabel2.setBounds(1320, 330, 410, 40);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/zyrafa.jpg"))); // NOI18N
         background.setText("Gratu");
+        background.setMaximumSize(getMaximumSize());
+        background.setMinimumSize(getMinimumSize());
+        background.setPreferredSize(getPreferredSize());
         getContentPane().add(background);
-        background.setBounds(0, -270, 1920, 1190);
+        background.setBounds(0, -260, 1920, 1350);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

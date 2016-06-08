@@ -156,39 +156,39 @@ public class QuestionWindow extends QuizWindow {
         labelQuestionNumber.setForeground(new java.awt.Color(78, 78, 78));
         labelQuestionNumber.setText("Pytanie nr 1");
         getContentPane().add(labelQuestionNumber);
-        labelQuestionNumber.setBounds(700, 50, 160, 59);
+        labelQuestionNumber.setBounds(1210, 120, 160, 59);
 
         labelQuestionText.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         labelQuestionText.setForeground(new java.awt.Color(78, 78, 78));
         labelQuestionText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelQuestionText.setText("Treśc bardzo trudnego pytania");
         getContentPane().add(labelQuestionText);
-        labelQuestionText.setBounds(310, 110, 871, 40);
+        labelQuestionText.setBounds(820, 180, 871, 40);
 
         buttonA.setBackground(new java.awt.Color(0, 255, 0));
         buttonA.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         buttonA.setForeground(new java.awt.Color(78, 78, 78));
         buttonA.setText("aaa");
         getContentPane().add(buttonA);
-        buttonA.setBounds(580, 180, 380, 54);
+        buttonA.setBounds(1190, 260, 380, 54);
 
         buttonB.setBackground(new java.awt.Color(0, 255, 0));
         buttonB.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         buttonB.setForeground(new java.awt.Color(78, 78, 78));
         getContentPane().add(buttonB);
-        buttonB.setBounds(580, 250, 380, 54);
+        buttonB.setBounds(1190, 330, 380, 54);
 
         buttonC.setBackground(new java.awt.Color(0, 255, 0));
         buttonC.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         buttonC.setForeground(new java.awt.Color(78, 78, 78));
         getContentPane().add(buttonC);
-        buttonC.setBounds(580, 320, 380, 54);
+        buttonC.setBounds(1190, 400, 380, 54);
 
         buttonD.setBackground(new java.awt.Color(0, 255, 0));
         buttonD.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         buttonD.setForeground(new java.awt.Color(78, 78, 78));
         getContentPane().add(buttonD);
-        buttonD.setBounds(580, 390, 380, 54);
+        buttonD.setBounds(1190, 470, 380, 54);
 
         buttonSend.setBackground(new java.awt.Color(189, 204, 204));
         buttonSend.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
@@ -200,7 +200,7 @@ public class QuestionWindow extends QuizWindow {
             }
         });
         getContentPane().add(buttonSend);
-        buttonSend.setBounds(760, 480, 180, 60);
+        buttonSend.setBounds(1410, 580, 180, 60);
 
         menu.setBackground(new Color(0,0,0,0));
         menu.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -212,7 +212,7 @@ public class QuestionWindow extends QuizWindow {
             }
         });
         getContentPane().add(menu);
-        menu.setBounds(1240, 662, 50, 50);
+        menu.setBounds(1760, 40, 50, 50);
 
         exit.setBackground(new Color(0,0,0,0));
         exit.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -224,7 +224,7 @@ public class QuestionWindow extends QuizWindow {
             }
         });
         getContentPane().add(exit);
-        exit.setBounds(1300, 670, 50, 40);
+        exit.setBounds(1830, 40, 50, 40);
 
         powtorzButton.setBackground(new java.awt.Color(189, 204, 204));
         powtorzButton.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
@@ -236,12 +236,15 @@ public class QuestionWindow extends QuizWindow {
             }
         });
         getContentPane().add(powtorzButton);
-        powtorzButton.setBounds(520, 480, 180, 60);
+        powtorzButton.setBounds(1190, 580, 180, 60);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/trawka.jpg"))); // NOI18N
-        background.setText("asasasasa");
+        background.setAutoscrolls(true);
+        background.setMaximumSize(getMaximumSize());
+        background.setMinimumSize(getMinimumSize());
+        background.setPreferredSize(getPreferredSize());
         getContentPane().add(background);
-        background.setBounds(-140, -180, 1630, 1110);
+        background.setBounds(0, -130, 1950, 1320);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

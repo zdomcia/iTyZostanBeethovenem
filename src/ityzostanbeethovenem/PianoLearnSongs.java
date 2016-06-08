@@ -53,7 +53,7 @@ public class PianoLearnSongs extends Piano {
         tryAgain.setForeground(new java.awt.Color(25, 25, 25));
         tryAgain.setText("Jeszcze raz");
         getContentPane().add(tryAgain);
-        tryAgain.setBounds(160, 200, 1400, 460);
+        tryAgain.setBounds(390, 290, 1400, 460);
 
         playSong.setBackground(new java.awt.Color(189, 204, 204));
         playSong.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
@@ -89,8 +89,10 @@ public class PianoLearnSongs extends Piano {
         songChoose.setBounds(250, 480, 270, 60);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/chatka.jpg"))); // NOI18N
+        background.setMaximumSize(getMaximumSize());
+        background.setPreferredSize(getMaximumSize());
         getContentPane().add(background);
-        background.setBounds(-170, -430, 1590, 1200);
+        background.setBounds(0, -160, 3000, 1300);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

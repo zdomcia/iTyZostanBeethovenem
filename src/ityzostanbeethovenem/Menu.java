@@ -21,15 +21,19 @@ public class Menu extends QuizWindow {
         piano = new javax.swing.JButton();
         quiz = new javax.swing.JButton();
         exit = new javax.swing.JButton();
-        background = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jToolBar1 = new javax.swing.JToolBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("I Ty możesz zostać Beethovenem");
+        setAlwaysOnTop(true);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setExtendedState(MAXIMIZED_BOTH);
         setIconImage(new ImageIcon(getClass().getResource("/Grafika/ikonka.png")).getImage());
         setLocationByPlatform(true);
         setMinimumSize(new java.awt.Dimension(1250, 800));
-        getContentPane().setLayout(null);
+        setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         piano.setBackground(new java.awt.Color(189, 204, 204));
         piano.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
@@ -44,8 +48,7 @@ public class Menu extends QuizWindow {
                 pianoActionPerformed(evt);
             }
         });
-        getContentPane().add(piano);
-        piano.setBounds(830, 240, 280, 70);
+        getContentPane().add(piano, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 250, 310, 90));
 
         quiz.setBackground(new java.awt.Color(189, 204, 204));
         quiz.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
@@ -60,25 +63,30 @@ public class Menu extends QuizWindow {
                 quizActionPerformed(evt);
             }
         });
-        getContentPane().add(quiz);
-        quiz.setBounds(830, 140, 280, 70);
+        getContentPane().add(quiz, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 360, 310, 90));
 
         exit.setBackground(new Color(0,0,0,0));
-        exit.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        exit.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
         exit.setForeground(new java.awt.Color(2, 40, 21));
         exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/exit.png"))); // NOI18N
+        exit.setMaximumSize(new java.awt.Dimension(80, 50));
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitActionPerformed(evt);
             }
         });
-        getContentPane().add(exit);
-        exit.setBounds(1300, 670, 50, 40);
+        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1830, 40, 50, 40));
 
-        background.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/zyrafa.jpg"))); // NOI18N
-        getContentPane().add(background);
-        background.setBounds(0, -270, 1920, 1190);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/zyrafa.jpg"))); // NOI18N
+        jLabel1.setLabelFor(this);
+        jLabel1.setAutoscrolls(true);
+        jLabel1.setMaximumSize(getMaximumSize());
+        jLabel1.setMinimumSize(getMinimumSize());
+        jLabel1.setPreferredSize(getPreferredSize());
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -150, 2090, 1330));
+
+        jToolBar1.setRollover(true);
+        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -133,7 +141,7 @@ public class Menu extends QuizWindow {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Thread.sleep(500);
+                    Thread.sleep(3000);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -143,8 +151,9 @@ public class Menu extends QuizWindow {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel background;
     private javax.swing.JButton exit;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton piano;
     private javax.swing.JButton quiz;
     // End of variables declaration//GEN-END:variables

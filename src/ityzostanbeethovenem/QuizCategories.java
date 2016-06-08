@@ -36,31 +36,33 @@ public class QuizCategories extends QuizWindow {
         jLabel1.setForeground(new java.awt.Color(78, 78, 78));
         jLabel1.setText("WYBIERZ KATEGORIĘ");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(610, 40, 570, 67);
+        jLabel1.setBounds(1040, 170, 570, 67);
 
         buttonInstruments.setBackground(new Color(0,0,0,0));
         buttonInstruments.setFont(new java.awt.Font("Comic Sans MS", 1, 23)); // NOI18N
         buttonInstruments.setForeground(new java.awt.Color(78, 78, 78));
         buttonInstruments.setText("Instrumenty");
+        buttonInstruments.setAutoscrolls(true);
         buttonInstruments.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonInstrumentsActionPerformed(evt);
             }
         });
         getContentPane().add(buttonInstruments);
-        buttonInstruments.setBounds(740, 120, 290, 70);
+        buttonInstruments.setBounds(1180, 290, 290, 70);
 
         buttonCompositors.setBackground(new Color(0,0,0,0));
         buttonCompositors.setFont(new java.awt.Font("Comic Sans MS", 1, 23)); // NOI18N
         buttonCompositors.setForeground(new java.awt.Color(78, 78, 78));
         buttonCompositors.setText("Kompozytorzy");
+        buttonCompositors.setAutoscrolls(true);
         buttonCompositors.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonCompositorsActionPerformed(evt);
             }
         });
         getContentPane().add(buttonCompositors);
-        buttonCompositors.setBounds(740, 200, 290, 70);
+        buttonCompositors.setBounds(1180, 370, 290, 70);
 
         buttonNotation.setBackground(new Color(0,0,0,0));
         buttonNotation.setFont(new java.awt.Font("Comic Sans MS", 1, 23)); // NOI18N
@@ -72,7 +74,7 @@ public class QuizCategories extends QuizWindow {
             }
         });
         getContentPane().add(buttonNotation);
-        buttonNotation.setBounds(740, 280, 290, 70);
+        buttonNotation.setBounds(1180, 450, 290, 70);
 
         buttonSoundsRecognition.setBackground(new Color(0,0,0,0));
         buttonSoundsRecognition.setFont(new java.awt.Font("Comic Sans MS", 1, 23)); // NOI18N
@@ -84,7 +86,7 @@ public class QuizCategories extends QuizWindow {
             }
         });
         getContentPane().add(buttonSoundsRecognition);
-        buttonSoundsRecognition.setBounds(740, 360, 290, 70);
+        buttonSoundsRecognition.setBounds(1180, 530, 290, 70);
 
         buttonEverything.setBackground(new Color(0,0,0,0));
         buttonEverything.setFont(new java.awt.Font("Comic Sans MS", 1, 23)); // NOI18N
@@ -96,7 +98,7 @@ public class QuizCategories extends QuizWindow {
             }
         });
         getContentPane().add(buttonEverything);
-        buttonEverything.setBounds(740, 440, 290, 70);
+        buttonEverything.setBounds(1180, 610, 290, 70);
 
         menu.setBackground(new Color(0,0,0,0));
         menu.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -108,7 +110,7 @@ public class QuizCategories extends QuizWindow {
             }
         });
         getContentPane().add(menu);
-        menu.setBounds(1240, 662, 50, 50);
+        menu.setBounds(1760, 40, 50, 50);
 
         exit.setBackground(new Color(0,0,0,0));
         exit.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -120,11 +122,13 @@ public class QuizCategories extends QuizWindow {
             }
         });
         getContentPane().add(exit);
-        exit.setBounds(1300, 670, 50, 40);
+        exit.setBounds(1830, 40, 50, 40);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/ogrod.jpg"))); // NOI18N
+        background.setAutoscrolls(true);
+        background.setMaximumSize(getMaximumSize());
         getContentPane().add(background);
-        background.setBounds(0, -150, 1640, 1080);
+        background.setBounds(0, -140, 2110, 1230);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -20,10 +20,13 @@ public class PianoWindow extends Piano {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("I Ty możesz zostać Beethovenem");
+        setExtendedState(MAXIMIZED_BOTH);
         setFocusCycleRoot(false);
         setFocusable(false);
         setIconImage(new ImageIcon(getClass().getResource("/Grafika/ikonka.png")).getImage());
+        setMaximizedBounds(getMaximizedBounds());
         setMinimumSize(new java.awt.Dimension(810, 450));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         learnSongs.setBackground(new java.awt.Color(189, 204, 204));
@@ -39,8 +42,11 @@ public class PianoWindow extends Piano {
         learnSongs.setBounds(250, 400, 310, 60);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafika/chatka.jpg"))); // NOI18N
+        background.setMaximumSize(getMaximumSize());
+        background.setMinimumSize(getMinimumSize());
+        background.setPreferredSize(getPreferredSize());
         getContentPane().add(background);
-        background.setBounds(-170, -430, 1590, 1200);
+        background.setBounds(0, -50, 2000, 1100);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
